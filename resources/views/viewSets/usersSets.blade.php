@@ -1,33 +1,27 @@
-@section('mainBodyRecommend')
+@section('mainBodyUsersSets')
 
 <section>
-    <div class="headerBlank"></div>
-
     <div class="textContainer">
         <div class="recommendTitle">
-            <h2><span>おすすめのコーディネート by wearcoord</span></h2>
-        </div>
-        <div class="recommendTags">
-            <div class="tags backColorPink">#春</div>
-            <div class="tags backColorGray">#nike</div>
+            <h2><span>みんなのコーディネート</span></h2>
         </div>
     </div>
 
     <ul class="reccomendImgContainer">
         <a href=""><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/z-FK0820-on_model-standard_view.jpg')}}" alt="">
+            <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
         </li></a>
         <a href=""><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/z-FK0820-on_model-standard_view.jpg')}}" alt="">
+            <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
         </li></a>
         <a href=""><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/z-FK0820-on_model-standard_view.jpg')}}" alt="">
+            <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
         </li></a>
         <a href=""><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/z-FK0820-on_model-standard_view.jpg')}}" alt="">
+            <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
         </li></a>
         <a href=""><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/z-FK0820-on_model-standard_view.jpg')}}" alt="">
+            <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
         </li></a>
             <div class="reccomendImg_item moreIcon">
                 <div class="moreIcon_inner">

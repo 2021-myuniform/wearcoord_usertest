@@ -25,8 +25,10 @@
 
     @yield('nav')
 
-    @yield('mainBody')
-    
+    @yield('mainBodyRecommend')
+    @yield('mainBodyUsersSets')
+    @yield('mainBodyHotTags')
+
 
 </body>
 </html>

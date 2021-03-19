@@ -10,3 +10,5 @@
 @include('parts.navbar')
 
 @include('viewSets.recommend')
+@include('viewSets.usersSets')
+@include('viewSets.hotTags')

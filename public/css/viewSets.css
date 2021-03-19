@@ -90,3 +90,29 @@
 .backColorGray {
   background-color: gray;
 }
+
+.tagContainer {
+  background-color: white;
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.tagContainer ul {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tagContainer ul li {
+  padding: 2px 4px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin: 4px 4px;
+  color: white;
+  box-shadow: 1px 1px 3px 0px darkgrey;
+  background-color: gray;
+}
