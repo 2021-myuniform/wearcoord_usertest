@@ -5,3 +5,7 @@
 @endsection
 
 @include('parts.header')
+
+@include('parts.navbar')
+
+@include('viewSets.recommend')
