@@ -6,12 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('app.name') }}</title>
 
-    @if(app('env')=='local')
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-    @endif
-    @if(app('env')=='production')
-    <link rel="stylesheet" href="{{ secure_asset('css/reset.css') }}">
-    @endif
 
 </head>
 <body>
