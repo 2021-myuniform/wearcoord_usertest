@@ -8,5 +8,7 @@
 </head>
 <body>
     <h1>LPページ</h1>
+    <a href="{{ route('login') }}">ログイン</a>
+    <a href="{{ route('register') }}">新規登録</a>
 </body>
 </html>
