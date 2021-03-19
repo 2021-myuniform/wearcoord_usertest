@@ -3,6 +3,11 @@
   height: 50px;
 }
 
+.navBlank {
+  content: '';
+  height: 80px;
+}
+
 .textContainer {
   display: flex;
   height: 50px;
