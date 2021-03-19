@@ -15,19 +15,19 @@
 
     <ul class="reccomendImgContainer">
         <a href=""><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/ナイキ-スポーツウェア-ダウンフィル-ウィンドランナー-シールド-メンズベスト-CPp1sd.jpg')}}" alt="">
+            <img src="{{asset('img/testImg/z-FK0820-on_model-standard_view.jpg')}}" alt="">
         </li></a>
         <a href=""><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/ナイキ-スポーツウェア-ダウンフィル-ウィンドランナー-シールド-メンズベスト-CPp1sd.jpg')}}" alt="">
+            <img src="{{asset('img/testImg/z-FK0820-on_model-standard_view.jpg')}}" alt="">
         </li></a>
         <a href=""><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/ナイキ-スポーツウェア-ダウンフィル-ウィンドランナー-シールド-メンズベスト-CPp1sd.jpg')}}" alt="">
+            <img src="{{asset('img/testImg/z-FK0820-on_model-standard_view.jpg')}}" alt="">
         </li></a>
         <a href=""><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/ナイキ-スポーツウェア-ダウンフィル-ウィンドランナー-シールド-メンズベスト-CPp1sd.jpg')}}" alt="">
+            <img src="{{asset('img/testImg/z-FK0820-on_model-standard_view.jpg')}}" alt="">
         </li></a>
         <a href=""><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/ナイキ-スポーツウェア-ダウンフィル-ウィンドランナー-シールド-メンズベスト-CPp1sd.jpg')}}" alt="">
+            <img src="{{asset('img/testImg/z-FK0820-on_model-standard_view.jpg')}}" alt="">
         </li></a>
             <div class="reccomendImg_item moreIcon">
                 <div class="moreIcon_inner">
