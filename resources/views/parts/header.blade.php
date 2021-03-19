@@ -1,6 +1,6 @@
 @section('header')
 
-<nav class="header">
+<header class="header">
     <div class="hiddenIcon"></div>
     <a href="{{route('viewsets')}}">
         <h1 class="mainTitle">wearcoord</h1>
@@ -8,6 +8,6 @@
     <a class="settingIcon" href="">
         <span class="material-icons-outlined">settings</span>
     </a>
-</nav>
+</header>
 
 @endsection
