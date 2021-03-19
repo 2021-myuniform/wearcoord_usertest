@@ -2,6 +2,7 @@
 
 @section('mainCss')
 <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+<link rel="stylesheet" href="{{ asset('css/viewSets.css') }}">
 @endsection
 
 @include('parts.header')
