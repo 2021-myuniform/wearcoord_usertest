@@ -28,6 +28,7 @@
     @yield('mainBodyRecommend')
     @yield('mainBodyUsersSets')
     @yield('mainBodyHotTags')
+    @yield('mainBodyArticles')
 
 
 </body>

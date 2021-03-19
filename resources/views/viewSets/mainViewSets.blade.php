@@ -12,3 +12,4 @@
 @include('viewSets.recommend')
 @include('viewSets.usersSets')
 @include('viewSets.hotTags')
+@include('viewSets.articles')
