@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .headerBlank {
   content: '';
   height: 50px;
@@ -10,6 +11,40 @@
 
 .mySetsSect {
   height: 100vh;
+}
+
+.displayNone {
+  display: none !important;
+}
+
+/* Chrome、Safari以外 */
+summary {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Chrome、Safari */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* オープン時にアニメーションを設定 */
+details[open] .detailsBottom {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    /* 透明 */
+    transform: translateY(-10px);
+    /* 上から表示 */
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .selectWearContainer {
@@ -33,6 +68,21 @@
 
 .btnDesign .btnText {
   padding-top: 5px;
+}
+
+.btnDesign .detailsBtn {
+  color: #484848;
+  text-align: center;
+  padding: 10px;
+  display: block;
+}
+
+.btnDesign hr {
+  width: 80%;
+}
+
+.btnDesign .detailsBottom {
+  text-align: center;
 }
 
 .left {

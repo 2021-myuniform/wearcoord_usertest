@@ -5,6 +5,10 @@
 <link rel="stylesheet" href="{{ asset('css/mySets.css') }}">
 @endsection
 
+@section('mainJs')
+<script src="{{ asset('js/mySets.js') }}"></script>
+@endsection
+
 @include('parts.header')
 
 @include('parts.navbar')

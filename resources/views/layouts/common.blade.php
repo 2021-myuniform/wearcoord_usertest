@@ -36,5 +36,6 @@
     @yield('mySets')
 
 
+    @yield('mainJs')
 </body>
 </html>

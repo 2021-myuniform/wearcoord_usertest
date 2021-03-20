@@ -12,6 +12,41 @@
     height: 100vh;
 }
 
+.displayNone{
+    display: none !important;
+}
+
+
+// アコーディオン
+
+
+/* Chrome、Safari以外 */
+summary {
+    display: block;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Chrome、Safari */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* オープン時にアニメーションを設定 */
+details[open] .detailsBottom {
+    animation: fadeIn 0.5s ease;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0; /* 透明 */
+      transform: translateY(-10px); /* 上から表示 */
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
 // wrapper
 
 .selectWearContainer{
@@ -35,6 +70,21 @@
 
     .btnText{
         padding-top: 5px;
+    }
+
+    .detailsBtn{
+        color: #484848;
+        text-align: center;
+        padding: 10px;
+        display: block;
+    }
+
+    hr{
+        width: 80%;
+    }
+
+    .detailsBottom{
+        text-align: center;
     }
 }
 
