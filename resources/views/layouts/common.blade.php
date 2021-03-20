@@ -26,10 +26,14 @@
 
     @yield('nav')
 
+    {{-- viewSets --}}
     @yield('mainBodyRecommend')
     @yield('mainBodyUsersSets')
     @yield('mainBodyHotTags')
     @yield('mainBodyArticles')
+
+    {{-- mySets --}}
+    @yield('mySets')
 
 
 </body>
