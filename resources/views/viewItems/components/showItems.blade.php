@@ -1,74 +1,74 @@
 <div class="imgContainer">
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
-    <a href="" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
 </div>

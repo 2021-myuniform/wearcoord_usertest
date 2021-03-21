@@ -37,4 +37,8 @@ Route::get('/viewItems', function () {
     return view('viewItems.mainViewItems');
 })->middleware(['auth'])->name('viewItems');
 
+Route::get('/itemdetails', function () {
+    return view('itemDetails.itemDetails');
+})->middleware(['auth'])->name('itemdetails');
+
 require __DIR__.'/auth.php';

@@ -1,0 +1,83 @@
+.itemDetailsSect {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modalCloseBtn{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #484848;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0.8;
+    right: 10px;
+    top: 30px;
+}
+
+.modal {
+    width: 90%;
+    height: 80%;
+    background-color: white;
+    margin: auto;
+    border-radius: 30px;
+    overflow: auto;
+
+    hr {
+        width: 70%;
+    }
+
+    .modalContainer {
+        width: 90%;
+        margin: auto;
+        padding: 20px 0;
+        box-sizing: border-box;
+
+        .modalTitle {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .modalSect {
+            font-size: 1.4rem;
+            padding: 10px;
+
+            .center {
+                text-align: center;
+            }
+
+            .linkArticle {
+                display: flex;
+                box-shadow: 1px 1px 3px 0px darkgrey;
+                margin: 10px;
+                border-radius: 10px;
+
+                .articleImg {
+                    width: 20%;
+
+                    img {
+                        width: 100%;
+                        padding: 10px;
+                        box-sizing: border-box;
+                    }
+                }
+
+                .articleTitle {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #484848;
+                    width: 80%;
+                    padding: 10px;
+                    box-sizing: border-box;
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+
+}
