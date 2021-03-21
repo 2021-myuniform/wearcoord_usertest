@@ -46,7 +46,7 @@ Route::get('/itemfavorite', function () {
 })->middleware(['auth'])->name('itemfavorite');
 
 Route::get('/coordfavoritedetail', function () {
-    return view('favorite.favoritecoordDetail');
+    return view('favorite.favoriteCoordDetail');
 })->middleware(['auth'])->name('coordfavoritedetail');
 
 require __DIR__.'/auth.php';
