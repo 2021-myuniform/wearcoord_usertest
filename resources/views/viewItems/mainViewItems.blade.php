@@ -6,7 +6,7 @@
 @endsection
 
 @section('mainJs')
-{{-- <script src="{{ asset('js/mySets.js') }}"></script> --}}
+<script src="{{ asset('js/viewItems.js') }}"></script>
 @endsection
 
 @include('parts.header')
