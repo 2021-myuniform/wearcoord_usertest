@@ -1,0 +1,48 @@
+<div class="leftContainer">
+
+    <details class="btnDesign left" id="btnBand">
+        <summary>
+                <span class="material-icons-outlined">
+                    circle
+                </span>
+            <p class="btnText" id="btnTitleBand">Band</p>
+        </summary>
+        <div class="detailsBottom">
+            <a href="" class="detailsBtn">
+                <span class="material-icons-outlined">
+                    pageview
+                    </span>
+                <p class="btnText">見る</p>
+            </a>
+                <hr>
+            <a href="" class="detailsBtn">
+                <span class="material-icons-outlined">
+                    file_download
+                    </span>
+                <p class="btnText">アイテムをインポート</p>
+            </a>
+        </div>
+    </details>
+
+    <details class="btnDesign left" id="btnInner">
+        <summary>
+                <i class="fas fa-tshirt sideFontAwesome"></i>
+                <p class="btnText" id="btnTitleInner">Inner</p>
+        </summary>
+        <div class="detailsBottom">
+            <a href="" class="detailsBtn">
+                <span class="material-icons-outlined">
+                    pageview
+                    </span>
+                <p class="btnText">見る</p>
+            </a>
+                <hr>
+            <a href="" class="detailsBtn">
+                <span class="material-icons-outlined">
+                    file_download
+                    </span>
+                <p class="btnText">アイテムをインポート</p>
+            </a>
+        </div>
+    </details>
+</div>

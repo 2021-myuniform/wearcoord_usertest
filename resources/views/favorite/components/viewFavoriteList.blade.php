@@ -1,11 +1,11 @@
 <div class="imgContainer" id="favoriteItem">
-    <a href="{{ route('itemfavorite') }}" class="imgItems">
+    <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10015185.png')}}" alt="">
     </a>
 </div>
 
 <div class="imgContainer" id="favoriteCoord">
-    <a href="{{ route('itemfavorite') }}" class="imgItems">
+    <a href="{{ route('coordfavoritedetail') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
     </a>
 </div>
