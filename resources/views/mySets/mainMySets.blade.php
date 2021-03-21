@@ -2,7 +2,7 @@
 
 @section('mainCss')
 <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-<link rel="stylesheet" href="{{ asset('css/mySets.css') }}">
+<link rel="stylesheet" href="{{ asset('css/mySets/mySets.css') }}">
 @endsection
 
 @section('mainJs')
@@ -18,11 +18,11 @@
     <div class="headerBlank"></div>
 
     <div class="selectWearContainer">
-        @include('mySets.leftBtn')
-        @include('mySets.center')
-        @include('mySets.rightBtn')
+        @include('mySets.componentsBtn.leftBtn')
+        @include('mySets.componentsBtn.center')
+        @include('mySets.componentsBtn.rightBtn')
     </div>
-    @include('mySets.buttomBtn')
+    @include('mySets.componentsBtn.buttomBtn')
 
     <div class="navBlank"></div>
 </section>

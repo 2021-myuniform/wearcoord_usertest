@@ -35,6 +35,9 @@
     {{-- mySets --}}
     @yield('mySets')
 
+    {{-- searchMySets --}}
+    @yield('searchMySets')
+
 
     @yield('mainJs')
 </body>

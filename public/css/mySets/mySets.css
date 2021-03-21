@@ -1,14 +1,4 @@
 @charset "UTF-8";
-.headerBlank {
-  content: '';
-  height: 50px;
-}
-
-.navBlank {
-  content: '';
-  height: 80px;
-}
-
 .mySetsSect {
   height: 100vh;
 }
@@ -108,6 +98,11 @@ details[open] .detailsBottom {
 
 .centerContainer .imgContainer {
   height: 100%;
+  background-image: url("../../img/other/mannequin_done3.png");
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .centerContainer .mannequinImg {
@@ -137,6 +132,7 @@ details[open] .detailsBottom {
   align-items: center;
   background-color: #dddddd;
   color: #484848;
+  line-height: 1.5;
 }
 
 .bottomContainer .bottomBtn span {

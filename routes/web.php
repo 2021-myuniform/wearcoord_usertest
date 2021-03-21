@@ -29,4 +29,8 @@ Route::get('/myset', function () {
     return view('mySets.mainMySets');
 })->middleware(['auth'])->name('mysets');
 
+Route::get('/searchmyset', function () {
+    return view('mySets.searchMySets');
+})->middleware(['auth'])->name('searchmysets');
+
 require __DIR__.'/auth.php';
