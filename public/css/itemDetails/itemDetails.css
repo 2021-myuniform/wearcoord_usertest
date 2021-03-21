@@ -80,3 +80,28 @@
   box-sizing: border-box;
   line-height: 1.2;
 }
+
+.bottomBtn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.bottomBtn .itemBottomBtn {
+  background-color: #216496;
+  color: white;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.bottomBtn .itemBottomBtn p {
+  display: flex;
+  align-items: center;
+}
+
+.bottomBtn .itemBottomBtn span {
+  padding-right: 10px;
+}
