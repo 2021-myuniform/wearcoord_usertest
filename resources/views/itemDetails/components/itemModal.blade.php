@@ -39,7 +39,19 @@
         </div>
     </div>
     <hr>
-
+</div>
 </div>
 
+<div class="bottomBtn">
+    <a href="" class="itemBottomBtn">
+        <p><span class="material-icons-outlined">
+            checkroom
+            </span>着用してみる</p>
+    </a>
+    <a href="" class="itemBottomBtn">
+        <p><span class="material-icons-outlined">
+            favorite_border
+            </span>
+        お気に入り</p>
+    </a>
 </div>
