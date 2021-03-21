@@ -56,7 +56,7 @@
 }
 
 .bottomBtnPosition {
-  position: absolute;
+  position: fixed;
   bottom: 80px;
   display: none;
 }
