@@ -41,4 +41,8 @@ Route::get('/itemdetails', function () {
     return view('itemDetails.itemDetails');
 })->middleware(['auth'])->name('itemdetails');
 
+Route::get('/itemfavorite', function () {
+    return view('favorite.mainFavorite');
+})->middleware(['auth'])->name('itemfavorite');
+
 require __DIR__.'/auth.php';

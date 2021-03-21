@@ -44,6 +44,9 @@
     {{-- itemDetails --}}
     @yield('itemDetails')
 
+    {{-- viewFavorite --}}
+    @yield('viewFavorite')
+
 
     @yield('mainJs')
 </body>
