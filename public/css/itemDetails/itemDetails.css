@@ -87,6 +87,9 @@
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
 }
 
 .bottomBtn .itemBottomBtn {
