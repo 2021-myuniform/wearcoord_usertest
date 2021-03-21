@@ -1,5 +1,10 @@
 .viewItemsSect {
     height: 100vh;
+    position: relative;
+}
+
+.displayBlock{
+    display: block !important;
 }
 
 .imgContainer {
@@ -44,7 +49,95 @@
         font-size: 16px;
     }
 
-    span{
+    span {
         padding-right: 10px;
     }
+}
+
+
+// searchフォーム
+
+.bottomBtnPosition{
+    position: absolute;
+    bottom: 80px;
+    display: none;
+}
+
+.searchForm {
+    width: 90%;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 1px 1px 3px 0px darkgrey;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+
+    .sideFontAwesome {
+        font-size: 2rem;
+    }
+}
+
+.tab_item {
+    color: #484848;
+    background: none;
+    margin-right: 5px;
+    padding: 3px 12px;
+    order: -1;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 10px 10px 0 0;
+}
+
+.tab_content {
+    width: 80%;
+    display: none;
+    border-top: 1px solid #216496;
+
+    .searchDown {
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+
+        select {
+            width: 80%;
+        }
+    }
+
+    hr{
+        width: 50%;
+    }
+
+    .searchBtn {
+        text-align: center;
+        margin: auto;
+        padding: 10px;
+
+        button {
+            width: 100%;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: #216496;
+            color: white;
+        }
+    }
+}
+
+/* アクティブなタブ */
+.tab-switch:checked+.tab_item {
+    background: #216496;
+    color: white;
+}
+
+.tab-switch:checked+.tab_item+.tab_content {
+    display: block;
+}
+
+/* ラジオボタン非表示 */
+.tab-switch {
+    display: none;
 }

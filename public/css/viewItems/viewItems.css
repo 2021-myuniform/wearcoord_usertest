@@ -1,5 +1,11 @@
+@charset "UTF-8";
 .viewItemsSect {
   height: 100vh;
+  position: relative;
+}
+
+.displayBlock {
+  display: block !important;
 }
 
 .imgContainer {
@@ -47,4 +53,89 @@
 
 .searchItemsBtn span {
   padding-right: 10px;
+}
+
+.bottomBtnPosition {
+  position: absolute;
+  bottom: 80px;
+  display: none;
+}
+
+.searchForm {
+  width: 90%;
+  margin: auto;
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 1px 1px 3px 0px darkgrey;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.tabs .sideFontAwesome {
+  font-size: 2rem;
+}
+
+.tab_item {
+  color: #484848;
+  background: none;
+  margin-right: 5px;
+  padding: 3px 12px;
+  order: -1;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border-radius: 10px 10px 0 0;
+}
+
+.tab_content {
+  width: 80%;
+  display: none;
+  border-top: 1px solid #216496;
+}
+
+.tab_content .searchDown {
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.tab_content .searchDown select {
+  width: 80%;
+}
+
+.tab_content hr {
+  width: 50%;
+}
+
+.tab_content .searchBtn {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
+
+.tab_content .searchBtn button {
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #216496;
+  color: white;
+}
+
+/* アクティブなタブ */
+.tab-switch:checked + .tab_item {
+  background: #216496;
+  color: white;
+}
+
+.tab-switch:checked + .tab_item + .tab_content {
+  display: block;
+}
+
+/* ラジオボタン非表示 */
+.tab-switch {
+  display: none;
 }
