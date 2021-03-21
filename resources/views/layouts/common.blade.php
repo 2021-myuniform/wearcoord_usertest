@@ -38,6 +38,9 @@
     {{-- searchMySets --}}
     @yield('searchMySets')
 
+    {{-- viewItems --}}
+    @yield('viewItems')
+
 
     @yield('mainJs')
 </body>

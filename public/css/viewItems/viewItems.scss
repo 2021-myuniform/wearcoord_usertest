@@ -1,0 +1,50 @@
+.viewItemsSect {
+    height: 100vh;
+}
+
+.imgContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    height: 70vh;
+    overflow: scroll;
+
+    .imgItems {
+        width: 25%;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 10px;
+        margin: 10px;
+        box-shadow: 1px 1px 3px 0px darkgrey;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.searchItemsBtn {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+
+    button {
+        background-color: #216496;
+        width: 100%;
+        color: white;
+        padding: 8px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+    }
+
+    span{
+        padding-right: 10px;
+    }
+}

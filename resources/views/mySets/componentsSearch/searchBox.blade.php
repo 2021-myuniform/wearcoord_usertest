@@ -1,5 +1,5 @@
 <div class="backBtn">
-    <a href=""><span class="material-icons-outlined">
+    <a href="{{ route('mysets') }}"><span class="material-icons-outlined">
         arrow_right
         </span></a>
 </div>

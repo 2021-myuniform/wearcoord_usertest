@@ -33,4 +33,8 @@ Route::get('/searchmyset', function () {
     return view('mySets.searchMySets');
 })->middleware(['auth'])->name('searchmysets');
 
+Route::get('/viewItems', function () {
+    return view('viewItems.mainViewItems');
+})->middleware(['auth'])->name('viewItems');
+
 require __DIR__.'/auth.php';
