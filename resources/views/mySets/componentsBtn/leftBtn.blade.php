@@ -15,7 +15,7 @@
                 <p class="btnText">買う</p>
             </a>
                 <hr>
-            <a href="" class="detailsBtn">
+            <a href="{{ route('searchmysets') }}" class="detailsBtn">
                 <span class="material-icons-outlined">
                     screen_search_desktop
                 </span>
