@@ -8,19 +8,19 @@
     </div>
 
     <ul class="reccomendImgContainer">
-        <a href=""><li class="reccomendImg_item">
+        <a href="{{ route('coordfavoritedetail') }}"><li class="reccomendImg_item">
             <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
         </li></a>
-        <a href=""><li class="reccomendImg_item">
+        <a href="{{ route('coordfavoritedetail') }}"><li class="reccomendImg_item">
             <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
         </li></a>
-        <a href=""><li class="reccomendImg_item">
+        <a href="{{ route('coordfavoritedetail') }}"><li class="reccomendImg_item">
             <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
         </li></a>
-        <a href=""><li class="reccomendImg_item">
+        <a href="{{ route('coordfavoritedetail') }}"><li class="reccomendImg_item">
             <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
         </li></a>
-        <a href=""><li class="reccomendImg_item">
+        <a href="{{ route('coordfavoritedetail') }}"><li class="reccomendImg_item">
             <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
         </li></a>
             <div class="reccomendImg_item moreIcon">
