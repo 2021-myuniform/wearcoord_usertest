@@ -5,7 +5,7 @@
 
     <div class="textContainer">
         <div class="recommendTitle">
-            <h2><span>おすすめのコーディネート by wearcoord</span></h2>
+            <h2><span>おすすめのコーディネート by W</span></h2>
         </div>
         <div class="recommendTags">
             <div class="tags backColorPink">#春</div>
