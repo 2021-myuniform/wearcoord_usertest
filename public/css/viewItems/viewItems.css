@@ -63,10 +63,10 @@
 }
 
 .searchItemsBtn {
-  text-align: center;
   width: 90%;
-  margin: auto;
   padding: 10px;
+  position: fixed;
+  bottom: 90px;
 }
 
 .searchItemsBtn button {

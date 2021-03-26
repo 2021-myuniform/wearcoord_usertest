@@ -19,7 +19,7 @@
                 <span class="material-icons-outlined">
                     file_download
                     </span>
-                <p class="btnText">アイテムをインポート</p>
+                <p class="btnText">アイテムを反映</p>
             </a>
         </div>
     </details>
@@ -41,7 +41,7 @@
                 <span class="material-icons-outlined">
                     file_download
                     </span>
-                <p class="btnText">アイテムをインポート</p>
+                <p class="btnText">アイテムを反映</p>
             </a>
         </div>
         </details>
@@ -65,7 +65,7 @@
                 <span class="material-icons-outlined">
                     file_download
                     </span>
-                <p class="btnText">アイテムをインポート</p>
+                <p class="btnText">アイテムを反映</p>
             </a>
         </div>
         </details>
@@ -87,7 +87,7 @@
                 <span class="material-icons-outlined">
                     file_download
                     </span>
-                <p class="btnText">アイテムをインポート</p>
+                <p class="btnText">アイテムを反映</p>
             </a>
         </div>
         </details>
@@ -109,7 +109,7 @@
                 <span class="material-icons-outlined">
                     file_download
                     </span>
-                <p class="btnText">アイテムをインポート</p>
+                <p class="btnText">アイテムを反映</p>
             </a>
         </div>
     </details>
