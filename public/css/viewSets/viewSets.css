@@ -163,3 +163,14 @@
   margin: auto;
   line-height: initial;
 }
+
+.wearcoordlab .wearcoordlab_link {
+  width: 90%;
+  margin: auto;
+  cursor: pointer;
+}
+
+.wearcoordlab .wearcoordlab_link a img {
+  width: 100%;
+  border-radius: 10px;
+}

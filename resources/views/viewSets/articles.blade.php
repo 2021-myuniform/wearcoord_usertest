@@ -3,11 +3,19 @@
 <section>
     <div class="textContainer">
         <div class="recommendTitle">
-            <h2><span>wearcoord lab 最新記事</span></h2>
+            <h2><span>wearcoord lab 最新記事はこちら</span></h2>
         </div>
     </div>
 
-    <ul class="articleImgContainer">
+    <div class="wearcoordlab">
+        <div class="wearcoordlab_link">
+            <a href="https://wearcoordlab.com/"  target="_blank" rel="noopener noreferrer">
+                <img src="{{ asset('/img/other/wearcoordlab.jpg') }}" alt="">
+            </a>
+        </div>
+    </div>
+
+    {{-- <ul class="articleImgContainer">
         <a href="">
             <li class="article_item">
                 <div class="article_itemBox">
@@ -32,7 +40,7 @@
                 </div>
             </li>
         </a>
-    </ul>
+    </ul> --}}
 
     <div class="navBlank"></div>
 
