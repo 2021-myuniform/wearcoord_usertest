@@ -1,3 +1,20 @@
+.navbar{
+    .navbar_ul{
+        .nav_item{
+            background-color: #216496;
+            border-radius: 10px;
+
+            i{
+                color: white;
+            }
+
+            p{
+                color: white;
+            }
+        }
+    }
+}
+
 .viewItemsSect {
     height: 100vh;
     position: relative;

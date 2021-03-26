@@ -1,4 +1,17 @@
 @charset "UTF-8";
+.navbar .navbar_ul .nav_coord {
+  background-color: #216496;
+  border-radius: 10px;
+}
+
+.navbar .navbar_ul .nav_coord span {
+  color: white;
+}
+
+.navbar .navbar_ul .nav_coord p {
+  color: white;
+}
+
 .mySetsSect {
   height: 100vh;
 }

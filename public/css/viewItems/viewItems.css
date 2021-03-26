@@ -1,4 +1,17 @@
 @charset "UTF-8";
+.navbar .navbar_ul .nav_item {
+  background-color: #216496;
+  border-radius: 10px;
+}
+
+.navbar .navbar_ul .nav_item i {
+  color: white;
+}
+
+.navbar .navbar_ul .nav_item p {
+  color: white;
+}
+
 .viewItemsSect {
   height: 100vh;
   position: relative;

@@ -1,12 +1,21 @@
-// .headerBlank{
-//     content: '';
-//     height: 50px;
-// }
+.navbar{
+    .navbar_ul{
+        .nav_home{
+            background-color: #216496;
+            border-radius: 10px;
 
-// .navBlank{
-//     content: '';
-//     height: 80px;
-// }
+            span{
+                color: white;
+            }
+
+            p{
+                color: white;
+            }
+        }
+    }
+}
+
+
 
 
 // recommend by wearcoord

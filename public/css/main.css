@@ -8,6 +8,7 @@ body {
   background-color: #ECECEC;
   height: 100vh;
   position: relative;
+  font-size: 1.2rem;
 }
 
 button {
@@ -36,6 +37,10 @@ button {
   align-items: center;
   position: fixed;
   width: 100%;
+}
+
+.header .titleIcon {
+  padding-left: 10px;
 }
 
 .header .mainTitle {
@@ -81,6 +86,7 @@ button {
 .navbar .navbar_ul li {
   padding: 10px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .navbar .navbar_ul p {
