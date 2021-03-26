@@ -2,8 +2,10 @@
 
 @section('mainCss')
 <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-<link rel="stylesheet" href="{{ asset('css/favorite/favorite.css') }}">
+{{-- <link rel="stylesheet" href="{{ asset('css/favorite/favorite.css') }}"> --}}
 <link rel="stylesheet" href="{{ asset('css/mySets/mySets.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/backgroundBlue.css') }}">
+<link rel="stylesheet" href="{{ asset('css/components/navActiveNone.css') }}">
 @endsection
 
 @section('mainJs')

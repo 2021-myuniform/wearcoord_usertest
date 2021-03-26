@@ -1,4 +1,17 @@
 @charset "UTF-8";
+.navbar .navbar_ul .nav_favorite {
+  background-color: #216496;
+  border-radius: 10px;
+}
+
+.navbar .navbar_ul .nav_favorite span {
+  color: white;
+}
+
+.navbar .navbar_ul .nav_favorite p {
+  color: white;
+}
+
 .viewFavoriteSect {
   height: 100vh;
 }

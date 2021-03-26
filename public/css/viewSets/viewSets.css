@@ -1,3 +1,16 @@
+.navbar .navbar_ul .nav_home {
+  background-color: #216496;
+  border-radius: 10px;
+}
+
+.navbar .navbar_ul .nav_home span {
+  color: white;
+}
+
+.navbar .navbar_ul .nav_home p {
+  color: white;
+}
+
 .textContainer {
   display: flex;
   height: 50px;
@@ -149,4 +162,15 @@
   white-space: normal;
   margin: auto;
   line-height: initial;
+}
+
+.wearcoordlab .wearcoordlab_link {
+  width: 90%;
+  margin: auto;
+  cursor: pointer;
+}
+
+.wearcoordlab .wearcoordlab_link a img {
+  width: 100%;
+  border-radius: 10px;
 }

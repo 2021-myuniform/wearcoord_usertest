@@ -1,3 +1,8 @@
+<div class="showSearchInput">
+    <div class="brand">ブランド : adidas</div>
+    <div class="color">カラー : black</div>
+</div>
+
 <div class="imgContainer">
     <a href="{{ route('itemdetails') }}" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
@@ -76,7 +81,7 @@
 <div class="searchItemsBtn">
     <button id="searchItemsBtn"><span class="material-icons-outlined">
         search
-        </span>Search</button>
+        </span>アイテムを絞り込む</button>
 </div>
 
 <div class="bottomBtnPosition" id="bottomBtnPosition">
@@ -116,7 +121,7 @@
                     </div>
 
                     <div class="searchBtn">
-                        <button type="submit">Search</button>
+                        <button type="submit">アイテムを絞り込む</button>
                     </div>
                 </form>
 
@@ -154,7 +159,7 @@
                     </div>
 
                     <div class="searchBtn">
-                        <button type="submit">Search</button>
+                        <button type="submit">アイテムを絞り込む</button>
                     </div>
                 </form>
 
@@ -194,7 +199,7 @@
                     </div>
 
                     <div class="searchBtn">
-                        <button type="submit">Search</button>
+                        <button type="submit">アイテムを絞り込む</button>
                     </div>
                 </form>
 
@@ -232,7 +237,7 @@
                     </div>
 
                     <div class="searchBtn">
-                        <button type="submit">Search</button>
+                        <button type="submit">アイテムを絞り込む</button>
                     </div>
                 </form>
 
@@ -270,7 +275,7 @@
                     </div>
 
                     <div class="searchBtn">
-                        <button type="submit">Search</button>
+                        <button type="submit">アイテムを絞り込む</button>
                     </div>
                 </form>
 

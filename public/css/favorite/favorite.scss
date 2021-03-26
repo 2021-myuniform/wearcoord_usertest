@@ -1,3 +1,20 @@
+.navbar{
+    .navbar_ul{
+        .nav_favorite{
+            background-color: #216496;
+            border-radius: 10px;
+
+            span{
+                color: white;
+            }
+
+            p{
+                color: white;
+            }
+        }
+    }
+}
+
 .viewFavoriteSect {
     height: 100vh;
 }

@@ -8,6 +8,7 @@ body{
     background-color: #ECECEC;
     height: 100vh;
     position: relative;
+    font-size: 1.2rem;
 }
 
 button{
@@ -39,6 +40,10 @@ button{
     align-items: center;
     position: fixed;
     width: 100%;
+
+    .titleIcon{
+        padding-left: 10px;
+    }
 
     .mainTitle{
         font-size: 2.4rem;
@@ -84,6 +89,7 @@ button{
         li{
             padding: 10px;
             box-sizing: border-box;
+            text-align: center;
         }
 
         p{

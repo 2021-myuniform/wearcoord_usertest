@@ -1,7 +1,7 @@
 .itemDetailsSect {
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: relative;
+    // height: 100vh;
+    // background-color: rgba(0, 0, 0, 0.3);
+    // position: relative;
 }
 
 .modalCloseBtn {
@@ -26,6 +26,7 @@
     margin: auto;
     border-radius: 30px;
     overflow: auto;
+    margin-top: 50px;
 
     hr {
         width: 70%;
@@ -89,8 +90,10 @@
     padding: 10px;
     box-sizing: border-box;
     position: absolute;
-    bottom: 100px;
+    top: 50px;
     width: 100%;
+    position: fixed;
+    z-index: 100;
 
     .itemBottomBtn {
         background-color: #216496;

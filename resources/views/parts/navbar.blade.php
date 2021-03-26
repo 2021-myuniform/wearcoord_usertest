@@ -2,16 +2,16 @@
 
 <nav class="navbar">
 <ul class="navbar_ul">
-    <a href="{{ route('mysets') }}"><li><span class="material-icons-outlined navIcon">
-        accessibility
-        </span><p>MY SET</p></li></a>
-    <a href="{{ route('viewsets') }}"><li><span class="material-icons-outlined navIcon">
+    <a href="{{ route('home') }}"><li class="nav_home"><span class="material-icons-outlined navIcon">
         dashboard
-        </span><p>VIEW SET</p></li></a>
-    <a href="{{ route('viewItems') }}"><li><i class="fas fa-tshirt navIconTshirt"></i><p>VIEW ITEM</p></li></a>
-    <a href="{{ route('itemfavorite') }}"><li><span class="material-icons-outlined navIcon">
+        </span><p>ホーム</p></li></a>
+    <a href="{{ route('mysets') }}"><li class="nav_coord"><span class="material-icons-outlined navIcon">
+        accessibility
+        </span><p>MYコーデ</p></li></a>
+    <a href="{{ route('viewItems') }}"><li class="nav_item"><i class="fas fa-tshirt navIconTshirt"></i><p>アイテム</p></li></a>
+    <a href="{{ route('itemfavorite') }}"><li class="nav_favorite"><span class="material-icons-outlined navIcon">
         favorite_border
-        </span><p>FAVORITE</p></li></a>
+        </span><p>お気に入り</p></li></a>
 </ul>
 </nav>
 

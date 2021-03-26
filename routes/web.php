@@ -21,9 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/viewsets', function () {
+Route::get('/home', function () {
     return view('viewSets.mainViewSets');
-})->middleware(['auth'])->name('viewsets');
+})->middleware(['auth'])->name('home');
 
 Route::get('/myset', function () {
     return view('mySets.mainMySets');
