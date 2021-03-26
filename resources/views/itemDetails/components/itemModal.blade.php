@@ -1,6 +1,20 @@
-<a href="{{ route('viewItems') }}" class="modalCloseBtn"><span class="material-icons-outlined">
+{{-- <a href="{{ route('viewItems') }}" class="modalCloseBtn"><span class="material-icons-outlined">
     close
-    </span></a>
+    </span></a> --}}
+
+    <div class="bottomBtn">
+        <a href="" class="itemBottomBtn">
+            <p><span class="material-icons-outlined">
+                checkroom
+                </span>着用してみる</p>
+        </a>
+        <a href="" class="itemBottomBtn">
+            <p><span class="material-icons-outlined">
+                favorite_border
+                </span>
+            お気に入り</p>
+        </a>
+    </div>
 
 <div class="modal">
     <div class="modalContainer">
@@ -42,16 +56,4 @@
 </div>
 </div>
 
-<div class="bottomBtn">
-    <a href="" class="itemBottomBtn">
-        <p><span class="material-icons-outlined">
-            checkroom
-            </span>着用してみる</p>
-    </a>
-    <a href="" class="itemBottomBtn">
-        <p><span class="material-icons-outlined">
-            favorite_border
-            </span>
-        お気に入り</p>
-    </a>
-</div>
+
