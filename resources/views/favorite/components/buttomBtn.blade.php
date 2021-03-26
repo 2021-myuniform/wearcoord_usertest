@@ -3,6 +3,12 @@
         <span class="material-icons-outlined">
             file_download
             </span>
-        <p>コーディネートをインポートする</p>
+        <p>コーディネートをMYコーデに反映</p>
+    </a>
+        <a href="" class="bottomBtn right">
+        <span class="material-icons-outlined">
+            favorite_border
+            </span>
+        <p>コーディネートをお気に入り</p>
     </a>
 </div>
