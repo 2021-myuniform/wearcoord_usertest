@@ -56,7 +56,7 @@ class SearchItems
             case 'nike':
                 $brand = 1000588;
                 break;
-            case 'Adidas':
+            case 'adidas':
                 $brand = 1000595;
                 break;
             case 'gosen':
@@ -118,6 +118,9 @@ class SearchItems
 
     public static function SearchRakutenAPI($genre, $brand, $color)
     {
+
+        // ddd($brand);
+
         //楽天APIを扱うRakutenRws_Clientクラスのインスタンスを作成します
         $client = new RakutenRws_Client();
 

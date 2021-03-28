@@ -6,7 +6,7 @@
 
 <div class="searchBox">
     <div class="searchContainer">
-        <form action="">
+        <form action="{{ route('searchmysetsSearch') }}" method="post">
             @csrf
 
             <h2 class="searchTitle">{{$type}}</h2>
@@ -73,66 +73,25 @@
 
     <div class="items">
     <div class="itemContainer">
+        @if (isset($getItems))
+        @foreach ($getItems as $getItem)
+        @foreach ($getItem as $item)
         <div class="itemBox">
             <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
+                <img src="{{ $item['mediumImageUrls'] }}" alt="{{$item['itemName']}}">
             </div>
             <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
+                <h3>{{$item['itemName']}}</h3>
+                <p>{{$item['itemPrice']}}</p>
                 <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
             </div>
         </div>
-        <div class="itemBox">
-            <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
-            </div>
-            <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
-                <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
-            </div>
-        </div>
-        <div class="itemBox">
-            <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
-            </div>
-            <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
-                <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
-            </div>
-        </div>
-        <div class="itemBox">
-            <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
-            </div>
-            <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
-                <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
-            </div>
-        </div>
-        <div class="itemBox">
-            <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
-            </div>
-            <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
-                <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
-            </div>
-        </div>
-        <div class="itemBox">
-            <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
-            </div>
-            <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
-                <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
-            </div>
-        </div>
+        @endforeach
+        @endforeach
+        @endif
+        @if (empty($getItems['items']))
+        <p>現在の条件に合ったウェアはありません</p>
+        @endif
     </div>
 </div>
 </div>

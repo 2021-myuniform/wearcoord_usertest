@@ -45,6 +45,10 @@ Route::get('/searchmyset/socks', [App\Http\Controllers\SearchRakutenController::
 
 Route::get('/searchmyset/shoes', [App\Http\Controllers\SearchRakutenController::class, "searchPreItems"])->middleware(['auth'])->name('searchmysetsGetShoes');
 
+// Rakuten API 検索
+
+Route::post('/searchmyset/search', [App\Http\Controllers\SearchRakutenController::class, "searchItems"])->middleware(['auth'])->name('searchmysetsSearch');
+
 Route::get('/viewItems', function () {
     return view('viewItems.mainViewItems');
 })->middleware(['auth'])->name('viewItems');

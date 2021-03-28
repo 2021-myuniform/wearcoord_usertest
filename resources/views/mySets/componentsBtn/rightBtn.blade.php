@@ -72,7 +72,7 @@
                 <p class="btnText">買う</p>
             </a>
                 <hr>
-            <form action="{{ route('searchmysetsGetPants') }}" class="detailsBtn2">
+            <form action="{{ route('searchmysetsGetPants') }}" class="detailsBtn2" method="get">
                 @csrf
                 <button class="searchBtn"  type="submit">
                     <input type="hidden" name="type" value="pants">
@@ -98,7 +98,7 @@
                 <p class="btnText">買う</p>
             </a>
                 <hr>
-            <form action="{{ route('searchmysetsGetSocks') }}" class="detailsBtn2">
+            <form action="{{ route('searchmysetsGetSocks') }}" class="detailsBtn2" method="get">
                 @csrf
                 <button class="searchBtn"  type="submit">
                     <input type="hidden" name="type" value="socks">
@@ -124,7 +124,7 @@
                 <p class="btnText">買う</p>
             </a>
                 <hr>
-            <form action="{{ route('searchmysetsGetShoes') }}" class="detailsBtn2">
+            <form action="{{ route('searchmysetsGetShoes') }}" class="detailsBtn2" method="get">
                 @csrf
                 <button class="searchBtn"  type="submit">
                     <input type="hidden" name="type" value="shoes">

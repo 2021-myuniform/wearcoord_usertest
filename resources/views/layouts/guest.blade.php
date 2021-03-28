@@ -15,7 +15,9 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        
+        <link rel="stylesheet" href="{{ asset('css/reglog/reglog.css') }}">
+
+
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
