@@ -29,9 +29,21 @@ Route::get('/myset', function () {
     return view('mySets.mainMySets');
 })->middleware(['auth'])->name('mysets');
 
+// rakuten API ウェア検索
+
 Route::get('/searchmyset', function () {
     return view('mySets.searchMySets');
 })->middleware(['auth'])->name('searchmysets');
+
+Route::get('/searchmyset/caps', [App\Http\Controllers\SearchRakutenController::class, "searchPreItems"])->middleware(['auth'])->name('searchmysetsGetCaps');
+
+Route::get('/searchmyset/tops', [App\Http\Controllers\SearchRakutenController::class, "searchPreItems"])->middleware(['auth'])->name('searchmysetsGetTops');
+
+Route::get('/searchmyset/pants', [App\Http\Controllers\SearchRakutenController::class, "searchPreItems"])->middleware(['auth'])->name('searchmysetsGetPants');
+
+Route::get('/searchmyset/socks', [App\Http\Controllers\SearchRakutenController::class, "searchPreItems"])->middleware(['auth'])->name('searchmysetsGetSocks');
+
+Route::get('/searchmyset/shoes', [App\Http\Controllers\SearchRakutenController::class, "searchPreItems"])->middleware(['auth'])->name('searchmysetsGetShoes');
 
 Route::get('/viewItems', function () {
     return view('viewItems.mainViewItems');

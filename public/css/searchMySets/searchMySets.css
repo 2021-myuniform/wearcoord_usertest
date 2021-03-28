@@ -69,6 +69,7 @@
   font-size: 1.5rem;
   padding: 10px;
   box-sizing: border-box;
+  text-transform: capitalize;
 }
 
 .searchBox .searchContainer .searchDown {
