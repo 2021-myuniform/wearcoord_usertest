@@ -77,6 +77,8 @@
         @foreach ($getItems as $getItem)
         @foreach ($getItem as $item)
         <div class="itemBox">
+            <input type="hidden" name="itemCode" value="{{$item['itemCode']}}">
+
             <div class="itemImg">
                 <img src="{{ $item['mediumImageUrls'] }}" alt="{{$item['itemName']}}">
             </div>
