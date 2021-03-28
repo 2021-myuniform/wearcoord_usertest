@@ -14,13 +14,18 @@
                 </span>
                 <p class="btnText">買う</p>
             </a>
-                <hr>
-            <a href="{{ route('searchmysets') }}" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    screen_search_desktop
-                </span>
-                <p class="btnText">選ぶ</p>
-            </a>
+            <hr>
+            <form action="{{ route('searchmysetsGetCaps') }}" class="detailsBtn2" method="get">
+                @csrf
+                <button class="searchBtn"  type="submit">
+                    <input type="hidden" name="type" value="caps">
+                    <span class="material-icons-outlined">
+                        screen_search_desktop
+                    </span>
+                    <p class="btnText">選ぶ</p>
+                </button>
+                {{-- <input class="btnText" type="submit" value="選ぶ"> --}}
+            </form>
         </div>
     </details>
 
@@ -37,12 +42,18 @@
                 <p class="btnText">買う</p>
             </a>
                 <hr>
-            <a href="{{ route('searchmysets') }}" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    screen_search_desktop
-                </span>
-                <p class="btnText">選ぶ</p>
-            </a>
+            <form action="{{ route('searchmysetsGetTops') }}" class="detailsBtn2"  method="get">
+                @csrf
+
+                <button class="searchBtn"  type="submit">
+                    <input type="hidden" name="type" value="tops">
+                    <span class="material-icons-outlined">
+                        screen_search_desktop
+                    </span>
+                    <p class="btnText">選ぶ</p>
+                </button>
+
+            </form>
         </div>
         </details>
 
@@ -61,12 +72,16 @@
                 <p class="btnText">買う</p>
             </a>
                 <hr>
-            <a href="{{ route('searchmysets') }}" class="detailsBtn">
+            <form action="{{ route('searchmysetsGetPants') }}" class="detailsBtn2" method="get">
+                @csrf
+                <button class="searchBtn"  type="submit">
+                    <input type="hidden" name="type" value="pants">
                 <span class="material-icons-outlined">
                     screen_search_desktop
                 </span>
                 <p class="btnText">選ぶ</p>
-            </a>
+            </button>
+            </form>
         </div>
         </details>
 
@@ -83,12 +98,16 @@
                 <p class="btnText">買う</p>
             </a>
                 <hr>
-            <a href="{{ route('searchmysets') }}" class="detailsBtn">
+            <form action="{{ route('searchmysetsGetSocks') }}" class="detailsBtn2" method="get">
+                @csrf
+                <button class="searchBtn"  type="submit">
+                    <input type="hidden" name="type" value="socks">
                 <span class="material-icons-outlined">
                     screen_search_desktop
                 </span>
                 <p class="btnText">選ぶ</p>
-            </a>
+            </button>
+            </form>
         </div>
         </details>
 
@@ -105,12 +124,16 @@
                 <p class="btnText">買う</p>
             </a>
                 <hr>
-            <a href="{{ route('searchmysets') }}" class="detailsBtn">
+            <form action="{{ route('searchmysetsGetShoes') }}" class="detailsBtn2" method="get">
+                @csrf
+                <button class="searchBtn"  type="submit">
+                    <input type="hidden" name="type" value="shoes">
                 <span class="material-icons-outlined">
                     screen_search_desktop
                 </span>
                 <p class="btnText">選ぶ</p>
-            </a>
+                </button>
+            </form>
         </div>
     </details>
 </div>

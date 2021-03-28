@@ -69,6 +69,7 @@
   font-size: 1.5rem;
   padding: 10px;
   box-sizing: border-box;
+  text-transform: capitalize;
 }
 
 .searchBox .searchContainer .searchDown {
@@ -129,6 +130,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.itemContainer .itemBox .itemInfo .itemInfo_price {
+  color: red;
+  text-align: center;
+  padding: 4px;
 }
 
 .itemContainer .itemBox .itemInfo .itemInfoBtn {

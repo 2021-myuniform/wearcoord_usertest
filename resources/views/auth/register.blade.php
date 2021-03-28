@@ -26,6 +26,19 @@
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
+            <div class="mt-4">
+                <p>ウェアの嗜好</p>
+                <div class="genderBox">
+                    <label class="genderRadiobox" for="male">
+                        <input type="radio" id="male" value="male" name="gender" required>
+                        男性向け
+                    </label>
+                    <label class="genderRadiobox" for="female">
+                        <input type="radio" id="female" value="female" name="gender">
+                        女性向け</label>
+                </div>
+            </div>
+
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />

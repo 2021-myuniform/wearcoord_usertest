@@ -6,32 +6,61 @@
 
 <div class="searchBox">
     <div class="searchContainer">
-        <form action="">
+        <form action="{{ route('searchmysetsSearch') }}" method="post">
             @csrf
 
-            <h2 class="searchTitle">Wear</h2>
+            <h2 class="searchTitle">{{$type}}</h2>
+            <input type="hidden" name="type" value="{{$type}}">
+
             <div class="searchDown">
-                <select name="brand" id="">
-                    <option value="">ブランドを選択</option>
-                    <option value="nike">NIKE</option>
-                    <option value="adidas">Adidas</option>
-                </select>
+                @if ($type == 'caps')
+                    @include('mySets.searchSelectBrand.capsSelect')
+                @elseif ($type == 'tops')
+                    @include('mySets.searchSelectBrand.topsSelect')
+                @elseif ($type == 'pants')
+                    @include('mySets.searchSelectBrand.pantsSelect')
+                @elseif ($type == 'socks')
+                    @include('mySets.searchSelectBrand.socksSelect')
+                @elseif ($type == 'shoes')
+                    @include('mySets.searchSelectBrand.shoesSelect')
+                @else
+                <p>error</p>
+                @endif
             </div>
             <hr>
             <div class="searchDown">
-                <select name="color" id="">
-                    <option value="">色を選択</option>
-                    <option value="black">黒</option>
-                    <option value="white">白</option>
-                </select>
+
+               @if ($type == 'caps')
+                    @include('mySets.searchSelectColor.capsSelect')
+                @elseif ($type == 'tops')
+                    @include('mySets.searchSelectColor.topsSelect')
+                @elseif ($type == 'pants')
+                    @include('mySets.searchSelectColor.pantsSelect')
+                @elseif ($type == 'socks')
+                    @include('mySets.searchSelectColor.socksSelect')
+                @elseif ($type == 'shoes')
+                    @include('mySets.searchSelectColor.shoesSelect')
+                @else
+                <p>error</p>
+                @endif
+
             </div>
             <hr>
             <div class="searchDown">
-                <select name="type" id="">
-                    <option value="">タイプを選択</option>
-                    <option value="tshirt">Tシャツ</option>
-                    <option value="polo">ポロシャツ</option>
-                </select>
+
+                @if ($type == 'caps')
+                    @include('mySets.searchSelectCategory.capsSelect')
+                @elseif ($type == 'tops')
+                    @include('mySets.searchSelectCategory.topsSelect')
+                @elseif ($type == 'pants')
+                    @include('mySets.searchSelectCategory.pantsSelect')
+                @elseif ($type == 'socks')
+                    @include('mySets.searchSelectCategory.socksSelect')
+                @elseif ($type == 'shoes')
+                    @include('mySets.searchSelectCategory.shoesSelect')
+                @else
+                <p>error</p>
+                @endif
             </div>
 
             <div class="searchBtn">
@@ -44,66 +73,25 @@
 
     <div class="items">
     <div class="itemContainer">
+        @if (isset($getItems))
+        @foreach ($getItems as $getItem)
+        @foreach ($getItem as $item)
         <div class="itemBox">
             <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
+                <img src="{{ $item['mediumImageUrls'] }}" alt="{{$item['itemName']}}">
             </div>
             <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
+                <h3>{{$item['itemName']}}</h3>
+                <p class="itemInfo_price">¥{{number_format($item['itemPrice'])}}</p>
                 <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
             </div>
         </div>
-        <div class="itemBox">
-            <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
-            </div>
-            <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
-                <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
-            </div>
-        </div>
-        <div class="itemBox">
-            <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
-            </div>
-            <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
-                <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
-            </div>
-        </div>
-        <div class="itemBox">
-            <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
-            </div>
-            <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
-                <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
-            </div>
-        </div>
-        <div class="itemBox">
-            <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
-            </div>
-            <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
-                <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
-            </div>
-        </div>
-        <div class="itemBox">
-            <div class="itemImg">
-                <img src="{{ asset('img/testImg/amuse37_10016364.png') }}" alt="">
-            </div>
-            <div class="itemInfo">
-                <h3>アイテムタイトル</h3>
-                <p>アイテムプライス</p>
-                <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
-            </div>
-        </div>
+        @endforeach
+        @endforeach
+        @endif
+        @if (empty($getItems['items']))
+        <p>現在の条件に合ったウェアはありません</p>
+        @endif
     </div>
 </div>
 </div>

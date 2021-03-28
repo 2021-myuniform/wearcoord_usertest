@@ -1,25 +1,25 @@
-.navbar{
-    .navbar_ul{
-        .nav_coord{
+.navbar {
+    .navbar_ul {
+        .nav_coord {
             background-color: #216496;
             border-radius: 10px;
 
-            span{
+            span {
                 color: white;
             }
 
-            p{
+            p {
                 color: white;
             }
         }
     }
 }
 
-.mySetsSect{
+.mySetsSect {
     height: 100vh;
 }
 
-.displayNone{
+.displayNone {
     display: none !important;
 }
 
@@ -32,36 +32,40 @@ summary {
     display: block;
     padding: 10px;
     text-align: center;
-  }
+}
 
-  /* Chrome、Safari */
-  summary::-webkit-details-marker {
+/* Chrome、Safari */
+summary::-webkit-details-marker {
     display: none;
-  }
+}
 
-  /* オープン時にアニメーションを設定 */
+/* オープン時にアニメーションを設定 */
 details[open] .detailsBottom {
     animation: fadeIn 0.5s ease;
-  }
-  @keyframes fadeIn {
+}
+
+@keyframes fadeIn {
     0% {
-      opacity: 0; /* 透明 */
-      transform: translateY(-10px); /* 上から表示 */
+        opacity: 0;
+        /* 透明 */
+        transform: translateY(-10px);
+        /* 上から表示 */
     }
+
     100% {
-      opacity: 1;
-      transform: none;
+        opacity: 1;
+        transform: none;
     }
-  }
+}
 
 // wrapper
 
-.selectWearContainer{
+.selectWearContainer {
     display: flex;
     height: 400px;
 }
 
-.btnDesign{
+.btnDesign {
     width: 70px;
     // height: 70px;
     display: flex;
@@ -70,36 +74,49 @@ details[open] .detailsBottom {
     align-items: center;
     background-color: #dddddd;
     color: #484848;
+    cursor: pointer;
 
-    .sideFontAwesome{
+    .sideFontAwesome {
         font-size: 2rem;
     }
 
-    .btnText{
+    .btnText {
         padding-top: 5px;
     }
 
-    .detailsBtn{
+    .detailsBtn {
         color: #484848;
         text-align: center;
         padding: 10px;
         display: block;
     }
 
-    hr{
+    .detailsBtn2 {
+        color: #484848;
+        text-align: center;
+        display: block;
+    }
+
+    .searchBtn {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+
+    hr {
         width: 80%;
     }
 
-    .detailsBottom{
+    .detailsBottom {
         text-align: center;
     }
 }
 
-.left{
+.left {
     border-radius: 0 10px 10px 0;
 }
 
-.right{
+.right {
     border-radius: 10px 0 0 10px;
     margin: 0 0 0 auto;
 }
@@ -110,7 +127,7 @@ details[open] .detailsBottom {
 
 
 
-.leftContainer{
+.leftContainer {
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -121,11 +138,11 @@ details[open] .detailsBottom {
 // 中央コンテナ
 
 
-.centerContainer{
+.centerContainer {
     width: 40%;
     min-width: 100px;
 
-    .imgContainer{
+    .imgContainer {
         height: 100%;
         background-image: url('../../img/other/mannequin_done3.png');
         object-fit: cover;
@@ -134,7 +151,7 @@ details[open] .detailsBottom {
         background-position: center;
     }
 
-    .mannequinImg{
+    .mannequinImg {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -145,7 +162,7 @@ details[open] .detailsBottom {
 // 右コンテナ
 
 
-.rightContainer{
+.rightContainer {
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -155,11 +172,11 @@ details[open] .detailsBottom {
 
 // 下コンテナ
 
-.bottomContainer{
+.bottomContainer {
     display: flex;
     justify-content: space-between;
 
-    .bottomBtn{
+    .bottomBtn {
         display: flex;
         width: 40%;
         height: 60px;
@@ -170,10 +187,11 @@ details[open] .detailsBottom {
         color: #484848;
         line-height: 1.5;
 
-        span{
+        span {
             padding: 5px;
         }
-        p{
+
+        p {
             padding: 5px;
         }
     }
