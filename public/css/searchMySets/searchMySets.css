@@ -132,6 +132,12 @@
   justify-content: space-evenly;
 }
 
+.itemContainer .itemBox .itemInfo .itemInfo_price {
+  color: red;
+  text-align: center;
+  padding: 4px;
+}
+
 .itemContainer .itemBox .itemInfo .itemInfoBtn {
   width: 100%;
   background-color: white;

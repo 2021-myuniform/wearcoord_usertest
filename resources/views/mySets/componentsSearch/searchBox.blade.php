@@ -82,7 +82,7 @@
             </div>
             <div class="itemInfo">
                 <h3>{{$item['itemName']}}</h3>
-                <p>{{$item['itemPrice']}}</p>
+                <p class="itemInfo_price">¥{{number_format($item['itemPrice'])}}</p>
                 <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
             </div>
         </div>

@@ -1,14 +1,14 @@
-.navbar{
-    .navbar_ul{
-        .nav_coord{
+.navbar {
+    .navbar_ul {
+        .nav_coord {
             background-color: #216496;
             border-radius: 10px;
 
-            span{
+            span {
                 color: white;
             }
 
-            p{
+            p {
                 color: white;
             }
         }
@@ -146,6 +146,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
+
+            .itemInfo_price {
+                color: red;
+                text-align: center;
+                padding: 4px;
+            }
 
             .itemInfoBtn {
                 width: 100%;
