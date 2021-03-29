@@ -24,16 +24,16 @@ class SearchRakutenController extends Controller
         $color = $request->color;
         $brand = $request->brand;
         $category = $request->category;
+        $type = $request->type;
 
         $encodeColor = SearchItems::encodeRakutenColorTag($color);
         $encodeBrand = SearchItems::encodeRakutenBrandTag($brand);
         $getItems = SearchItems::SearchRakutenAPI($category, $encodeBrand, $encodeColor);
 
-        $DBitems = SearchItems::searchRakutenDB($category, $encodeBrand, $encodeColor, $getItems);
+        $DBitems = SearchItems::searchRakutenDB($type, $getItems);
 
         // ddd($DBitems);
 
-        $type = $request->type;
 
         return view('mySets.searchMySets', [ 'type' => $type, 'getItems' => $DBitems, 'user' => $user]);
     }
