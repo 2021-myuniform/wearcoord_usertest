@@ -172,4 +172,9 @@ class SearchItems
 
         return ['items' => $items];
     }
+
+    public static function searchRakutenDB($category, $brand, $color, $getItems)
+    {
+
+    }
 }
