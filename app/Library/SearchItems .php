@@ -204,4 +204,26 @@ class SearchItems
 
         return ['result' => $result];
     }
+
+    public static function searchRakutenDBItems($type, $sortDBitems, $color)
+    {
+        $wearType = $type;
+        $DBitems = [];
+
+        foreach($sortDBitems as $sortDBitem){
+
+            foreach($sortDBitem as $item){
+                    if ($wearType == 'tops') {
+                        $DBitems[] = DB::table('tops_rakuten_apis')->where('itemId', $item['itemCode'])->first();
+                    }
+
+                    if ($wearType == 'pants') {
+                        $DBitems[] = DB::table('pants_rakuten_apis')->where('itemId', $item['itemCode'])->first();
+                    }
+            }
+
+        }
+        // ddd($DBitems);
+        return ['DBitems' => $DBitems];
+    }
 }
