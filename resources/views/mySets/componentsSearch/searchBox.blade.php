@@ -91,7 +91,7 @@
         @endforeach
         @endforeach
         @endif
-        @if (empty($getItems['items']))
+        @if (empty($getItems['result']))
         <p>現在の条件に合ったウェアはありません</p>
         @endif
     </div>

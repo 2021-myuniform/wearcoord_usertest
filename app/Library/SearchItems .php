@@ -175,6 +175,13 @@ class SearchItems
 
     public static function searchRakutenDB($category, $brand, $color, $getItems)
     {
+        foreach($getItems as $getItem){
+            $result = array_filter($getItem, function($element){
+                return $element['itemPrice'] == '880';
+            });
+            // ddd($result);
+        }
 
+        return ['result' => $result];
     }
 }
