@@ -73,14 +73,27 @@
 
     <div class="items">
     <div class="itemContainer">
+        {{-- 検索結果があった場合 --}}
         @if (isset($getItems))
+
+        {{-- APIの処理 --}}
         @foreach ($getItems as $getItem)
         @foreach ($getItem as $item)
+
+        {{-- DB結果の処理 --}}
+        @foreach ($myDBitems as $myDBitem)
+        @foreach ($myDBitem as $DBitem)
+
+
+        @if ($DBitem->itemId == $item['itemCode'])
+        @if (!($DBitem->{$color . 'Img'}) == null)
+
         <div class="itemBox">
             <input type="hidden" name="itemCode" value="{{$item['itemCode']}}">
 
             <div class="itemImg">
-                <img src="{{ $item['mediumImageUrls'] }}" alt="{{$item['itemName']}}">
+                {{-- <img src="{{ $item['mediumImageUrls'] }}" alt="{{$item['itemName']}}"> --}}
+                <img src="{{ asset('/img/rakutenlist/' . $brand . '/' . $user->gender . '/' . $category . '/' . $color . '/' . $DBitem->{$color . 'Img'}) }}" alt="{{$item['itemName']}}">
             </div>
             <div class="itemInfo">
                 <h3>{{$item['itemName']}}</h3>
@@ -88,12 +101,18 @@
                 <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
             </div>
         </div>
+        @endif
+        @endif
+
+        @endforeach
+        @endforeach
         @endforeach
         @endforeach
         @endif
-        @if (empty($getItems['items']))
+        @if (empty($getItems['result']))
         <p>現在の条件に合ったウェアはありません</p>
         @endif
+        <p>ここにウェアが表示されない場合は、検索条件を変更してください。</p>
     </div>
 </div>
 </div>

@@ -1,14 +1,17 @@
 <?php
 
 namespace App\Library;
+
 use App;
 use RakutenRws_Client;
+use Illuminate\Support\Facades\DB;
 
 class SearchItems
 {
-    public static function encodeRakutenColorTag($color){
+    public static function encodeRakutenColorTag($color)
+    {
 
-        switch($color){
+        switch ($color) {
             case 'navy':
                 $color = 1004015;
                 break;
@@ -39,7 +42,7 @@ class SearchItems
             case 'purple':
                 $color = 1000882;
                 break;
-            default :
+            default:
                 $color = $color;
                 break;
         }
@@ -47,9 +50,10 @@ class SearchItems
         return $color;
     }
 
-    public static function encodeRakutenBrandTag($brand){
+    public static function encodeRakutenBrandTag($brand)
+    {
 
-        switch($brand){
+        switch ($brand) {
             case 'yonex':
                 $brand = 1002656;
                 break;
@@ -107,13 +111,12 @@ class SearchItems
             case 'armani':
                 $brand = 1005489;
                 break;
-            default :
+            default:
                 $brand = $brand;
                 break;
         }
 
         return $brand;
-
     }
 
     public static function SearchRakutenAPI($genre, $brand, $color)
@@ -171,5 +174,56 @@ class SearchItems
         }
 
         return ['items' => $items];
+    }
+
+    public static function searchRakutenDB($type, $getItems)
+    {
+        $wearType = $type;
+
+        foreach ($getItems as $getItem) {
+            $result = array_filter(
+                $getItem,
+                function ($element) use ($wearType) {
+
+                    if ($wearType == 'tops') {
+                        $item = DB::table('tops_rakuten_apis')->where('itemId', $element['itemCode'])->first();
+
+                        return $item;
+                    }
+
+                    if ($wearType == 'pants') {
+                        $item = DB::table('pants_rakuten_apis')->where('itemId', $element['itemCode'])->first();
+
+                        return $item;
+                        // return $element['itemPrice'] == '880';
+                    }
+                }
+            );
+        }
+        // ddd($result);
+
+        return ['result' => $result];
+    }
+
+    public static function searchRakutenDBItems($type, $sortDBitems, $color)
+    {
+        $wearType = $type;
+        $DBitems = [];
+
+        foreach($sortDBitems as $sortDBitem){
+
+            foreach($sortDBitem as $item){
+                    if ($wearType == 'tops') {
+                        $DBitems[] = DB::table('tops_rakuten_apis')->where('itemId', $item['itemCode'])->first();
+                    }
+
+                    if ($wearType == 'pants') {
+                        $DBitems[] = DB::table('pants_rakuten_apis')->where('itemId', $item['itemCode'])->first();
+                    }
+            }
+
+        }
+        // ddd($DBitems);
+        return ['DBitems' => $DBitems];
     }
 }
