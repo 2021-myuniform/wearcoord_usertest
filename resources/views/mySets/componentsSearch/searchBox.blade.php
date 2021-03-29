@@ -73,13 +73,17 @@
 
     <div class="items">
     <div class="itemContainer">
+        {{-- 検索結果があった場合 --}}
         @if (isset($getItems))
+
+        {{-- APIの処理 --}}
         @foreach ($getItems as $getItem)
         @foreach ($getItem as $item)
 
+        {{-- DB結果の処理 --}}
         @foreach ($myDBitems as $myDBitem)
         @foreach ($myDBitem as $DBitem)
-{{-- {{$DBitem->blackImg}} --}}
+
 
         @if ($DBitem->itemId == $item['itemCode'])
         @if (!($DBitem->{$color . 'Img'}) == null)
@@ -108,6 +112,7 @@
         @if (empty($getItems['result']))
         <p>現在の条件に合ったウェアはありません</p>
         @endif
+        <p>ここにウェアが表示されない場合は、検索条件を変更してください。</p>
     </div>
 </div>
 </div>
