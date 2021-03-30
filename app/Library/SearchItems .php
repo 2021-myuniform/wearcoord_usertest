@@ -155,7 +155,12 @@ class SearchItems
                 foreach ($response as $item) {
                     //画像サイズを変えたかったのでURLを整形します
                     // $str = str_replace("_ex=128x128", "_ex=175x175", $item['mediumImageUrls'][0]['imageUrl']);
-                    $str = $item['mediumImageUrls'][0]['imageUrl'];
+                    if(isset($item['mediumImageUrls'][0]['imageUrl']))
+                    {
+                        $str = $item['mediumImageUrls'][0]['imageUrl'];
+                    }else{
+                        $str = null;
+                    }
 
                     $items[] = array(
                         'itemName' => $item['itemName'],
