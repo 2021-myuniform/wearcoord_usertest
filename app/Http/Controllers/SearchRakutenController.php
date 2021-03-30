@@ -17,7 +17,7 @@ class SearchRakutenController extends Controller
 
         $arrayUrl =  Wear::createArrayImgUrl();
 
-        return view('mySets.MainMySets', [ 'type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
+        return view('mySets.mainMySets', [ 'type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
     }
 
     public function searchPreItems(Request $request)
