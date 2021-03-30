@@ -38,32 +38,4 @@ class SearchRakutenController extends Controller
 
         return view('mySets.searchMySets', [ 'type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category]);
     }
-
-    // public function searchTops(Request $request)
-    // {
-    //     $type = $request->type;
-
-    //     return view('mySets.searchMySets', [ 'type' => $type ]);
-    // }
-
-    // public function searchPants(Request $request)
-    // {
-    //     $type = $request->type;
-
-    //     return view('mySets.searchMySets', [ 'type' => $type ]);
-    // }
-
-    // public function searchSocks(Request $request)
-    // {
-    //     $type = $request->type;
-
-    //     return view('mySets.searchMySets', [ 'type' => $type ]);
-    // }
-
-    // public function searchShoes(Request $request)
-    // {
-    //     $type = $request->type;
-
-    //     return view('mySets.searchMySets', [ 'type' => $type ]);
-    // }
 }

@@ -1,4 +1,52 @@
-<div class="mannequinBox">
-    <div class="mannequinImg">
+<div class="mannequinWrapper">
+    <div class="mannequinBox">
+        <div class="mannequinImg">
+
+            {{-- caps --}}
+            <form action="{{ route('searchmysetsGetCaps') }}" class="capsForm" method="get">
+                @csrf
+                <button class="mannequinBtn"  type="submit">
+                    <input type="hidden" name="type" value="caps">
+                    <img class="mannequinItemImg" src="{{ asset('/img/testImg/la-foresta_10084789.png') }}" alt="">
+                </button>
+            </form>
+
+            {{-- face --}}
+            <div class="faceDiv"></div>
+
+            {{-- tops --}}
+            <form action="{{ route('searchmysetsGetTops') }}" class="topsForm" method="get">
+                @csrf
+                <button class="mannequinBtn"  type="submit">
+                    <input type="hidden" name="type" value="caps">
+                    <img class="mannequinItemImg" src="{{ asset('/img/rakutenlist/nike/male/508759/black/amuse37_10009813.png') }}" alt="">
+                </button>
+            </form>
+
+            {{-- pants --}}
+            <form action="{{ route('searchmysetsGetPants') }}" class="pantsForm" method="get">
+                @csrf
+                <button class="mannequinBtn"  type="submit">
+                    <input type="hidden" name="type" value="caps">
+                    <img class="mannequinItemImg" src="{{ asset('/img/rakutenlist/nike/male/508772/black/amuse37_10015176.png') }}" alt="">
+                </button>
+            </form>
+
+            {{-- socks --}}
+            <div class="socksImg">
+                <div class="socksBox" style="background-color: red"></div>
+                <div class="socksBox" style="background-color: red"></div>
+            </div>
+
+            {{-- shoes --}}
+            <form action="{{ route('searchmysetsGetShoes') }}" class="shoesForm" method="get">
+                @csrf
+                <button class="mannequinBtn"  type="submit">
+                    <input type="hidden" name="type" value="caps">
+                    <img class="mannequinItemImg" src="{{ asset('/img/testImg/alpen_10353285.png') }}" alt="">
+                </button>
+            </form>
+
+        </div>
     </div>
 </div>
