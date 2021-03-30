@@ -91,10 +91,13 @@
         <div class="itemBox">
             <input type="hidden" name="itemCode" value="{{$item['itemCode']}}">
 
+            {{-- 画像表示 --}}
             <div class="itemImg">
                 {{-- <img src="{{ $item['mediumImageUrls'] }}" alt="{{$item['itemName']}}"> --}}
                 <img src="{{ asset('/img/rakutenlist/' . $brand . '/' . $user->gender . '/' . $category . '/' . $color . '/' . $DBitem->{$color . 'Img'}) }}" alt="{{$item['itemName']}}">
             </div>
+
+            {{-- 情報表示 --}}
             <div class="itemInfo">
                 <h3>{{$item['itemName']}}</h3>
                 <p class="itemInfo_price">¥{{number_format($item['itemPrice'])}}</p>
