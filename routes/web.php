@@ -49,6 +49,10 @@ Route::get('/searchmyset/shoes', [App\Http\Controllers\SearchRakutenController::
 
 Route::post('/searchmyset/search', [App\Http\Controllers\SearchRakutenController::class, "searchItems"])->middleware(['auth'])->name('searchmysetsSearch');
 
+// ウェアを着せる
+
+Route::post('/searchmyset/wear', [App\Http\Controllers\SearchRakutenController::class, "wearItem"])->middleware(['auth'])->name('wearItem');
+
 Route::get('/viewItems', function () {
     return view('viewItems.mainViewItems');
 })->middleware(['auth'])->name('viewItems');
