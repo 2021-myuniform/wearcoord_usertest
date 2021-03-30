@@ -25,9 +25,7 @@ Route::get('/home', function () {
     return view('viewSets.mainViewSets');
 })->middleware(['auth'])->name('home');
 
-Route::get('/myset', function () {
-    return view('mySets.mainMySets');
-})->middleware(['auth'])->name('mysets');
+Route::get('/myset', [App\Http\Controllers\SearchRakutenController::class, "view"])->middleware(['auth'])->name('mysets');
 
 // rakuten API ウェア検索
 

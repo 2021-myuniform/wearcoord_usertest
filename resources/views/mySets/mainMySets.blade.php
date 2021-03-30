@@ -2,6 +2,7 @@
 
 @section('mainCss')
 <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+<link rel="stylesheet" href="{{ asset('css/searchMySets/searchMySets.css') }}">
 <link rel="stylesheet" href="{{ asset('css/mySets/mySets.css') }}">
 @endsection
 
