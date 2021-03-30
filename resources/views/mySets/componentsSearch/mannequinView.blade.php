@@ -19,7 +19,9 @@
                 @csrf
                 <button class="mannequinBtn"  type="submit">
                     <input type="hidden" name="type" value="caps">
-                    <img class="mannequinItemImg" src="{{ asset('/img/rakutenlist/nike/male/508759/black/amuse37_10009813.png') }}" alt="">
+                    @if ((asset( $arrayUrl['topsUrl'] )) != asset(''))
+                    <img class="mannequinItemImg" src="{{ asset( $arrayUrl['topsUrl'] ) }}" alt="{{ asset( $arrayUrl['topsUrl'] ) }}">
+                    @endif
                 </button>
             </form>
 
@@ -28,7 +30,9 @@
                 @csrf
                 <button class="mannequinBtn"  type="submit">
                     <input type="hidden" name="type" value="caps">
-                    <img class="mannequinItemImg" src="{{ asset('/img/rakutenlist/nike/male/508772/black/amuse37_10015176.png') }}" alt="">
+                    @if ((asset( $arrayUrl['pantsUrl'] )) != asset(''))
+                    <img class="mannequinItemImg" src="{{ asset( $arrayUrl['pantsUrl'] ) }}" alt="">
+                    @endif
                 </button>
             </form>
 

@@ -57,7 +57,7 @@
 
 
 .capsForm {
-    height: 30px;
+    height: 40px;
 
     .mannequinItemImg {
         width: 70px;
@@ -68,7 +68,7 @@
 }
 
 .faceDiv {
-    height: 30px;
+    height: 20px;
 }
 
 .topsForm {
@@ -84,7 +84,7 @@
 }
 
 .pantsForm {
-    height: 160px;
+    height: 155px;
     position: relative;
 
     .mannequinItemImg {
@@ -101,12 +101,13 @@
 
 .socksBox{
     width: 20px;
-    height: 20px;
+    height: 15px;
     margin: 0 4px;
     border-radius: 6px 6px 0 0;
     border-top: 1px solid black;
     border-right: 1px solid black;
     border-left: 1px solid black;
+    box-sizing: border-box;
 }
 
 .shoesForm {

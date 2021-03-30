@@ -93,7 +93,6 @@
 
             {{-- 画像表示 --}}
             <div class="itemImg">
-                {{-- <img src="{{ $item['mediumImageUrls'] }}" alt="{{$item['itemName']}}"> --}}
                 <img src="{{ asset('/img/rakutenlist/' . $brand . '/' . $user->gender . '/' . $category . '/' . $color . '/' . $DBitem->{$color . 'Img'}) }}" alt="{{$item['itemName']}}">
             </div>
 
@@ -101,7 +100,22 @@
             <div class="itemInfo">
                 <h3>{{$item['itemName']}}</h3>
                 <p class="itemInfo_price">¥{{number_format($item['itemPrice'])}}</p>
-                <a class="itemInfoBtn" href=""><i class="fas fa-tshirt navIconTshirt"></i>着替える</a>
+                <form class="itemInfoBtn" action="{{ route('wearItem') }}" method="post">
+                    @csrf
+
+                    {{-- <input type="hidden" name="getItems" value="{{$getItems}}">
+                    <input type="hidden" name="myDBitems" value="{{$myDBitems}}"> --}}
+                    <input type="hidden" name="type" value="{{$type}}">
+                    <input type="hidden" name="color" value="{{$color}}">
+                    <input type="hidden" name="brand" value="{{$brand}}">
+                    {{-- <input type="hidden" name="user" value="{{$user}}"> --}}
+                    <input type="hidden" name="category" value="{{$category}}">
+                    <input type="hidden" name="DBID" value="{{$DBitem->id}}">
+
+
+                    <button type="submit" >
+                        <i class="fas fa-tshirt navIconTshirt"></i>着替える</form>
+                    </button>
             </div>
         </div>
         @endif
