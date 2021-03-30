@@ -9,6 +9,17 @@ use App\Library\Wear;
 
 class SearchRakutenController extends Controller
 {
+    public function view(Request $request)
+    {
+        $user = Auth::user();
+
+        $type = $request->type;
+
+        $arrayUrl =  Wear::createArrayImgUrl();
+
+        return view('mySets.MainMySets', [ 'type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
+    }
+
     public function searchPreItems(Request $request)
     {
         $user = Auth::user();
