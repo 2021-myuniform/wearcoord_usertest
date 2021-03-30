@@ -15,14 +15,16 @@ class SearchRakutenController extends Controller
 
         $type = $request->type;
 
-        $arrayUrl =  Wear::createArrayImgUrl($brand, $color);
+        $arrayUrl =  Wear::createArrayImgUrl();
 
-        return view('mySets.searchMySets', [ 'type' => $type, 'user' => $user]);
+        return view('mySets.searchMySets', [ 'type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
     }
 
     public function searchItems(Request $request)
     {
         $user = Auth::user();
+
+        $arrayUrl =  Wear::createArrayImgUrl();
 
         $color = $request->color;
         $brand = $request->brand;
@@ -38,7 +40,7 @@ class SearchRakutenController extends Controller
         $sortDBitems = SearchItems::searchRakutenDB($type, $getItems);
         $myDBitems = SearchItems::searchRakutenDBItems($type, $sortDBitems, $color);
 
-        return view('mySets.searchMySets', [ 'type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category]);
+        return view('mySets.searchMySets', [ 'type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl]);
     }
 
     public function wearItem(Request $request)
@@ -60,9 +62,9 @@ class SearchRakutenController extends Controller
         $myDBitems = SearchItems::searchRakutenDBItems($type, $sortDBitems, $color);
 
         // 選んだウェアを登録
-        Wear::registerItem($type, $DBID, $category);
+        Wear::registerItem($type, $DBID, $category, $color, $brand);
 
-        $arrayUrl =  Wear::createArrayImgUrl($brand, $color);
+        $arrayUrl =  Wear::createArrayImgUrl();
 
         return view('mySets.searchMySets', [ 'type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl]);
     }

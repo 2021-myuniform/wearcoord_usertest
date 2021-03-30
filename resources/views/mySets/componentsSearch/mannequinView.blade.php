@@ -19,7 +19,9 @@
                 @csrf
                 <button class="mannequinBtn"  type="submit">
                     <input type="hidden" name="type" value="caps">
+                    @if ((asset( $arrayUrl['topsUrl'] )) != asset(''))
                     <img class="mannequinItemImg" src="{{ asset( $arrayUrl['topsUrl'] ) }}" alt="{{ asset( $arrayUrl['topsUrl'] ) }}">
+                    @endif
                 </button>
             </form>
 
@@ -28,7 +30,9 @@
                 @csrf
                 <button class="mannequinBtn"  type="submit">
                     <input type="hidden" name="type" value="caps">
+                    @if ((asset( $arrayUrl['pantsUrl'] )) != asset(''))
                     <img class="mannequinItemImg" src="{{ asset( $arrayUrl['pantsUrl'] ) }}" alt="">
+                    @endif
                 </button>
             </form>
 

@@ -93,8 +93,6 @@
 
             {{-- 画像表示 --}}
             <div class="itemImg">
-                {{-- <img src="{{ $item['mediumImageUrls'] }}" alt="{{$item['itemName']}}"> --}}
-                {{-- <img src="{{ asset('/img/rakutenlist/' . $brand . '/' . $user->gender . '/' . $category . '/' . $color . '/' . $DBitem->{$color . 'Img'}) }}" alt="{{$item['itemName']}}"> --}}
                 <img src="{{ asset('/img/rakutenlist/' . $brand . '/' . $user->gender . '/' . $category . '/' . $color . '/' . $DBitem->{$color . 'Img'}) }}" alt="{{$item['itemName']}}">
             </div>
 
