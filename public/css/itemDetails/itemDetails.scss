@@ -58,6 +58,14 @@
                 color: red;
             }
 
+            .buy{
+                padding: 5px;
+
+                table{
+                    width: 100% !important;
+                }
+            }
+
             .linkArticle {
                 display: flex;
                 box-shadow: 1px 1px 3px 0px darkgrey;
@@ -104,14 +112,14 @@
 
     .itemBottomBtn {
         background-color: #216496;
-        color: white;
         padding: 5px 10px;
         box-sizing: border-box;
         border-radius: 10px;
 
-        p {
+        button {
             display: flex;
             align-items: center;
+            color: white;
         }
 
         span {

@@ -29,8 +29,7 @@
         <button class="mannequinBtn"  type="submit">
             <input type="hidden" name="type" value="caps">
             @if ((asset( $arrayUrl['pantsUrl'] )) != asset(''))
-            {{-- <img class="mannequinItemImg" src="{{ asset( $arrayUrl['pantsUrl'] ) }}" alt=""> --}}
-            <img class="mannequinItemImg" src="{{ asset( '/img/testImg/0331/la-foresta_10085297.png' ) }}" alt="">
+            <img class="mannequinItemImg" src="{{ asset( $arrayUrl['pantsUrl'] ) }}" alt="">
             @endif
         </button>
     </form>

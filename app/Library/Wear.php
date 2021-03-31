@@ -32,6 +32,7 @@ class Wear
         }
     }
 
+
     public static function createImgUrl($type)
     {
         $user = Auth::user();

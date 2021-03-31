@@ -55,6 +55,14 @@
   color: red;
 }
 
+.modal .modalContainer .modalSect .buy {
+  padding: 5px;
+}
+
+.modal .modalContainer .modalSect .buy table {
+  width: 100% !important;
+}
+
 .modal .modalContainer .modalSect .linkArticle {
   display: flex;
   box-shadow: 1px 1px 3px 0px darkgrey;
@@ -98,15 +106,15 @@
 
 .bottomBtn .itemBottomBtn {
   background-color: #216496;
-  color: white;
   padding: 5px 10px;
   box-sizing: border-box;
   border-radius: 10px;
 }
 
-.bottomBtn .itemBottomBtn p {
+.bottomBtn .itemBottomBtn button {
   display: flex;
   align-items: center;
+  color: white;
 }
 
 .bottomBtn .itemBottomBtn span {
