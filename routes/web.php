@@ -66,7 +66,10 @@ Route::post('/searchGetItems', [App\Http\Controllers\SearchRakutenController::cl
 
 Route::post('/itemdetails', [App\Http\Controllers\ItemController::class, "itemDetail"])->middleware(['auth'])->name('itemDetail');
 
-// お気に入り表示
+// アイテム詳細ページウェア着用
+
+Route::post('/itemdetails/wear', [App\Http\Controllers\ItemController::class, "registerSearchItem"])->middleware(['auth'])->name('registerSearchItem');
+
 
 Route::get('/itemfavorite', [App\Http\Controllers\FavController::class, "viewFav"])->middleware(['auth'])->name('viewFav');
 

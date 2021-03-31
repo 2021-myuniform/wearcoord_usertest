@@ -3,16 +3,24 @@
     </span></a> --}}
 
     <div class="bottomBtn">
-        <a href="" class="itemBottomBtn">
-            <p><span class="material-icons-outlined">
+        <form action="{{ route('registerSearchItem') }}" class="itemBottomBtn" method="post">
+            @csrf
+
+            <input type="hidden" name="type" value="{{$type}}">
+            <input type="hidden" name="color" value="{{$color}}">
+            <input type="hidden" name="brand" value="{{$brand}}">
+            <input type="hidden" name="category" value="{{$category}}">
+            <input type="hidden" name="DBID" value="{{$DBID}}">
+
+            <button type="submit"><span class="material-icons-outlined">
                 checkroom
-                </span>着用してみる</p>
-        </a>
+                </span>着用してみる</button>
+        </form>
         <a href="" class="itemBottomBtn">
-            <p><span class="material-icons-outlined">
+            <button><span class="material-icons-outlined">
                 favorite_border
                 </span>
-            お気に入り</p>
+            お気に入り</button>
         </a>
     </div>
 
@@ -51,11 +59,13 @@
         </a>
     </div>
     <hr> --}}
+    @if (isset($buy))
     <div class="modalSect">
         <p>Buy : </p>
-        <div><?= $buy ?></div>
+        <div class="buy"><?= $buy ?></div>
     </div>
     <hr>
+    @endif
 </div>
 </div>
 
