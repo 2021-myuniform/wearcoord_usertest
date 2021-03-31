@@ -1,81 +1,62 @@
 <div class="showSearchInput">
-    <div class="brand">ブランド : adidas</div>
-    <div class="color">カラー : black</div>
+    @if (isset($brand))
+    <div class="brand">ブランド : {{$brand}}</div>
+    @endif
+    @if (isset($color))
+    <div class="color">カラー : {{$color}}</div>
+    @endif
 </div>
 
 <div class="imgContainer">
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
-    <a href="{{ route('itemdetails') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
-    </a>
+
+        {{-- 検索結果があった場合 --}}
+        @if (isset($getItems))
+
+        {{-- APIの処理 --}}
+        @foreach ($getItems as $getItem)
+        @foreach ($getItem as $item)
+
+        {{-- DB結果の処理 --}}
+        @foreach ($myDBitems as $myDBitem)
+        @foreach ($myDBitem as $DBitem)
+
+
+        @if ($DBitem->itemId == $item['itemCode'])
+        @if (!($DBitem->{$color . 'Img'}) == null)
+
+            {{-- 画像表示 --}}
+        <form  action="{{ asset('/itemdetails?type=' . $type . '/' . $DBitem->id) }}" method="post" class="imgItems">
+            @csrf
+
+            <button type="submit">
+
+                <img src="{{ asset('/img/rakutenlist/' . $brand . '/' . $user->gender . '/' . $category . '/' . $color . '/' . $DBitem->{$color . 'Img'}) }}" alt="{{$item['itemName']}}" alt="">
+
+                <input type="hidden" name="itemCode" value="{{$item['itemCode']}}">
+                <input type="hidden" name="itemPrice" value="{{$item['itemPrice']}}">
+                <input type="hidden" name="itemName" value="{{$item['itemName']}}">
+
+                        <input type="hidden" name="type" value="{{$type}}">
+                        <input type="hidden" name="color" value="{{$color}}">
+                        <input type="hidden" name="brand" value="{{$brand}}">
+                        <input type="hidden" name="category" value="{{$category}}">
+                        <input type="hidden" name="DBID" value="{{$DBitem->id}}">
+                        <input type="hidden" name="buy" value="{{$DBitem->moshimoLink}}">
+            </button>
+
+        </form>
+        @endif
+        @endif
+
+        @endforeach
+        @endforeach
+        @endforeach
+        @endforeach
+        @endif
+        @if (empty($getItems['result']))
+        <p>現在の条件に合ったウェアはありません</p>
+        @endif
+        <p>ここにウェアが表示されない場合は、検索条件を変更してください。</p>
 </div>
 
 <div class="searchItemsBtn">
@@ -93,31 +74,21 @@
                 </span></label>
             <div class="tab_content" id="showSearchCaps">
 
-                <form action="">
+                <form action="{{ asset('/searchGetItems?type=caps') }}" method="post">
                     @csrf
 
+                    <input type="hidden" name="type" value="caps">
+
                     <div class="searchDown">
-                        <select name="brand" id="">
-                            <option value="">ブランドを選択</option>
-                            <option value="nike">NIKE</option>
-                            <option value="adidas">Adidas</option>
-                        </select>
+                        @include('mySets.searchSelectBrand.capsSelect')
                     </div>
                     <hr>
                     <div class="searchDown">
-                        <select name="color" id="">
-                            <option value="">色を選択</option>
-                            <option value="black">黒</option>
-                            <option value="white">白</option>
-                        </select>
+                        @include('mySets.searchSelectColor.capsSelect')
                     </div>
                     <hr>
                     <div class="searchDown">
-                        <select name="type" id="">
-                            <option value="">タイプを選択</option>
-                            <option value="tshirt">Tシャツ</option>
-                            <option value="polo">ポロシャツ</option>
-                        </select>
+                        @include('mySets.searchSelectCategory.capsSelect')
                     </div>
 
                     <div class="searchBtn">
@@ -131,31 +102,21 @@
             <label  class="tab_item" for="searchTops"><i class="fas fa-tshirt sideFontAwesome"></i></label>
             <div  class="tab_content" id="showSearchTops">
 
-                <form action="">
+                <form action="{{ asset('/searchGetItems?type=tops') }}" method="post">
                     @csrf
 
+                    <input type="hidden" name="type" value="tops">
+
                     <div class="searchDown">
-                        <select name="brand" id="">
-                            <option value="">ブランドを選択</option>
-                            <option value="nike">NIKE</option>
-                            <option value="adidas">Adidas</option>
-                        </select>
+                        @include('mySets.searchSelectBrand.topsSelect')
                     </div>
                     <hr>
                     <div class="searchDown">
-                        <select name="color" id="">
-                            <option value="">色を選択</option>
-                            <option value="black">黒</option>
-                            <option value="white">白</option>
-                        </select>
+                        @include('mySets.searchSelectColor.topsSelect')
                     </div>
                     <hr>
                     <div class="searchDown">
-                        <select name="type" id="">
-                            <option value="">タイプを選択</option>
-                            <option value="tshirt">Tシャツ</option>
-                            <option value="polo">ポロシャツ</option>
-                        </select>
+                        @include('mySets.searchSelectCategory.topsSelect')
                     </div>
 
                     <div class="searchBtn">
@@ -171,31 +132,21 @@
                 </span></label>
             <div class="tab_content" id="showSearchPants">
 
-                <form action="">
+                <form action="{{ asset('/searchGetItems?type=pants') }}" method="post">
                     @csrf
 
+                    <input type="hidden" name="type" value="pants">
+
                     <div class="searchDown">
-                        <select name="brand" id="">
-                            <option value="">ブランドを選択</option>
-                            <option value="nike">NIKE</option>
-                            <option value="adidas">Adidas</option>
-                        </select>
+                        @include('mySets.searchSelectBrand.pantsSelect')
                     </div>
                     <hr>
                     <div class="searchDown">
-                        <select name="color" id="">
-                            <option value="">色を選択</option>
-                            <option value="black">黒</option>
-                            <option value="white">白</option>
-                        </select>
+                        @include('mySets.searchSelectColor.pantsSelect')
                     </div>
                     <hr>
                     <div class="searchDown">
-                        <select name="type" id="">
-                            <option value="">タイプを選択</option>
-                            <option value="tshirt">Tシャツ</option>
-                            <option value="polo">ポロシャツ</option>
-                        </select>
+                        @include('mySets.searchSelectCategory.pantsSelect')
                     </div>
 
                     <div class="searchBtn">
@@ -209,31 +160,21 @@
             <label  class="tab_item" for="searchSocks"><i class="fas fa-socks sideFontAwesome"></i></label>
             <div  class="tab_content" id="showSearchSocks">
 
-                <form action="">
+                <form action="{{ asset('/searchGetItems?type=socks') }}" method="post">
                     @csrf
 
+                    <input type="hidden" name="type" value="socks">
+
                     <div class="searchDown">
-                        <select name="brand" id="">
-                            <option value="">ブランドを選択</option>
-                            <option value="nike">NIKE</option>
-                            <option value="adidas">Adidas</option>
-                        </select>
+                        @include('mySets.searchSelectBrand.socksSelect')
                     </div>
                     <hr>
                     <div class="searchDown">
-                        <select name="color" id="">
-                            <option value="">色を選択</option>
-                            <option value="black">黒</option>
-                            <option value="white">白</option>
-                        </select>
+                        @include('mySets.searchSelectColor.socksSelect')
                     </div>
                     <hr>
                     <div class="searchDown">
-                        <select name="type" id="">
-                            <option value="">タイプを選択</option>
-                            <option value="tshirt">Tシャツ</option>
-                            <option value="polo">ポロシャツ</option>
-                        </select>
+                        @include(('mySets.searchSelectCategory.socksSelect'))
                     </div>
 
                     <div class="searchBtn">
@@ -247,31 +188,21 @@
             <label  class="tab_item" for="searchShoes"><i class="fas fa-shoe-prints sideFontAwesome"></i></label>
             <div  class="tab_content" id="showSearchShoes">
 
-                <form action="">
+                <form action="{{ asset('/searchGetItems?type=shoes') }}" method="post">
                     @csrf
 
+                    <input type="hidden" name="type" value="shoes">
+
                     <div class="searchDown">
-                        <select name="brand" id="">
-                            <option value="">ブランドを選択</option>
-                            <option value="nike">NIKE</option>
-                            <option value="adidas">Adidas</option>
-                        </select>
+                        @include(('mySets.searchSelectBrand.shoesSelect'))
                     </div>
                     <hr>
                     <div class="searchDown">
-                        <select name="color" id="">
-                            <option value="">色を選択</option>
-                            <option value="black">黒</option>
-                            <option value="white">白</option>
-                        </select>
+                        @include('mySets.searchSelectColor.shoesSelect')
                     </div>
                     <hr>
                     <div class="searchDown">
-                        <select name="type" id="">
-                            <option value="">タイプを選択</option>
-                            <option value="tshirt">Tシャツ</option>
-                            <option value="polo">ポロシャツ</option>
-                        </select>
+                        @include('mySets.searchSelectCategory.shoesSelect')
                     </div>
 
                     <div class="searchBtn">
