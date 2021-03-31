@@ -1,5 +1,5 @@
 <div class="imgContainer" id="favoriteItem">
-    <a href="{{ route('itemdetails') }}" class="imgItems">
+    <a href="" class="imgItems">
         <img src="{{asset('/img/testImg/amuse37_10015185.png')}}" alt="">
     </a>
 </div>
