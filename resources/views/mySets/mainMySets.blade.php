@@ -8,6 +8,15 @@
 
 @section('mainJs')
 <script src="{{ asset('js/mySets.js') }}"></script>
+<script src="{{ asset('js/html2canvas.js') }}"></script>
+
+<script type="text/javascript">
+    html2canvas(document.querySelector("#centerContainer"),{ backgroundColor:null }).then(canvas => {
+
+    document.getElementById('canvas_img').setAttribute("value",canvas.toDataURL());
+  });
+  </script>
+
 @endsection
 
 @include('parts.header')
@@ -24,6 +33,10 @@
         @include('mySets.componentsBtn.rightBtn')
     </div>
     @include('mySets.componentsBtn.buttomBtn')
+
+    @if (isset($message))
+    <p>{{$message}}</p>
+    @endif
 
     <div class="navBlank"></div>
 </section>

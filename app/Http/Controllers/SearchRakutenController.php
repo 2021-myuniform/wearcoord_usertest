@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Library\SearchItems;
 use App\Library\Wear;
+use Illuminate\Support\Facades\DB;
+
 
 class SearchRakutenController extends Controller
 {
@@ -17,7 +19,31 @@ class SearchRakutenController extends Controller
 
         $arrayUrl =  Wear::createArrayImgUrl();
 
-        return view('mySets.mainMySets', [ 'type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
+        return view('mySets.mainMySets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
+    }
+
+    public function registerCoord(Request $request)
+    {
+        $user = Auth::user();
+
+        $arrayUrl = $request->arrayUrl;
+        $message = '登録しました';
+        // ddd($arrayUrl);
+
+        DB::table('users_favorite_outfits')->insert([
+            'favcaps' => $request->favcaps,
+            'favtops' => $request->favtops,
+            'favpants' => $request->favpants,
+            'favsocks' => $request->favsocks,
+            'favshoes' => $request->favshoes,
+            'outfitSetImg' => $request->canvas_img,
+            'userid' => $user->id,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        return view('mySets.mainMySets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'message' => $message]);
+
     }
 
     public function searchPreItems(Request $request)
@@ -28,7 +54,7 @@ class SearchRakutenController extends Controller
 
         $arrayUrl =  Wear::createArrayImgUrl();
 
-        return view('mySets.searchMySets', [ 'type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
+        return view('mySets.searchMySets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
     }
 
     public function searchItems(Request $request)
@@ -51,7 +77,7 @@ class SearchRakutenController extends Controller
         $sortDBitems = SearchItems::searchRakutenDB($type, $getItems);
         $myDBitems = SearchItems::searchRakutenDBItems($type, $sortDBitems, $color);
 
-        return view('mySets.searchMySets', [ 'type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl]);
+        return view('mySets.searchMySets', ['type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl]);
     }
 
     public function wearItem(Request $request)
@@ -77,6 +103,6 @@ class SearchRakutenController extends Controller
 
         $arrayUrl =  Wear::createArrayImgUrl();
 
-        return view('mySets.searchMySets', [ 'type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl]);
+        return view('mySets.searchMySets', ['type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl]);
     }
 }

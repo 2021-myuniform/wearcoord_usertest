@@ -51,6 +51,10 @@ Route::post('/searchmyset/search', [App\Http\Controllers\SearchRakutenController
 
 Route::post('/searchmyset/wear', [App\Http\Controllers\SearchRakutenController::class, "wearItem"])->middleware(['auth'])->name('wearItem');
 
+// コーデお気に入り登録
+
+Route::post('/registerCoord', [App\Http\Controllers\SearchRakutenController::class, "registerCoord"])->middleware(['auth'])->name('registerCoord');
+
 Route::get('/viewItems', function () {
     return view('viewItems.mainViewItems');
 })->middleware(['auth'])->name('viewItems');
@@ -59,9 +63,7 @@ Route::get('/itemdetails', function () {
     return view('itemDetails.itemDetails');
 })->middleware(['auth'])->name('itemdetails');
 
-Route::get('/itemfavorite', function () {
-    return view('favorite.mainFavorite');
-})->middleware(['auth'])->name('itemfavorite');
+Route::get('/itemfavorite', [App\Http\Controllers\FavController::class, "viewFav"])->middleware(['auth'])->name('viewFav');
 
 Route::get('/coordfavoritedetail', function () {
     return view('favorite.favoriteCoordDetail');
