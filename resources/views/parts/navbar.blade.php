@@ -9,7 +9,7 @@
         accessibility
         </span><p>MYコーデ</p></li></a>
     <a href="{{ route('viewItems') }}"><li class="nav_item"><i class="fas fa-tshirt navIconTshirt"></i><p>アイテム</p></li></a>
-    <a href="{{ route('itemfavorite') }}"><li class="nav_favorite"><span class="material-icons-outlined navIcon">
+    <a href="{{ route('viewFav') }}"><li class="nav_favorite"><span class="material-icons-outlined navIcon">
         favorite_border
         </span><p>お気に入り</p></li></a>
 </ul>

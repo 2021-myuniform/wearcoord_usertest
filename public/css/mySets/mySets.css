@@ -153,3 +153,11 @@ details[open] .detailsBottom {
 .bottomContainer .bottomBtn p {
   padding: 5px;
 }
+
+.bottomContainer .bottomBtn .favBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

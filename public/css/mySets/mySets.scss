@@ -194,5 +194,13 @@ details[open] .detailsBottom {
         p {
             padding: 5px;
         }
+
+        .favBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
     }
 }

@@ -5,9 +5,11 @@
 </div>
 
 <div class="imgContainer" id="favoriteCoord">
+    @foreach ( $allUsersCoord as $userCoord )
     <a href="{{ route('coordfavoritedetail') }}" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10016364.png')}}" alt="">
+        <img src="{{ $userCoord->outfitSetImg  }}" alt="">
     </a>
+    @endforeach
 </div>
 
 <div class="btn_wrapper">
