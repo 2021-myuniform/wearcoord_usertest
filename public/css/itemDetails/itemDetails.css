@@ -37,6 +37,7 @@
 .modal .modalContainer .modalTitle {
   text-align: center;
   font-size: 2rem;
+  text-transform: capitalize;
 }
 
 .modal .modalContainer .modalSect {
@@ -46,6 +47,12 @@
 
 .modal .modalContainer .modalSect .center {
   text-align: center;
+  padding: 5px;
+  text-transform: capitalize;
+}
+
+.modal .modalContainer .modalSect .price {
+  color: red;
 }
 
 .modal .modalContainer .modalSect .linkArticle {

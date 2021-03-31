@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,13 +56,17 @@ Route::post('/searchmyset/wear', [App\Http\Controllers\SearchRakutenController::
 
 Route::post('/registerCoord', [App\Http\Controllers\SearchRakutenController::class, "registerCoord"])->middleware(['auth'])->name('registerCoord');
 
-Route::get('/viewItems', function () {
-    return view('viewItems.mainViewItems');
-})->middleware(['auth'])->name('viewItems');
+// アイテム単品
 
-Route::get('/itemdetails', function () {
-    return view('itemDetails.itemDetails');
-})->middleware(['auth'])->name('itemdetails');
+Route::get('/viewItems', [App\Http\Controllers\SearchRakutenController::class, "getItems"])->middleware(['auth'])->name('getItems');
+
+Route::post('/searchGetItems', [App\Http\Controllers\SearchRakutenController::class, "searchGetItems"])->middleware(['auth'])->name('searchGetItems');
+
+// アイテム詳細ページ
+
+Route::post('/itemdetails', [App\Http\Controllers\ItemController::class, "itemDetail"])->middleware(['auth'])->name('itemDetail');
+
+// お気に入り表示
 
 Route::get('/itemfavorite', [App\Http\Controllers\FavController::class, "viewFav"])->middleware(['auth'])->name('viewFav');
 

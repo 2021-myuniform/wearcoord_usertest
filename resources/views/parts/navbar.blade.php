@@ -8,7 +8,7 @@
     <a href="{{ route('mysets') }}"><li class="nav_coord"><span class="material-icons-outlined navIcon">
         accessibility
         </span><p>MYコーデ</p></li></a>
-    <a href="{{ route('viewItems') }}"><li class="nav_item"><i class="fas fa-tshirt navIconTshirt"></i><p>アイテム</p></li></a>
+    <a href="{{ route('getItems') }}"><li class="nav_item"><i class="fas fa-tshirt navIconTshirt"></i><p>アイテム</p></li></a>
     <a href="{{ route('viewFav') }}"><li class="nav_favorite"><span class="material-icons-outlined navIcon">
         favorite_border
         </span><p>お気に入り</p></li></a>

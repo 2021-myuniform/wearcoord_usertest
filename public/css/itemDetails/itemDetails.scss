@@ -41,6 +41,7 @@
         .modalTitle {
             text-align: center;
             font-size: 2rem;
+            text-transform: capitalize;
         }
 
         .modalSect {
@@ -49,6 +50,12 @@
 
             .center {
                 text-align: center;
+                padding: 5px;
+                text-transform: capitalize;
+            }
+
+            .price{
+                color: red;
             }
 
             .linkArticle {

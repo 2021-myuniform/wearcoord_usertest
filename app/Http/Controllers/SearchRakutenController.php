@@ -80,6 +80,8 @@ class SearchRakutenController extends Controller
         return view('mySets.searchMySets', ['type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl]);
     }
 
+    // マネキンに着用 DBに登録
+
     public function wearItem(Request $request)
     {
         $user = Auth::user();
@@ -104,5 +106,35 @@ class SearchRakutenController extends Controller
         $arrayUrl =  Wear::createArrayImgUrl();
 
         return view('mySets.searchMySets', ['type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl]);
+    }
+
+    public function getItems(Request $request)
+    {
+        $user = Auth::user();
+
+        return view('viewItems.mainViewItems', ['user' => $user]);
+    }
+
+    public function searchGetItems(Request $request)
+    {
+        $user = Auth::user();
+
+        $arrayUrl =  Wear::createArrayImgUrl();
+
+        $color = $request->color;
+        $brand = $request->brand;
+        $category = $request->category;
+        $type = $request->type;
+
+        // エンコードして楽天APIで検索
+        $encodeColor = SearchItems::encodeRakutenColorTag($color);
+        $encodeBrand = SearchItems::encodeRakutenBrandTag($brand);
+        $getItems = SearchItems::SearchRakutenAPI($category, $encodeBrand, $encodeColor);
+
+        // API結果をwearcoord DB内でフィルター
+        $sortDBitems = SearchItems::searchRakutenDB($type, $getItems);
+        $myDBitems = SearchItems::searchRakutenDBItems($type, $sortDBitems, $color);
+
+        return view('viewItems.mainViewItems', ['type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl]);
     }
 }
