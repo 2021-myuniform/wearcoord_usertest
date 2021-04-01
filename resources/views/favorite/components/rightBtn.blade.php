@@ -59,12 +59,17 @@
                 <p class="btnText" id="btnTitlePants">Pants</p>
         </summary>
         <div class="detailsBottom">
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    pageview
-                    </span>
-                <p class="btnText">見る</p>
-            </a>
+            <form action="{{ asset('/coorditemdetails?' . $favid .  '/pants') }}" class="detailsBtn" method="post">
+                    @csrf
+                    <button type="submit">
+                        <span class="material-icons-outlined">
+                            pageview
+                            </span>
+                        <p class="btnText">見る</p>
+                        <input type="hidden" name="favid" value="{{$favid}}">
+                        <input type="hidden" name="type" value="pants">
+                    </button>
+            </form>
                 <hr>
             <a href="" class="detailsBtn">
                 <span class="material-icons-outlined">

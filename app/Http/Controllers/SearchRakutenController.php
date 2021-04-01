@@ -37,22 +37,31 @@ class SearchRakutenController extends Controller
             'favcaps' => $request->favcaps,
             'capsBrand' => $request->capsBrand,
             'capsColor' => $request->capsColor,
+            'capsCategory' => $request->capsCategory,
 
             'favtops' => $request->favtops,
             'topsBrand' => $request->topsBrand,
             'topsColor' => $request->topsColor,
+            'topsCategory' => $request->topsCategory,
+
 
             'favpants' => $request->favpants,
             'pantsBrand' => $request->pantsBrand,
             'pantsColor' => $request->pantsColor,
+            'pantsCategory' => $request->pantsCategory,
+
 
             'favsocks' => $request->favsocks,
             'socksBrand' => $request->socksBrand,
             'socksColor' => $request->socksColor,
+            'socksCategory' => $request->socksCategory,
+
 
             'favshoes' => $request->favshoes,
             'shoesBrand' => $request->shoesBrand,
             'shoesColor' => $request->shoesColor,
+            'shoesCategory' => $request->shoesCategory,
+
 
             'outfitSetImg' => $request->canvas_img,
             'userid' => $user->id,
@@ -164,14 +173,26 @@ class SearchRakutenController extends Controller
 
         // ウェアのIDを取得
         $wearid = DB::table('users_favorite_outfits')->where('id', $favid)->value('fav' . $type);
+        $outfitid = DB::table('users_favorite_outfits')->where('id', $favid)->first();
 
         // itemCodeを取得
         $itemCode = DB::table( $type . '_rakuten_apis')->where('id', $wearid)->value('itemId');
+        $buy = DB::table( $type . '_rakuten_apis')->where('id', $wearid)->value('moshimoLink');
 
         $item = SearchItems::SearchItemCodeRakutenAPI($itemCode);
 
+        $color = $outfitid->{$type . 'Color'};
+        $brand = $outfitid->{$type . 'Brand'};
+        $DBID = $outfitid->id;
+        $category = $outfitid->{$type . 'Category'};
 
-        // return view('itemDetails.itemDetails', ['user' => $user, 'type' => $type, 'color' => $color, 'brand' => $brand, 'category' => $category, 'itemPrice' => $itemPrice, 'buy' => $buy, 'itemName' => $itemName, 'DBID' => $DBID]);
+        foreach($item as $i)
+        {
+            $itemName = $i[0]['itemName'];
+            $itemPrice = $i[0]['itemPrice'];
+        }
+
+        return view('itemDetails.itemDetails', ['user' => $user, 'type' => $type, 'color' => $color, 'brand' => $brand, 'category' => $category, 'itemPrice' => $itemPrice, 'buy' => $buy, 'itemName' => $itemName, 'DBID' => $DBID]);
 
     }
 }
