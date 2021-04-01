@@ -14,14 +14,14 @@ class Wear
 
         $checkList = DB::table('userFavorite')->where('userid', $user->id)->first();
 
-        if(isset($checkList)){
+        if (isset($checkList)) {
             DB::table('userFavorite')->where('userid', $user->id)->update([
                 'fav' . $type => $DBID,
                 $type . 'Tag' => $category,
                 $type . 'Brand' => $brand,
                 $type . 'Color' => $color,
             ]);
-        }else{
+        } else {
             DB::table('userFavorite')->insert([
                 'fav' . $type => $DBID,
                 $type . 'Tag' => $category,
@@ -39,7 +39,7 @@ class Wear
 
         $dbUser = DB::table('userFavorite')->where('userid', $user->id)->value('fav' . $type);
 
-        if($dbUser == null){
+        if ($dbUser == null) {
             return;
         }
 
@@ -47,7 +47,7 @@ class Wear
         $brand = DB::table('userFavorite')->where('userid', $user->id)->value($type . 'Brand');
         $color = DB::table('userFavorite')->where('userid', $user->id)->value($type . 'Color');
 
-        $getItem =DB::table( $type . '_rakuten_apis')->where('Id', $dbUser)->first();
+        $getItem = DB::table($type . '_rakuten_apis')->where('Id', $dbUser)->first();
 
 
         $createUrl = ('/img/rakutenlist/' . $brand . '/' . $user->gender . '/' . $category . '/' . $color . '/' . $getItem->{$color . 'Img'});
@@ -76,50 +76,10 @@ class Wear
         return $urlArray;
     }
 
-    // 他人のコーデ参照
+    public static function importCoord($favid)
+    {
+        $getCoord = DB::table('users_favorite_outfits')->where('Id', $favid)->first();
 
-    // public static function createFavImgUrl($type, $favid, $userid)
-    // {
-    //     $user = Auth::user();
-
-    //     $dbitem = DB::table('users_favorite_outfits')->where('id', $favid)->value('fav' . $type);
-
-    //     $userGender = DB::table('users')->where('id', $userid)->value('gender');
-
-    //     if($dbitem == null){
-    //         return;
-    //     }
-
-    //     $category = DB::table('userFavorite')->where('userid', $userid)->value($type . 'Tag');
-    //     $brand = DB::table('userFavorite')->where('userid', $userid)->value($type . 'Brand');
-    //     $color = DB::table('userFavorite')->where('userid', $userid)->value($type . 'Color');
-
-    //     $getItem =DB::table( $type . '_rakuten_apis')->where('Id', $dbitem)->first();
-
-
-    //     $createUrl = ('/img/rakutenlist/' . $brand . '/' . $userGender . '/' . $category . '/' . $color . '/' . $getItem->{$color . 'Img'});
-
-    //     // ddd($createUrl);
-
-    //     return $createUrl;
-    // }
-
-    // public static function createFavArrayImgUrl($favid, $userid)
-    // {
-
-    //     // $capsUrl =  Wear::createImgUrl('caps', $brand, $category, $color);
-    //     $topsUrl =  Wear::createFavImgUrl('tops', $favid, $userid);
-    //     $pantsUrl =  Wear::createFavImgUrl('pants', $favid, $userid);
-    //     // $socksUrl =  Wear::createImgUrl('socks', $brand, $category, $color);
-    //     // $shoesUrl =  Wear::createImgUrl('shoes', $brand, $category, $color);
-
-    //     $urlArray = array(
-    //         'topsUrl' => $topsUrl,
-    //         'pantsUrl' => $pantsUrl,
-    //     );
-
-    //     // ddd($urlArray);
-
-    //     return $urlArray;
-    // }
+        return $getCoord;
+    }
 }
