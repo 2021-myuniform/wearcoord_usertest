@@ -7,6 +7,8 @@
         {{-- コーデ画像 --}}
         <input type="hidden" id="canvas_img" name="canvas_img" value="">
 
+        @if (isset($userFav))
+
         {{-- ウェアid --}}
         <input type="hidden" name="favcaps" value="{{ $userFav->favcaps }}">
         <input type="hidden" name="capsBrand" value="{{ $userFav->capsBrand }}">
@@ -35,6 +37,7 @@
         <input type="hidden" name="shoesBrand" value="{{ $userFav->shoesBrand }}">
         <input type="hidden" name="shoesColor" value="{{ $userFav->shoesColor }}">
         <input type="hidden" name="shoesCategory" value="{{ $userFav->shoesTag }}">
+        @endif
 
 
         <input type="hidden" name="arrayUrl[topsUrl]" value="{{ $arrayUrl['topsUrl']  }}">
