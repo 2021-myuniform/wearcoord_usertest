@@ -15,11 +15,13 @@ class SearchRakutenController extends Controller
     {
         $user = Auth::user();
 
+        $userFav = DB::table('userFavorite')->where('userid', $user->id)->first();
+
         $type = $request->type;
 
         $arrayUrl =  Wear::createArrayImgUrl();
 
-        return view('mySets.mainMySets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
+        return view('mySets.mainMySets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
     }
 
     public function registerCoord(Request $request)
@@ -29,20 +31,36 @@ class SearchRakutenController extends Controller
         $arrayUrl = $request->arrayUrl;
         $message = '登録しました';
         // ddd($arrayUrl);
+        $userFav = DB::table('userFavorite')->where('userid', $user->id)->first();
 
         DB::table('users_favorite_outfits')->insert([
             'favcaps' => $request->favcaps,
+            'capsBrand' => $request->capsBrand,
+            'capsColor' => $request->capsColor,
+
             'favtops' => $request->favtops,
+            'topsBrand' => $request->topsBrand,
+            'topsColor' => $request->topsColor,
+
             'favpants' => $request->favpants,
+            'pantsBrand' => $request->pantsBrand,
+            'pantsColor' => $request->pantsColor,
+
             'favsocks' => $request->favsocks,
+            'socksBrand' => $request->socksBrand,
+            'socksColor' => $request->socksColor,
+
             'favshoes' => $request->favshoes,
+            'shoesBrand' => $request->shoesBrand,
+            'shoesColor' => $request->shoesColor,
+
             'outfitSetImg' => $request->canvas_img,
             'userid' => $user->id,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
-        return view('mySets.mainMySets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'message' => $message]);
+        return view('mySets.mainMySets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'message' => $message, 'userFav' => $userFav]);
 
     }
 
@@ -136,5 +154,24 @@ class SearchRakutenController extends Controller
         $myDBitems = SearchItems::searchRakutenDBItems($type, $sortDBitems, $color);
 
         return view('viewItems.mainViewItems', ['type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl]);
+    }
+
+    public function searchDetailsItem(Request $request)
+    {
+        $user = Auth::user();
+        $favid = $request->favid;
+        $type = $request->type;
+
+        // ウェアのIDを取得
+        $wearid = DB::table('users_favorite_outfits')->where('id', $favid)->value('fav' . $type);
+
+        // itemCodeを取得
+        $itemCode = DB::table( $type . '_rakuten_apis')->where('id', $wearid)->value('itemId');
+
+        $item = SearchItems::SearchItemCodeRakutenAPI($itemCode);
+
+
+        // return view('itemDetails.itemDetails', ['user' => $user, 'type' => $type, 'color' => $color, 'brand' => $brand, 'category' => $category, 'itemPrice' => $itemPrice, 'buy' => $buy, 'itemName' => $itemName, 'DBID' => $DBID]);
+
     }
 }
