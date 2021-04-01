@@ -42,12 +42,18 @@
                 </button>
             </form>
                 <hr>
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    file_download
-                    </span>
-                <p class="btnText">アイテムを反映</p>
-            </a>
+            <form action="{{ route('importItem') }}" class="detailsBtn" method="post">
+                @csrf
+
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        file_download
+                        </span>
+                    <p class="btnText">アイテムを反映</p>
+                    <input type="hidden" name="favid" value="{{$favid}}">
+                    <input type="hidden" name="type" value="tops">
+                </button>
+            </form>
         </div>
         </details>
 
@@ -71,12 +77,18 @@
                     </button>
             </form>
                 <hr>
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    file_download
-                    </span>
-                <p class="btnText">アイテムを反映</p>
-            </a>
+            <form action="{{ route('importItem') }}" class="detailsBtn" method="post">
+                @csrf
+
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        file_download
+                        </span>
+                    <p class="btnText">アイテムを反映</p>
+                    <input type="hidden" name="favid" value="{{$favid}}">
+                    <input type="hidden" name="type" value="pants">
+                </button>
+            </form>
         </div>
         </details>
 

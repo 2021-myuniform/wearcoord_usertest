@@ -83,4 +83,8 @@ Route::post('/coordfavoritedetail', [App\Http\Controllers\FavController::class, 
 
 Route::post('/wearcoordinate', [App\Http\Controllers\FavController::class, "fittingCoord"])->middleware(['auth'])->name('fittingCoord');
 
+// コーデの一部をインポート
+
+Route::post('/wearoneitem', [App\Http\Controllers\FavController::class, "importItem"])->middleware(['auth'])->name('importItem');
+
 require __DIR__.'/auth.php';
