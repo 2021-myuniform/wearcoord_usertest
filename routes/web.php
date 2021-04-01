@@ -70,6 +70,8 @@ Route::post('/itemdetails/fav', [App\Http\Controllers\FavController::class, "fav
 
 Route::post('/coorditemdetails', [App\Http\Controllers\SearchRakutenController::class, "searchDetailsItem"])->middleware(['auth'])->name('searchDetailsItem');
 
+Route::post('/favitemdetails', [App\Http\Controllers\SearchRakutenController::class, "searchFavDetailsItem"])->middleware(['auth'])->name('searchFavDetailsItem');
+
 // アイテム詳細ページウェア着用
 
 Route::post('/itemdetails/wear', [App\Http\Controllers\ItemController::class, "registerSearchItem"])->middleware(['auth'])->name('registerSearchItem');
@@ -88,5 +90,9 @@ Route::post('/wearcoordinate', [App\Http\Controllers\FavController::class, "fitt
 // コーデの一部をインポート
 
 Route::post('/wearoneitem', [App\Http\Controllers\FavController::class, "importItem"])->middleware(['auth'])->name('importItem');
+
+// お気に入りアイテムを絞り込み
+
+Route::post('/favitem', [App\Http\Controllers\FavController::class, "viewFavItem"])->middleware(['auth'])->name('viewFavItem');
 
 require __DIR__.'/auth.php';

@@ -18,7 +18,25 @@ class FavController extends Controller
 
         $allUsersCoord = DB::table('users_favorite_outfits')->get();
 
-        return view('favorite.mainFavorite', ['user' => $user, 'allUsersCoord' => $allUsersCoord]);
+        $allUsersItem = null;
+
+        return view('favorite.mainFavorite', ['user' => $user, 'allUsersCoord' => $allUsersCoord, 'allUsersItem' => $allUsersItem]);
+    }
+
+    // アイテムカテゴリ選択後
+
+    public function viewFavItem(Request $request)
+    {
+        $user = Auth::user();
+
+        $type = $request->type;
+
+        $allUsersCoord = DB::table('users_favorite_outfits')->get();
+        $allUsersItem = DB::table( $type . 'UserFavoriteItems')->get();
+
+        $arrayUrl =  Wear::createArrayFavImgUrl($type);
+
+        return view('favorite.mainFavorite', ['user' => $user, 'allUsersCoord' => $allUsersCoord, 'allUsersItem' => $allUsersItem, 'arrayUrl' => $arrayUrl, 'type' => $type]);
     }
 
     // 他人のコーデ詳細を参照

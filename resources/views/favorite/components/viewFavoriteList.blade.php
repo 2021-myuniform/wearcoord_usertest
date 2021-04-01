@@ -1,7 +1,41 @@
 <div class="imgContainer" id="favoriteItem">
-    <a href="" class="imgItems">
-        <img src="{{asset('/img/testImg/amuse37_10015185.png')}}" alt="">
-    </a>
+
+
+
+    @if (isset($allUsersItem))
+    @foreach ( $allUsersItem as $userItem )
+    @foreach ( $arrayUrl as $url )
+
+    @if ( $userItem->itemid == $url['id'])
+    <form action="{{ route('searchFavDetailsItem') }}" class="imgItems itemFav" method="post">
+        @csrf
+        <button type="submit">
+            <img src="{{ asset( $url['url'] )}}">
+            <input type="hidden" name="type" value={{$type}}>
+            <input type="hidden" name="favid" value={{$userItem->itemid}}>
+        </button>
+    </form>
+        @endif
+        @endforeach
+        @endforeach
+    @else
+
+{{-- 最初のアクセスなら表示 --}}
+    <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
+        @csrf
+        <button class="itemBtn" type="submit">
+            <p>tops</p>
+            <input type="hidden" name="type" value="tops">
+        </button>
+    </form>
+    <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
+        @csrf
+        <button class="itemBtn" type="submit">
+            <p>pants</p>
+            <input type="hidden" name="type" value="pants">
+        </button>
+    </form>
+    @endif
 </div>
 
 <div class="imgContainer" id="favoriteCoord">
