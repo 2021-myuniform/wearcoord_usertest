@@ -79,4 +79,8 @@ Route::get('/itemfavorite', [App\Http\Controllers\FavController::class, "viewFav
 
 Route::post('/coordfavoritedetail', [App\Http\Controllers\FavController::class, "viewFavCoordDetail"])->middleware(['auth'])->name('coordfavoritedetail');
 
+// コーデ一式をインポート
+
+Route::post('/wearcoordinate', [App\Http\Controllers\FavController::class, "fittingCoord"])->middleware(['auth'])->name('fittingCoord');
+
 require __DIR__.'/auth.php';
