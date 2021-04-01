@@ -75,4 +75,51 @@ class Wear
 
         return $urlArray;
     }
+
+    // 他人のコーデ参照
+
+    // public static function createFavImgUrl($type, $favid, $userid)
+    // {
+    //     $user = Auth::user();
+
+    //     $dbitem = DB::table('users_favorite_outfits')->where('id', $favid)->value('fav' . $type);
+
+    //     $userGender = DB::table('users')->where('id', $userid)->value('gender');
+
+    //     if($dbitem == null){
+    //         return;
+    //     }
+
+    //     $category = DB::table('userFavorite')->where('userid', $userid)->value($type . 'Tag');
+    //     $brand = DB::table('userFavorite')->where('userid', $userid)->value($type . 'Brand');
+    //     $color = DB::table('userFavorite')->where('userid', $userid)->value($type . 'Color');
+
+    //     $getItem =DB::table( $type . '_rakuten_apis')->where('Id', $dbitem)->first();
+
+
+    //     $createUrl = ('/img/rakutenlist/' . $brand . '/' . $userGender . '/' . $category . '/' . $color . '/' . $getItem->{$color . 'Img'});
+
+    //     // ddd($createUrl);
+
+    //     return $createUrl;
+    // }
+
+    // public static function createFavArrayImgUrl($favid, $userid)
+    // {
+
+    //     // $capsUrl =  Wear::createImgUrl('caps', $brand, $category, $color);
+    //     $topsUrl =  Wear::createFavImgUrl('tops', $favid, $userid);
+    //     $pantsUrl =  Wear::createFavImgUrl('pants', $favid, $userid);
+    //     // $socksUrl =  Wear::createImgUrl('socks', $brand, $category, $color);
+    //     // $shoesUrl =  Wear::createImgUrl('shoes', $brand, $category, $color);
+
+    //     $urlArray = array(
+    //         'topsUrl' => $topsUrl,
+    //         'pantsUrl' => $pantsUrl,
+    //     );
+
+    //     // ddd($urlArray);
+
+    //     return $urlArray;
+    // }
 }

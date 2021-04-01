@@ -66,6 +66,8 @@ Route::post('/searchGetItems', [App\Http\Controllers\SearchRakutenController::cl
 
 Route::post('/itemdetails', [App\Http\Controllers\ItemController::class, "itemDetail"])->middleware(['auth'])->name('itemDetail');
 
+Route::post('/coorditemdetails', [App\Http\Controllers\SearchRakutenController::class, "searchDetailsItem"])->middleware(['auth'])->name('searchDetailsItem');
+
 // アイテム詳細ページウェア着用
 
 Route::post('/itemdetails/wear', [App\Http\Controllers\ItemController::class, "registerSearchItem"])->middleware(['auth'])->name('registerSearchItem');
@@ -73,8 +75,8 @@ Route::post('/itemdetails/wear', [App\Http\Controllers\ItemController::class, "r
 
 Route::get('/itemfavorite', [App\Http\Controllers\FavController::class, "viewFav"])->middleware(['auth'])->name('viewFav');
 
-Route::get('/coordfavoritedetail', function () {
-    return view('favorite.favoriteCoordDetail');
-})->middleware(['auth'])->name('coordfavoritedetail');
+// コーデ詳細ページへ
+
+Route::post('/coordfavoritedetail', [App\Http\Controllers\FavController::class, "viewFavCoordDetail"])->middleware(['auth'])->name('coordfavoritedetail');
 
 require __DIR__.'/auth.php';
