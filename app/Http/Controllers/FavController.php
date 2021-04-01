@@ -145,6 +145,11 @@ class FavController extends Controller
         $type = $request->type;
         $DBID = $request->DBID;
 
+        $itemPrice = $request->itemPrice;
+        $itemName = $request->itemName;
+        $buy = $request->buy;
+
+
         // エンコードして楽天APIで検索
         $encodeColor = SearchItems::encodeRakutenColorTag($color);
         $encodeBrand = SearchItems::encodeRakutenBrandTag($brand);
@@ -160,6 +165,7 @@ class FavController extends Controller
 
         if (isset($checkList)) {
             $favResult = DB::table( $type . 'UserFavoriteItems')->where('userid', $user->id)->where('itemid', $DBID)->where('itemBrand', $brand)->delete();
+            $favResult = null;
         } else {
             $favResult = DB::table( $type . 'UserFavoriteItems')->insert([
                 'itemid' => $DBID,
@@ -170,6 +176,8 @@ class FavController extends Controller
             ]);
         }
 
-        return view('viewItems.mainViewItems', ['type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl, 'favResult' => $favResult]);
+        // return view('viewItems.mainViewItems', ['type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl, 'favResult' => $favResult]);
+
+        return view('itemDetails.itemDetails', ['user' => $user, 'type' => $type, 'color' => $color, 'brand' => $brand, 'category' => $category, 'itemPrice' => $itemPrice, 'buy' => $buy, 'itemName' => $itemName, 'DBID' => $DBID, 'favResult' => $favResult]);
     }
 }

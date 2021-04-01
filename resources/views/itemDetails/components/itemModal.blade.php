@@ -20,23 +20,25 @@
             @csrf
 
             <button type="submit">
-            @if (isset($favResult))
+            @if ($favResult == null)
+            <span class="material-icons-outlined">
+            favorite_border
+            </span>
+            <p>お気に入り</p>
+            @else
             <span class="material-icons-outlined">
                 favorite
                 </span>
                 <p>お気に入りを外す</p>
-            @else
-            <span class="material-icons-outlined">
-            favorite_border
-            </span>
-        <p>お気に入り</p>
-
             @endif
             <input type="hidden" name="type" value="{{$type}}">
             <input type="hidden" name="color" value="{{$color}}">
             <input type="hidden" name="brand" value="{{$brand}}">
             <input type="hidden" name="category" value="{{$category}}">
             <input type="hidden" name="DBID" value="{{$DBID}}">
+            <input type="hidden" name="itemName" value="{{$itemName}}">
+            <input type="hidden" name="itemPrice" value="{{$itemPrice}}">
+            <input type="hidden" name="buy" value="{{$buy}}">
         </button>
         </form>
     </div>
