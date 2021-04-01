@@ -72,7 +72,7 @@ class SearchItems
             case 'asics':
                 $brand = 1000860;
                 break;
-            case 'diadra':
+            case 'diadora':
                 $brand = 1002148;
                 break;
             case 'babolat':
