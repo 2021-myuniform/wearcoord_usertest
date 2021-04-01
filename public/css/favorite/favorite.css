@@ -59,6 +59,10 @@
   width: 100%;
 }
 
+.itemFav {
+  width: 25% !important;
+}
+
 .btn_wrapper {
   width: 100%;
   margin: auto;
@@ -106,4 +110,10 @@ input[type="radio"]:checked + label {
 
 .tab-switch:checked + .tab_item + .tab_content {
   display: block;
+}
+
+.itemBtn {
+  width: 100%;
+  height: 100%;
+  text-transform: capitalize;
 }

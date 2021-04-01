@@ -70,7 +70,6 @@ class SearchRakutenController extends Controller
         ]);
 
         return view('mySets.mainMySets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'message' => $message, 'userFav' => $userFav]);
-
     }
 
     public function searchPreItems(Request $request)
@@ -171,13 +170,16 @@ class SearchRakutenController extends Controller
         $favid = $request->favid;
         $type = $request->type;
 
+
         // ウェアのIDを取得
         $wearid = DB::table('users_favorite_outfits')->where('id', $favid)->value('fav' . $type);
         $outfitid = DB::table('users_favorite_outfits')->where('id', $favid)->first();
 
         // itemCodeを取得
-        $itemCode = DB::table( $type . '_rakuten_apis')->where('id', $wearid)->value('itemId');
-        $buy = DB::table( $type . '_rakuten_apis')->where('id', $wearid)->value('moshimoLink');
+        $itemCode = DB::table($type . '_rakuten_apis')->where('id', $wearid)->value('itemId');
+        $buy = DB::table($type . '_rakuten_apis')->where('id', $wearid)->value('moshimoLink');
+
+        // ddd($itemCode);
 
         $item = SearchItems::SearchItemCodeRakutenAPI($itemCode);
 
@@ -186,13 +188,47 @@ class SearchRakutenController extends Controller
         $DBID = $outfitid->id;
         $category = $outfitid->{$type . 'Category'};
 
-        foreach($item as $i)
-        {
+        foreach ($item as $i) {
             $itemName = $i[0]['itemName'];
             $itemPrice = $i[0]['itemPrice'];
         }
 
         return view('itemDetails.itemDetails', ['user' => $user, 'type' => $type, 'color' => $color, 'brand' => $brand, 'category' => $category, 'itemPrice' => $itemPrice, 'buy' => $buy, 'itemName' => $itemName, 'DBID' => $DBID]);
+    }
 
+    public function searchFavDetailsItem(Request $request)
+    {
+        $user = Auth::user();
+        $wearid = $request->favid;
+        $type = $request->type;
+
+
+        // ウェアのIDを取得
+        // $wearid = DB::table('users_favorite_outfits')->where('id', $favid)->value('fav' . $type);
+        $outfitid = DB::table($type . 'UserFavoriteItems')->where('itemid', $wearid)->first();
+
+        // itemCodeを取得
+        $itemCode = DB::table($type . '_rakuten_apis')->where('id', $wearid)->value('itemId');
+        $buy = DB::table($type . '_rakuten_apis')->where('id', $wearid)->value('moshimoLink');
+
+        // ddd($wearid);
+
+        $item = SearchItems::SearchItemCodeRakutenAPI($itemCode);
+
+        $color = $outfitid->itemColor;
+        $brand = $outfitid->itemBrand;
+        $DBID = $outfitid->itemid;
+        $category = $outfitid->itemCategory;
+
+        foreach ($item as $i) {
+            $itemName = $i[0]['itemName'];
+            $itemPrice = $i[0]['itemPrice'];
+        }
+
+        // お気に入り登録
+
+        $favResult = DB::table($type . 'UserFavoriteItems')->where('userid', $user->id)->where('itemid', $wearid)->where('itemBrand', $brand)->first();
+
+        return view('itemDetails.itemDetails', ['user' => $user, 'type' => $type, 'color' => $color, 'brand' => $brand, 'category' => $category, 'itemPrice' => $itemPrice, 'buy' => $buy, 'itemName' => $itemName, 'DBID' => $DBID, 'favResult' => $favResult]);
     }
 }
