@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Library\Wear;
+use App\Library\SearchItems;
 
 
 
@@ -109,5 +110,48 @@ class FavController extends Controller
         $arrayUrl =  Wear::createArrayImgUrl();
 
         return view('mySets.mainMySets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
+    }
+
+    // アイテムのお気に入り
+
+    public function favItem(Request $request)
+    {
+
+        $user = Auth::user();
+
+        $arrayUrl =  Wear::createArrayImgUrl();
+
+        $color = $request->color;
+        $brand = $request->brand;
+        $category = $request->category;
+        $type = $request->type;
+        $DBID = $request->DBID;
+
+        // エンコードして楽天APIで検索
+        $encodeColor = SearchItems::encodeRakutenColorTag($color);
+        $encodeBrand = SearchItems::encodeRakutenBrandTag($brand);
+        $getItems = SearchItems::SearchRakutenAPI($category, $encodeBrand, $encodeColor);
+
+        // API結果をwearcoord DB内でフィルター
+        $sortDBitems = SearchItems::searchRakutenDB($type, $getItems);
+        $myDBitems = SearchItems::searchRakutenDBItems($type, $sortDBitems, $color);
+
+        // お気に入り登録
+
+        $checkList = DB::table( $type . 'UserFavoriteItems')->where('userid', $user->id)->where('itemid', $DBID)->where('itemBrand', $brand)->first();
+
+        if (isset($checkList)) {
+            $favResult = DB::table( $type . 'UserFavoriteItems')->where('userid', $user->id)->where('itemid', $DBID)->where('itemBrand', $brand)->delete();
+        } else {
+            $favResult = DB::table( $type . 'UserFavoriteItems')->insert([
+                'itemid' => $DBID,
+                'itemBrand' => $brand,
+                'itemColor' => $color,
+                'itemCategory' => $category,
+                'userid' => $user->id,
+            ]);
+        }
+
+        return view('viewItems.mainViewItems', ['type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl, 'favResult' => $favResult]);
     }
 }

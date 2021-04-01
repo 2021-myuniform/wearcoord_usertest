@@ -16,12 +16,29 @@
                 checkroom
                 </span>着用してみる</button>
         </form>
-        <a href="" class="itemBottomBtn">
-            <button><span class="material-icons-outlined">
-                favorite_border
+        <form action="{{ route('favItem') }}" class="itemBottomBtn" method="post">
+            @csrf
+
+            <button type="submit">
+            @if (isset($favResult))
+            <span class="material-icons-outlined">
+                favorite
                 </span>
-            お気に入り</button>
-        </a>
+                <p>お気に入りを外す</p>
+            @else
+            <span class="material-icons-outlined">
+            favorite_border
+            </span>
+        <p>お気に入り</p>
+
+            @endif
+            <input type="hidden" name="type" value="{{$type}}">
+            <input type="hidden" name="color" value="{{$color}}">
+            <input type="hidden" name="brand" value="{{$brand}}">
+            <input type="hidden" name="category" value="{{$category}}">
+            <input type="hidden" name="DBID" value="{{$DBID}}">
+        </button>
+        </form>
     </div>
 
 <div class="modal">

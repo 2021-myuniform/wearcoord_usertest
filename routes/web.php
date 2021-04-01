@@ -66,6 +66,8 @@ Route::post('/searchGetItems', [App\Http\Controllers\SearchRakutenController::cl
 
 Route::post('/itemdetails', [App\Http\Controllers\ItemController::class, "itemDetail"])->middleware(['auth'])->name('itemDetail');
 
+Route::post('/itemdetails/fav', [App\Http\Controllers\FavController::class, "favItem"])->middleware(['auth'])->name('favItem');
+
 Route::post('/coorditemdetails', [App\Http\Controllers\SearchRakutenController::class, "searchDetailsItem"])->middleware(['auth'])->name('searchDetailsItem');
 
 // アイテム詳細ページウェア着用
