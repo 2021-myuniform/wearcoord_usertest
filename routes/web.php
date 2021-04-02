@@ -22,9 +22,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/home', function () {
-    return view('viewSets.mainViewSets');
-})->middleware(['auth'])->name('home');
+Route::get('/home',[App\Http\Controllers\MainController::class, "home"])->middleware(['auth'])->name('home');
 
 Route::get('/myset', [App\Http\Controllers\SearchRakutenController::class, "view"])->middleware(['auth'])->name('mysets');
 
