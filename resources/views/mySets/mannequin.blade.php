@@ -1,4 +1,4 @@
-<div class="mannequinImg">
+<div class="mannequinImg" id="mannequinImg">
 
     {{-- caps --}}
     <form action="{{ route('searchmysetsGetCaps') }}" class="capsForm" method="get">

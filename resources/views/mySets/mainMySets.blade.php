@@ -4,19 +4,12 @@
 <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 <link rel="stylesheet" href="{{ asset('css/searchMySets/searchMySets.css') }}">
 <link rel="stylesheet" href="{{ asset('css/mySets/mySets.css') }}">
-@endsection
-
-@section('mainJs')
-<script src="{{ asset('js/mySets.js') }}"></script>
-<script src="{{ asset('js/html2canvas.js') }}"></script>
-
-<script type="text/javascript">
-    html2canvas(document.querySelector("#centerContainer"),{ backgroundColor:null }).then(canvas => {
-
-    document.getElementById('canvas_img').setAttribute("value",canvas.toDataURL());
-  });
-  </script>
-
+<style>
+    .mannequinImg{
+        /* background-image: url('img/other/<?= $user->innerUrl ?>'); */
+        background-image: url('img/other/{{$user->innerUrl}}');
+    }
+</style>
 @endsection
 
 @include('parts.header')
@@ -40,6 +33,20 @@
 
     <div class="navBlank"></div>
 </section>
+
+@section('mainJs')
+<script src="{{ asset('js/mySets.js') }}"></script>
+<script src="{{ asset('js/html2canvas.js') }}"></script>
+<script src="{{ asset('js/inner.js') }}"></script>
+
+<script type="text/javascript">
+    html2canvas(document.querySelector("#centerContainer"),{ backgroundColor:null }).then(canvas => {
+
+    document.getElementById('canvas_img').setAttribute("value",canvas.toDataURL());
+  });
+  </script>
+
+@endsection
 
 @endsection
 

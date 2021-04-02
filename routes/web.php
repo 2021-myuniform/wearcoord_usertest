@@ -22,11 +22,17 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/home', function () {
-    return view('viewSets.mainViewSets');
-})->middleware(['auth'])->name('home');
+Route::get('/home',[App\Http\Controllers\MainController::class, "home"])->middleware(['auth'])->name('home');
 
 Route::get('/myset', [App\Http\Controllers\SearchRakutenController::class, "view"])->middleware(['auth'])->name('mysets');
+
+// インナーを脱ぐ
+
+Route::post('/myset', [App\Http\Controllers\SearchRakutenController::class, "removeInner"])->middleware(['auth'])->name('removeInner');
+
+// インナーを着る
+
+Route::post('/searchmyset/innerget', [App\Http\Controllers\SearchRakutenController::class, "getInnerItem"])->middleware(['auth'])->name('wearInner');
 
 // rakuten API ウェア検索
 
@@ -43,6 +49,8 @@ Route::get('/searchmyset/pants', [App\Http\Controllers\SearchRakutenController::
 Route::get('/searchmyset/socks', [App\Http\Controllers\SearchRakutenController::class, "searchPreItems"])->middleware(['auth'])->name('searchmysetsGetSocks');
 
 Route::get('/searchmyset/shoes', [App\Http\Controllers\SearchRakutenController::class, "searchPreItems"])->middleware(['auth'])->name('searchmysetsGetShoes');
+
+Route::get('/searchmyset/inner', [App\Http\Controllers\SearchRakutenController::class, "searchPreItems"])->middleware(['auth'])->name('searchmysetsGetInner');
 
 // Rakuten API 検索
 

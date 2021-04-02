@@ -3,10 +3,12 @@
 @section('mainCss')
 <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 <link rel="stylesheet" href="{{ asset('css/searchMySets/searchMySets.css') }}">
-@endsection
-
-@section('mainJs')
-{{-- <script src="{{ asset('js/mySets.js') }}"></script> --}}
+<style>
+    .mannequinImg{
+        /* background-image: url('../img/other/<?= $user->innerUrl ?>'); */
+        background-image: url('../img/other/{{$user->innerUrl}}');
+    }
+</style>
 @endsection
 
 @include('parts.header')
@@ -26,4 +28,9 @@
     <div class="navBlank"></div>
 
 </section>
+@endsection
+
+@section('mainJs')
+<script src="{{ asset('js/mySets.js') }}"></script>
+<script src="{{ asset('js/inner.js') }}"></script>
 @endsection
