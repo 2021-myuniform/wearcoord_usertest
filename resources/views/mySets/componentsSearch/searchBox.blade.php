@@ -6,6 +6,9 @@
 
 <div class="searchBox">
     <div class="searchContainer">
+        @if ($type == 'inner')
+        <h2 class="searchTitle">{{$type}}</h2>
+        @else
         <form action="{{ route('searchmysetsSearch') }}" method="post">
             @csrf
 
@@ -68,6 +71,7 @@
             </div>
 
         </form>
+        @endif
         <hr>
     </div>
 
@@ -114,8 +118,9 @@
 
 
                     <button type="submit" >
-                        <i class="fas fa-tshirt navIconTshirt"></i>着替える</form>
+                        <i class="fas fa-tshirt navIconTshirt"></i>着替える
                     </button>
+                    </form>
             </div>
         </div>
         @endif
@@ -126,10 +131,19 @@
         @endforeach
         @endforeach
         @endif
+
+        {{-- アイテムが無い場合の表示 --}}
+
         @if (empty($getItems['result']))
+        @if ($type == 'inner')
+
+        @include('mySets.componentsSearch.innerSelect')
+
+        @else
         <p>現在の条件に合ったウェアはありません</p>
-        @endif
         <p>ここにウェアが表示されない場合は、検索条件を変更してください。</p>
+        @endif
+        @endif
     </div>
 </div>
 </div>

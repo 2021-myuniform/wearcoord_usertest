@@ -24,6 +24,30 @@ class SearchRakutenController extends Controller
         return view('mySets.mainMySets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
     }
 
+    // インナーを脱ぐ
+
+    public function removeInner(Request $request)
+    {
+        $user = Auth::user();
+
+        $inner = $request->innerUrl;
+        $checkList = DB::table('users')->where('id', $user->id)->first();
+
+        if (isset($checkList)) {
+            DB::table('users')->where('id', $user->id)->update([
+                'innerUrl' => $inner,
+            ]);
+        }
+
+        $userFav = DB::table('userFavorite')->where('userid', $user->id)->first();
+
+        $type = $request->type;
+
+        $arrayUrl =  Wear::createArrayImgUrl();
+
+        return redirect()->route('mysets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
+    }
+
     public function registerCoord(Request $request)
     {
         $user = Auth::user();
@@ -81,6 +105,29 @@ class SearchRakutenController extends Controller
         $arrayUrl =  Wear::createArrayImgUrl();
 
         return view('mySets.searchMySets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
+    }
+
+    // インナー選択
+
+    public function getInnerItem(Request $request)
+    {
+        $user = Auth::user();
+
+        $type = $request->type;
+
+        $inner = $request->innerUrl;
+        $checkList = DB::table('users')->where('id', $user->id)->first();
+
+        if (isset($checkList)) {
+            DB::table('users')->where('id', $user->id)->update([
+                'innerUrl' => $inner,
+            ]);
+        }
+
+        $arrayUrl =  Wear::createArrayImgUrl();
+
+        return redirect()->route('searchmysetsGetInner', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
+        // return view('mySets.searchMySets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
     }
 
     public function searchItems(Request $request)
