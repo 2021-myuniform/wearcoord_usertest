@@ -83,6 +83,7 @@ class Wear
             array_push($urlArray, [
                 'url' => $url,
                 'id' => $useritem->itemid,
+                'type' => $type,
             ]);
         }
 
@@ -112,12 +113,25 @@ class Wear
 
     public static function createArrayFavImgUrl($type)
     {
-
         $arrayUrl =  Wear::createFavImgUrl($type);
 
-        // ddd($urlArray);
-
         return $arrayUrl;
+    }
+
+    public static function getAllFavItems()
+    {
+        $types = ['tops', 'pants'];
+        $array = [];
+
+        foreach($types as $type)
+        {
+            $arrayUrl =  Wear::createFavImgUrl($type);
+            array_push($array, $arrayUrl);
+        }
+
+        // ddd($array);
+
+        return $array;
     }
 
     public static function importCoord($favid)

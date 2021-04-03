@@ -20,7 +20,12 @@ class FavController extends Controller
 
         $allUsersItem = null;
 
-        return view('favorite.mainFavorite', ['user' => $user, 'allUsersCoord' => $allUsersCoord, 'allUsersItem' => $allUsersItem]);
+        $itemsArrayUrl =  Wear::getAllFavItems();
+
+
+        // ddd($itemsArrayUrl);
+
+        return view('favorite.mainFavorite', ['user' => $user, 'allUsersCoord' => $allUsersCoord, 'allUsersItem' => $allUsersItem, 'itemsArrayUrl' => $itemsArrayUrl]);
     }
 
     // アイテムカテゴリ選択後
@@ -35,6 +40,8 @@ class FavController extends Controller
         $allUsersItem = DB::table( $type . 'UserFavoriteItems')->get();
 
         $arrayUrl =  Wear::createArrayFavImgUrl($type);
+
+        // ddd($arrayUrl);
 
         return view('favorite.mainFavorite', ['user' => $user, 'allUsersCoord' => $allUsersCoord, 'allUsersItem' => $allUsersItem, 'arrayUrl' => $arrayUrl, 'type' => $type]);
     }

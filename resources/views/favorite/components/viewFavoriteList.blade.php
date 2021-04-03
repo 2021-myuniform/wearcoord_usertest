@@ -35,6 +35,24 @@
             <input type="hidden" name="type" value="pants">
         </button>
     </form>
+
+    {{-- アイテム一覧を表示 --}}
+
+@foreach ($itemsArrayUrl as$itemsArray )
+@foreach ($itemsArray as$items )
+
+<form action="{{ route('searchFavDetailsItem') }}" class="imgItems itemFav" method="post">
+    @csrf
+    <button type="submit">
+        <img src="{{ asset( $items['url'] )}}">
+        <input type="hidden" name="type" value={{$items['type']}}>
+        <input type="hidden" name="favid" value={{$items['id']}}>
+    </button>
+</form>
+
+@endforeach
+@endforeach
+
     @endif
 </div>
 
