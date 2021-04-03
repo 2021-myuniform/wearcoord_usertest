@@ -65,6 +65,11 @@ class FavController extends Controller
 
         if (isset($checkList)) {
             $types = ['caps', 'tops', 'pants', 'socks', 'shoes',];
+
+            DB::table('users')->where('id', $user->id)->update([
+                'innerUrl' => $getCoord->innerUrl,
+            ]);
+
             foreach ($types as $type) {
                 DB::table('userFavorite')->where('userid', $user->id)->update([
                     'fav' . $type => $getCoord->{'fav' . $type},
@@ -75,6 +80,11 @@ class FavController extends Controller
             }
         } else {
             $types = ['caps', 'tops', 'pants', 'socks', 'shoes',];
+
+            DB::table('users')->where('id', $user->id)->update([
+                'innerUrl' => $getCoord->innerUrl,
+            ]);
+
             foreach ($types as $type) {
                 DB::table('userFavorite')->insert([
                     'fav' . $type => $getCoord->{'fav' . $type},
@@ -90,7 +100,9 @@ class FavController extends Controller
 
         $arrayUrl =  Wear::createArrayImgUrl();
 
-        return view('mySets.mainMySets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
+        return redirect()->route('mysets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
+
+        // return view('mySets.mainMySets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
     }
 
     public function importItem(Request $request)
