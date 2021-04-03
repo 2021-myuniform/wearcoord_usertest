@@ -8,21 +8,22 @@
     </div>
 
     <ul class="reccomendImgContainer">
-        <a href="{{ route('coordfavoritedetail') }}"><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
-        </li></a>
-        <a href="{{ route('coordfavoritedetail') }}"><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
-        </li></a>
-        <a href="{{ route('coordfavoritedetail') }}"><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
-        </li></a>
-        <a href="{{ route('coordfavoritedetail') }}"><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
-        </li></a>
-        <a href="{{ route('coordfavoritedetail') }}"><li class="reccomendImg_item">
-            <img src="{{asset('img/testImg/z-GH7619-on_model-standard_view.jpg')}}" alt="">
-        </li></a>
+
+        @foreach ($userCoords as $userCoord)
+
+        <form action="{{ route('coordfavoritedetail') }}" method="post" class="homeImg">
+            @csrf
+            <li class="reccomendImg_item">
+            <button>
+                <img src="{{$userCoord->outfitSetImg}}" alt="">
+                <input type="hidden" name="favid" value="{{ $userCoord->id  }}">
+                <input type="hidden" name="outfitSetImg" value="{{ $userCoord->outfitSetImg  }}">
+            </button>
+        </li>
+        </form>
+
+        @endforeach
+
             <div class="reccomendImg_item moreIcon">
                 <div class="moreIcon_inner">
                     <a href="" class="moreIcon_text">
