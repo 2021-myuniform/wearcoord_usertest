@@ -37,8 +37,11 @@
         <input type="hidden" name="shoesBrand" value="{{ $userFav->shoesBrand }}">
         <input type="hidden" name="shoesColor" value="{{ $userFav->shoesColor }}">
         <input type="hidden" name="shoesCategory" value="{{ $userFav->shoesTag }}">
-        @endif
 
+        <input type="hidden" name="innerUrl" value="{{ $user->innerUrl }}">
+
+
+        @endif
 
         <input type="hidden" name="arrayUrl[topsUrl]" value="{{ $arrayUrl['topsUrl']  }}">
         <input type="hidden" name="arrayUrl[pantsUrl]" value="{{ $arrayUrl['pantsUrl']  }}">

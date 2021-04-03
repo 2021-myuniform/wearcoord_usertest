@@ -37,7 +37,6 @@
 @section('mainJs')
 <script src="{{ asset('js/mySets.js') }}"></script>
 <script src="{{ asset('js/html2canvas.js') }}"></script>
-<script src="{{ asset('js/inner.js') }}"></script>
 
 <script type="text/javascript">
     html2canvas(document.querySelector("#centerContainer"),{ backgroundColor:null }).then(canvas => {
