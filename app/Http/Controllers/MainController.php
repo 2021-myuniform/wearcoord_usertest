@@ -14,6 +14,10 @@ class MainController extends Controller
 
         $checkList = DB::table('users')->where('id', $user->id)->value('innerUrl');
 
+        $userCoords = DB::table('users_favorite_outfits')->orderBy('created_at', 'desc')->take(5)->get();
+
+        // ddd($userCoord);
+
         if ($checkList == null) {
             if($user->gender == 'male')
             {
@@ -29,7 +33,6 @@ class MainController extends Controller
             }
         }
 
-        return view('viewSets.mainViewSets');
-
+        return view('viewSets.mainViewSets', ['user' => $user, 'userCoords' => $userCoords]);
     }
 }
