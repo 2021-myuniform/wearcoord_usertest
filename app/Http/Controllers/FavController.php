@@ -185,6 +185,7 @@ class FavController extends Controller
         if (isset($checkList)) {
             $favResult = DB::table( $type . 'UserFavoriteItems')->where('userid', $user->id)->where('itemid', $DBID)->where('itemBrand', $brand)->delete();
             $favResult = null;
+            return redirect()->route('getFavDetailsItem', ['user' => $user, 'type' => $type, 'color' => $color, 'brand' => $brand, 'category' => $category, 'itemPrice' => $itemPrice, 'buy' => $buy, 'itemName' => $itemName, 'favid' => $DBID, 'favResult' => $favResult, 'outfitid' => $checkList]);
         } else {
             $favResult = DB::table( $type . 'UserFavoriteItems')->insert([
                 'itemid' => $DBID,
@@ -195,8 +196,13 @@ class FavController extends Controller
             ]);
         }
 
+        // ddd($checkList);
+
         // return view('viewItems.mainViewItems', ['type' => $type, 'getItems' => $sortDBitems, 'myDBitems' => $myDBitems, 'user' => $user, 'color' => $color, 'brand' => $brand, 'category' => $category, 'arrayUrl' => $arrayUrl, 'favResult' => $favResult]);
 
-        return view('itemDetails.itemDetails', ['user' => $user, 'type' => $type, 'color' => $color, 'brand' => $brand, 'category' => $category, 'itemPrice' => $itemPrice, 'buy' => $buy, 'itemName' => $itemName, 'DBID' => $DBID, 'favResult' => $favResult]);
+        // return view('itemDetails.itemDetails', ['user' => $user, 'type' => $type, 'color' => $color, 'brand' => $brand, 'category' => $category, 'itemPrice' => $itemPrice, 'buy' => $buy, 'itemName' => $itemName, 'DBID' => $DBID, 'favResult' => $favResult]);
+
+        return redirect()->route('getFavDetailsItem', ['user' => $user, 'type' => $type, 'color' => $color, 'brand' => $brand, 'category' => $category, 'itemPrice' => $itemPrice, 'buy' => $buy, 'itemName' => $itemName, 'favid' => $DBID, 'favResult' => $favResult, 'outfitid' => $checkList]);
+
     }
 }
