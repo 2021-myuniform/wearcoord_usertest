@@ -1,3 +1,23 @@
+{{-- 最初のアクセスなら表示 --}}
+<div class="topCategoryBtn">
+    <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
+        @csrf
+        <button class="itemBtn" type="submit">
+            <i class="fas fa-tshirt sideFontAwesome"></i>
+            <input type="hidden" name="type" value="tops">
+        </button>
+    </form>
+    <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
+        @csrf
+        <button class="itemBtn" type="submit">
+            <span class="material-icons-outlined">
+                airline_seat_legroom_extra
+                </span>
+            <input type="hidden" name="type" value="pants">
+        </button>
+    </form>
+</div>
+
 <div class="imgContainer" id="favoriteItem">
 
 
@@ -20,21 +40,7 @@
         @endforeach
     @else
 
-{{-- 最初のアクセスなら表示 --}}
-    <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
-        @csrf
-        <button class="itemBtn" type="submit">
-            <p>tops</p>
-            <input type="hidden" name="type" value="tops">
-        </button>
-    </form>
-    <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
-        @csrf
-        <button class="itemBtn" type="submit">
-            <p>pants</p>
-            <input type="hidden" name="type" value="pants">
-        </button>
-    </form>
+
 
     {{-- アイテム一覧を表示 --}}
 

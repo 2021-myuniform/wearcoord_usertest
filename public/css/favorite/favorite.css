@@ -59,6 +59,19 @@
   width: 100%;
 }
 
+.topCategoryBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.topCategoryBtn .imgItems {
+  width: 20%;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  margin: 10px;
+}
+
 .itemFav {
   width: 25% !important;
 }
