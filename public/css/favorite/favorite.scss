@@ -38,6 +38,16 @@
     }
 }
 
+.itemBoxFlex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    height: 60vh;
+    overflow: scroll;
+}
+
 .imgContainer {
     // display: none;
     flex-wrap: wrap;
@@ -66,6 +76,7 @@
 .topCategoryBtn{
     display: flex;
     justify-content: center;
+    width: 100%;
 
     .imgItems {
         width: 20%;
@@ -75,7 +86,7 @@
         border-radius: 10px;
         margin: 10px;
         // box-shadow: 1px 1px 3px 0px darkgrey;
-        // height: fit-content;
+        height: auto;
     }
 }
 

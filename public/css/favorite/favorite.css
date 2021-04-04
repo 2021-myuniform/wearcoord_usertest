@@ -36,6 +36,16 @@
   width: 40%;
 }
 
+.itemBoxFlex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  height: 60vh;
+  overflow: scroll;
+}
+
 .imgContainer {
   flex-wrap: wrap;
   justify-content: space-between;
@@ -62,6 +72,7 @@
 .topCategoryBtn {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .topCategoryBtn .imgItems {
@@ -70,6 +81,7 @@
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   margin: 10px;
+  height: auto;
 }
 
 .itemFav {
