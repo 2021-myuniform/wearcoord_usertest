@@ -80,6 +80,8 @@ Route::post('/coorditemdetails', [App\Http\Controllers\SearchRakutenController::
 
 Route::post('/favitemdetails', [App\Http\Controllers\SearchRakutenController::class, "searchFavDetailsItem"])->middleware(['auth'])->name('searchFavDetailsItem');
 
+Route::get('/favitemdetails', [App\Http\Controllers\SearchRakutenController::class, "getFavDetailsItem"])->middleware(['auth'])->name('getFavDetailsItem');
+
 // アイテム詳細ページウェア着用
 
 Route::post('/itemdetails/wear', [App\Http\Controllers\ItemController::class, "registerSearchItem"])->middleware(['auth'])->name('registerSearchItem');
