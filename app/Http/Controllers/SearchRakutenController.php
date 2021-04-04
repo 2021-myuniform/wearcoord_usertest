@@ -90,6 +90,7 @@ class SearchRakutenController extends Controller
             'outfitSetImg' => $request->canvas_img,
             'innerUrl' => $request->innerUrl,
             'userid' => $user->id,
+            'gender' => $user->gender,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
