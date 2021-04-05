@@ -65,6 +65,8 @@ class ItemController extends Controller
 
             $arrayUrl =  Wear::createArrayImgUrl();
 
-            return view('mySets.mainMySets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
+            // return view('mySets.mainMySets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
+
+            return redirect()->route('mysets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl]);
         }
 }

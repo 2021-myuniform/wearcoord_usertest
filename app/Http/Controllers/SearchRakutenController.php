@@ -95,6 +95,8 @@ class SearchRakutenController extends Controller
             'updated_at' => now(),
         ]);
 
+        // ddd($arrayUrl);
+
         return view('mySets.mainMySets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'message' => $message, 'userFav' => $userFav]);
     }
 

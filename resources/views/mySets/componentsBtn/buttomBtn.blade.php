@@ -43,8 +43,11 @@
 
         @endif
 
+        {{-- 画像の配列作成 --}}
+        <input type="hidden" name="arrayUrl[capsUrl]" value="{{ $arrayUrl['capsUrl']  }}">
         <input type="hidden" name="arrayUrl[topsUrl]" value="{{ $arrayUrl['topsUrl']  }}">
         <input type="hidden" name="arrayUrl[pantsUrl]" value="{{ $arrayUrl['pantsUrl']  }}">
+        <input type="hidden" name="arrayUrl[shoesUrl]" value="{{ $arrayUrl['shoesUrl']  }}">
 
         <span class="material-icons-outlined navIcon">
             favorite_border
