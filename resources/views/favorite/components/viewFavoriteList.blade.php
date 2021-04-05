@@ -6,6 +6,15 @@
         <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
             @csrf
             <button class="itemBtn" type="submit">
+                <span class="material-icons-outlined">
+                    face
+                    </span>
+                <input type="hidden" name="type" value="caps">
+            </button>
+        </form>
+        <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
+            @csrf
+            <button class="itemBtn" type="submit">
                 <i class="fas fa-tshirt sideFontAwesome"></i>
                 <input type="hidden" name="type" value="tops">
             </button>
@@ -17,6 +26,13 @@
                     airline_seat_legroom_extra
                     </span>
                 <input type="hidden" name="type" value="pants">
+            </button>
+        </form>
+        <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
+            @csrf
+            <button class="itemBtn" type="submit">
+                <i class="fas fa-shoe-prints sideFontAwesome"></i>
+                <input type="hidden" name="type" value="shoes">
             </button>
         </form>
     </div>

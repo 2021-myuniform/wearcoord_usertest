@@ -124,7 +124,7 @@ class Wear
 
     public static function getAllFavItems()
     {
-        $types = ['caps', 'tops', 'pants'];
+        $types = ['caps', 'tops', 'pants', 'shoes'];
         $array = [];
 
         foreach($types as $type)

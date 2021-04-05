@@ -8,7 +8,7 @@
             <p class="btnText" id="btnTitleBand">Band</p>
         </summary>
         <div class="detailsBottom">
-            <a href="" class="detailsBtn">
+            {{-- <a href="" class="detailsBtn">
                 <span class="material-icons-outlined">
                     shopping_cart
                 </span>
@@ -20,6 +20,10 @@
                     screen_search_desktop
                 </span>
                 <p class="btnText">選ぶ</p>
+            </a> --}}
+
+            <a href="" class="detailsBtn">
+                <p class="btnText">準備中</p>
             </a>
         </div>
     </details>
