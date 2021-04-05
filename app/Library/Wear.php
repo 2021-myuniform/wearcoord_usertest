@@ -96,14 +96,18 @@ class Wear
     {
 
         // $capsUrl =  Wear::createImgUrl('caps', $brand, $category, $color);
+        $capsUrl =  Wear::createImgUrl('caps');
         $topsUrl =  Wear::createImgUrl('tops');
         $pantsUrl =  Wear::createImgUrl('pants');
+        $shoesUrl =  Wear::createImgUrl('shoes');
         // $socksUrl =  Wear::createImgUrl('socks', $brand, $category, $color);
         // $shoesUrl =  Wear::createImgUrl('shoes', $brand, $category, $color);
 
         $urlArray = array(
+            'capsUrl' => $capsUrl,
             'topsUrl' => $topsUrl,
             'pantsUrl' => $pantsUrl,
+            'shoesUrl' => $shoesUrl,
         );
 
         // ddd($urlArray);
@@ -120,7 +124,7 @@ class Wear
 
     public static function getAllFavItems()
     {
-        $types = ['tops', 'pants'];
+        $types = ['caps', 'tops', 'pants'];
         $array = [];
 
         foreach($types as $type)

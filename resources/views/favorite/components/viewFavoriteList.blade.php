@@ -1,66 +1,72 @@
-{{-- 最初のアクセスなら表示 --}}
-<div class="topCategoryBtn">
-    <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
-        @csrf
-        <button class="itemBtn" type="submit">
-            <i class="fas fa-tshirt sideFontAwesome"></i>
-            <input type="hidden" name="type" value="tops">
-        </button>
-    </form>
-    <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
-        @csrf
-        <button class="itemBtn" type="submit">
-            <span class="material-icons-outlined">
-                airline_seat_legroom_extra
-                </span>
-            <input type="hidden" name="type" value="pants">
-        </button>
-    </form>
-</div>
 
 <div class="imgContainer" id="favoriteItem">
 
+    {{-- 最初のアクセスなら表示 --}}
+    <div class="topCategoryBtn">
+        <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
+            @csrf
+            <button class="itemBtn" type="submit">
+                <i class="fas fa-tshirt sideFontAwesome"></i>
+                <input type="hidden" name="type" value="tops">
+            </button>
+        </form>
+        <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
+            @csrf
+            <button class="itemBtn" type="submit">
+                <span class="material-icons-outlined">
+                    airline_seat_legroom_extra
+                    </span>
+                <input type="hidden" name="type" value="pants">
+            </button>
+        </form>
+    </div>
 
 
+
+
+    <div class="itemBoxFlex">
     @if (isset($allUsersItem))
     @foreach ( $allUsersItem as $userItem )
     @foreach ( $arrayUrl as $url )
 
-    @if ( $userItem->itemid == $url['id'])
-    <form action="{{ route('searchFavDetailsItem') }}" class="imgItems itemFav" method="post">
-        @csrf
-        <button type="submit">
-            <img src="{{ asset( $url['url'] )}}">
-            <input type="hidden" name="type" value={{$type}}>
-            <input type="hidden" name="favid" value={{$userItem->itemid}}>
-        </button>
-    </form>
+
+        @if ( $userItem->itemid == $url['id'])
+        <form action="{{ route('searchFavDetailsItem') }}" class="imgItems itemFav" method="post">
+            @csrf
+            <button type="submit">
+                <img src="{{ asset( $url['url'] )}}">
+                <input type="hidden" name="type" value={{$type}}>
+                <input type="hidden" name="favid" value={{$userItem->itemid}}>
+            </button>
+        </form>
         @endif
+
         @endforeach
         @endforeach
-    @else
+        @else
 
 
 
-    {{-- アイテム一覧を表示 --}}
+        {{-- アイテム一覧を表示 --}}
 
-@foreach ($itemsArrayUrl as$itemsArray )
-@foreach ($itemsArray as$items )
+        @foreach ($itemsArrayUrl as$itemsArray )
+        @foreach ($itemsArray as$items )
 
-<form action="{{ route('searchFavDetailsItem') }}" class="imgItems itemFav" method="post">
-    @csrf
-    <button type="submit">
-        <img src="{{ asset( $items['url'] )}}">
-        <input type="hidden" name="type" value={{$items['type']}}>
-        <input type="hidden" name="favid" value={{$items['id']}}>
-    </button>
-</form>
+        <form action="{{ route('searchFavDetailsItem') }}" class="imgItems itemFav" method="post">
+            @csrf
+            <button type="submit">
+                <img src="{{ asset( $items['url'] )}}">
+                <input type="hidden" name="type" value={{$items['type']}}>
+                <input type="hidden" name="favid" value={{$items['id']}}>
+            </button>
+        </form>
 
-@endforeach
-@endforeach
+        @endforeach
+        @endforeach
 
-    @endif
-</div>
+        @endif
+    </div>
+    </div>
 
 <div class="imgContainer" id="favoriteCoord">
     @foreach ( $allUsersCoord as $userCoord )

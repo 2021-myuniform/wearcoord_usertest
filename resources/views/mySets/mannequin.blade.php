@@ -5,7 +5,9 @@
         @csrf
         <button class="mannequinBtn"  type="submit">
             <input type="hidden" name="type" value="caps">
-            <img class="mannequinItemImg" src="{{ asset('/img/testImg/la-foresta_10084789.png') }}" alt="">
+            @if ((asset( $arrayUrl['capsUrl'] )) != asset(''))
+            <img class="mannequinItemImg" src="{{ asset( $arrayUrl['capsUrl'] ) }}" alt="{{ asset( $arrayUrl['capsUrl'] ) }}">
+            @endif
         </button>
     </form>
 
@@ -44,8 +46,10 @@
     <form action="{{ route('searchmysetsGetShoes') }}" class="shoesForm" method="get">
         @csrf
         <button class="mannequinBtn"  type="submit">
-            <input type="hidden" name="type" value="caps">
-            <img class="mannequinItemImg" src="{{ asset('/img/testImg/alpen_10353285.png') }}" alt="">
+            <input type="hidden" name="type" value="shoes">
+            @if ((asset( $arrayUrl['shoesUrl'] )) != asset(''))
+            <img class="mannequinItemImg" src="{{ asset( $arrayUrl['shoesUrl'] ) }}" alt="">
+            @endif
         </button>
     </form>
 
