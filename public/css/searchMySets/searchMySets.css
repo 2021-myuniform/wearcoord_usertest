@@ -84,6 +84,16 @@
   max-width: 200px;
 }
 
+.socksForm {
+  height: 20px;
+}
+
+.socksForm button .mannequinItemImg {
+  width: 70%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .socksImg {
   display: flex;
   justify-content: center;

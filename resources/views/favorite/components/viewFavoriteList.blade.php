@@ -31,6 +31,13 @@
         <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
             @csrf
             <button class="itemBtn" type="submit">
+                <i class="fas fa-socks sideFontAwesome"></i>
+                <input type="hidden" name="type" value="socks">
+            </button>
+        </form>
+        <form action="{{ route('viewFavItem') }}" class="imgItems"  method="post">
+            @csrf
+            <button class="itemBtn" type="submit">
                 <i class="fas fa-shoe-prints sideFontAwesome"></i>
                 <input type="hidden" name="type" value="shoes">
             </button>
