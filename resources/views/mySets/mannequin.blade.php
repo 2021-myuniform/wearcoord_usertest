@@ -37,10 +37,20 @@
     </form>
 
     {{-- socks --}}
-    <div class="socksImg">
+    <form action="{{ route('searchmysetsGetSocks') }}" class="socksForm" method="get">
+        @csrf
+        <button class="mannequinBtn"  type="submit">
+            <input type="hidden" name="type" value="socks">
+            @if ((asset( $arrayUrl['socksUrl'] )) != asset(''))
+            <img class="mannequinItemImg" src="{{ asset( $arrayUrl['socksUrl'] ) }}" alt="">
+            @endif
+        </button>
+    </form>
+
+    {{-- <div class="socksImg">
         <div class="socksBox" style="background-color: red"></div>
         <div class="socksBox" style="background-color: red"></div>
-    </div>
+    </div> --}}
 
     {{-- shoes --}}
     <form action="{{ route('searchmysetsGetShoes') }}" class="shoesForm" method="get">
