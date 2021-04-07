@@ -8,19 +8,29 @@
                 <p class="btnText" id="btnTitleCaps">Caps</p>
         </summary>
         <div class="detailsBottom">
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    pageview
-                    </span>
-                <p class="btnText">見る</p>
-            </a>
+            <form action="{{ asset('/coorditemdetails?' . $favid .  '/tops') }}" class="detailsBtn" method="post">
+                @csrf
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        pageview
+                        </span>
+                    <p class="btnText">見る</p>
+                    <input type="hidden" name="type" value="caps">
+                    <input type="hidden" name="favid" value="{{$favid}}">
+                </button>
+            </form>
                 <hr>
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    file_download
-                    </span>
-                <p class="btnText">アイテムを反映</p>
-            </a>
+            <form action="{{ route('importItem') }}" class="detailsBtn" method="post">
+                @csrf
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        file_download
+                        </span>
+                    <p class="btnText">アイテムを反映</p>
+                    <input type="hidden" name="favid" value="{{$favid}}">
+                    <input type="hidden" name="type" value="caps">
+                </button>
+            </form>
         </div>
     </details>
 
@@ -98,19 +108,29 @@
             <p class="btnText" id="btnTitleSocks">Socks</p>
         </summary>
         <div class="detailsBottom">
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    pageview
-                    </span>
-                <p class="btnText">見る</p>
-            </a>
+            <form action="{{ asset('/coorditemdetails?' . $favid .  '/socks') }}" class="detailsBtn" method="post">
+                @csrf
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        pageview
+                        </span>
+                    <p class="btnText">見る</p>
+                    <input type="hidden" name="type" value="socks">
+                    <input type="hidden" name="favid" value="{{$favid}}">
+                </button>
+            </form>
                 <hr>
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    file_download
-                    </span>
-                <p class="btnText">アイテムを反映</p>
-            </a>
+            <form action="{{ route('importItem') }}" class="detailsBtn" method="post">
+                @csrf
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        file_download
+                        </span>
+                    <p class="btnText">アイテムを反映</p>
+                    <input type="hidden" name="favid" value="{{$favid}}">
+                    <input type="hidden" name="type" value="socks">
+                </button>
+            </form>
         </div>
         </details>
 
@@ -120,19 +140,29 @@
             <p class="btnText" id="btnTitleShoes">Shoes</p>
         </summary>
         <div class="detailsBottom">
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    pageview
-                    </span>
-                <p class="btnText">見る</p>
-            </a>
+            <form action="{{ asset('/coorditemdetails?' . $favid .  '/tops') }}" class="detailsBtn" method="post">
+                @csrf
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        pageview
+                        </span>
+                    <p class="btnText">見る</p>
+                    <input type="hidden" name="type" value="shoes">
+                    <input type="hidden" name="favid" value="{{$favid}}">
+                </button>
+            </form>
                 <hr>
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    file_download
-                    </span>
-                <p class="btnText">アイテムを反映</p>
-            </a>
+            <form action="{{ route('importItem') }}" class="detailsBtn" method="post">
+                @csrf
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        file_download
+                        </span>
+                    <p class="btnText">アイテムを反映</p>
+                    <input type="hidden" name="favid" value="{{$favid}}">
+                    <input type="hidden" name="type" value="shoes">
+                </button>
+            </form>
         </div>
     </details>
 </div>

@@ -74,7 +74,7 @@
 }
 
 .pantsForm {
-  height: 155px;
+  height: 140px;
   position: relative;
 }
 
@@ -85,12 +85,12 @@
 }
 
 .socksForm {
-  height: 20px;
+  height: 10px;
 }
 
 .socksForm button .mannequinItemImg {
   width: 70%;
-  height: 100%;
+  height: 20px;
   object-fit: cover;
 }
 
