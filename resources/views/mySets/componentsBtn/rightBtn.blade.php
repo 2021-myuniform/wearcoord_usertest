@@ -8,12 +8,17 @@
                 <p class="btnText" id="btnTitleCaps">Caps</p>
         </summary>
         <div class="detailsBottom">
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    shopping_cart
-                </span>
-                <p class="btnText">買う</p>
-            </a>
+            <form action="{{ route('buyDetailsItem') }}" class="detailsBtn" method="post">
+                @csrf
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    <p class="btnText">買う</p>
+                    <input type="hidden" name="type" value="caps">
+                </button>
+
+            </form>
             <hr>
             <form action="{{ route('searchmysetsGetCaps') }}" class="detailsBtn2" method="get">
                 @csrf
@@ -35,12 +40,16 @@
             <p class="btnText" id="btnTitleTops">Tops</p>
         </summary>
         <div class="detailsBottom">
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    shopping_cart
-                </span>
-                <p class="btnText">買う</p>
-            </a>
+            <form action="{{ route('buyDetailsItem') }}" class="detailsBtn" method="post">
+                @csrf
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    <p class="btnText">買う</p>
+                    <input type="hidden" name="type" value="tops">
+                </button>
+            </form>
                 <hr>
             <form action="{{ route('searchmysetsGetTops') }}" class="detailsBtn2"  method="get">
                 @csrf
@@ -65,12 +74,16 @@
                 <p class="btnText" id="btnTitlePants">Pants</p>
         </summary>
         <div class="detailsBottom">
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    shopping_cart
-                </span>
-                <p class="btnText">買う</p>
-            </a>
+            <form action="{{ route('buyDetailsItem') }}" class="detailsBtn" method="post">
+                @csrf
+                <button>
+                    <span class="material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    <p class="btnText">買う</p>
+                    <input type="hidden" name="type" value="pants">
+                </button>
+            </form>
                 <hr>
             <form action="{{ route('searchmysetsGetPants') }}" class="detailsBtn2" method="get">
                 @csrf
@@ -91,12 +104,16 @@
             <p class="btnText" id="btnTitleSocks">Socks</p>
         </summary>
         <div class="detailsBottom">
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    shopping_cart
-                </span>
-                <p class="btnText">買う</p>
-            </a>
+            <form action="{{ route('buyDetailsItem') }}" class="detailsBtn" method="post">
+                @csrf
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    <p class="btnText">買う</p>
+                    <input type="hidden" name="type" value="socks">
+                </button>
+            </form>
                 <hr>
             <form action="{{ route('searchmysetsGetSocks') }}" class="detailsBtn2" method="get">
                 @csrf
@@ -117,12 +134,16 @@
             <p class="btnText" id="btnTitleShoes">Shoes</p>
         </summary>
         <div class="detailsBottom">
-            <a href="" class="detailsBtn">
-                <span class="material-icons-outlined">
-                    shopping_cart
-                </span>
-                <p class="btnText">買う</p>
-            </a>
+            <form action="{{ route('buyDetailsItem') }}" class="detailsBtn" method="post">
+                @csrf
+                <button type="submit">
+                    <span class="material-icons-outlined">
+                        shopping_cart
+                    </span>
+                    <p class="btnText">買う</p>
+                    <input type="hidden" name="type" value="shoes">
+                </button>
+            </form>
                 <hr>
             <form action="{{ route('searchmysetsGetShoes') }}" class="detailsBtn2" method="get">
                 @csrf

@@ -78,6 +78,8 @@ Route::post('/itemdetails/fav', [App\Http\Controllers\FavController::class, "fav
 
 Route::post('/coorditemdetails', [App\Http\Controllers\SearchRakutenController::class, "searchDetailsItem"])->middleware(['auth'])->name('searchDetailsItem');
 
+Route::post('/buyitemdetails', [App\Http\Controllers\SearchRakutenController::class, "buyDetailsItem"])->middleware(['auth'])->name('buyDetailsItem');
+
 Route::post('/favitemdetails', [App\Http\Controllers\SearchRakutenController::class, "searchFavDetailsItem"])->middleware(['auth'])->name('searchFavDetailsItem');
 
 Route::get('/favitemdetails', [App\Http\Controllers\SearchRakutenController::class, "getFavDetailsItem"])->middleware(['auth'])->name('getFavDetailsItem');
