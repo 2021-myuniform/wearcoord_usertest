@@ -35,4 +35,14 @@ class MainController extends Controller
 
         return view('viewSets.mainViewSets', ['user' => $user, 'userCoords' => $userCoords]);
     }
+
+    public function viewAllCoord(Request $request)
+{
+    $user = Auth::user();
+
+    $allUsersCoord = DB::table('users_favorite_outfits')->where('userid', $user->id)->get();
+
+    return view('viewSets.mainViewCoord', ['user' => $user, 'allUsersCoord' => $allUsersCoord]);
+
+}
 }

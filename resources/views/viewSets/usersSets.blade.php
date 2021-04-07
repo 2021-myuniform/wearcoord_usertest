@@ -26,7 +26,7 @@
 
             <div class="reccomendImg_item moreIcon">
                 <div class="moreIcon_inner">
-                    <a href="" class="moreIcon_text">
+                    <a href="{{ route('viewallcoord') }}"  class="moreIcon_text">
                         <p>MORE</p>
                         <span class="material-icons-outlined iconArrow">
                         arrow_forward_ios

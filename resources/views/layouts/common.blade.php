@@ -34,6 +34,9 @@
     @yield('mainBodyHotTags')
     @yield('mainBodyArticles')
 
+    {{-- mainViewCoord --}}
+    @yield('mainViewCoord')
+
     {{-- mySets --}}
     @yield('mySets')
 
