@@ -47,7 +47,7 @@
         <input type="hidden" name="arrayUrl[capsUrl]" value="{{ $arrayUrl['capsUrl']  }}">
         <input type="hidden" name="arrayUrl[topsUrl]" value="{{ $arrayUrl['topsUrl']  }}">
         <input type="hidden" name="arrayUrl[pantsUrl]" value="{{ $arrayUrl['pantsUrl']  }}">
-        <input type="hidden" name="arrayUrl[pantsUrl]" value="{{ $arrayUrl['socksUrl']  }}">
+        <input type="hidden" name="arrayUrl[socksUrl]" value="{{ $arrayUrl['socksUrl']  }}">
         <input type="hidden" name="arrayUrl[shoesUrl]" value="{{ $arrayUrl['shoesUrl']  }}">
 
         <span class="material-icons-outlined navIcon">
