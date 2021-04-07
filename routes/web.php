@@ -107,4 +107,9 @@ Route::post('/wearoneitem', [App\Http\Controllers\FavController::class, "importI
 
 Route::post('/favitem', [App\Http\Controllers\FavController::class, "viewFavItem"])->middleware(['auth'])->name('viewFavItem');
 
+// 全てのコーデを見る
+
+Route::get('/viewallcoord', [App\Http\Controllers\MainController::class, "viewAllCoord"])->middleware(['auth'])->name('viewallcoord');
+
+
 require __DIR__.'/auth.php';
