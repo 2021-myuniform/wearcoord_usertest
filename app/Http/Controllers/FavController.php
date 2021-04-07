@@ -16,7 +16,8 @@ class FavController extends Controller
     {
         $user = Auth::user();
 
-        $allUsersCoord = DB::table('users_favorite_outfits')->where('gender', $user->gender)->get();
+        // $allUsersCoord = DB::table('users_favorite_outfits')->where('gender', $user->gender)->get();
+        $allUsersCoord = DB::table('users_favorite_outfits')->where('userid', $user->id)->get();
 
         $allUsersItem = null;
 
