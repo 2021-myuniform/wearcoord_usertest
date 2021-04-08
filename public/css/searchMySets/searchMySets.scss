@@ -61,7 +61,7 @@
     height: 40px;
     position: relative;
 
-    .mannequinBtn{
+    .mannequinBtn {
         position: absolute;
         top: -20px;
         height: 70px;
@@ -83,6 +83,11 @@
     height: 130px;
     position: relative;
     z-index: 100;
+
+    .mannequinBtn {
+        position: absolute;
+        height: 140px;
+    }
 
     .mannequinItemImg {
         width: 100%;

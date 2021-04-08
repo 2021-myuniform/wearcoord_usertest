@@ -71,6 +71,11 @@
   z-index: 100;
 }
 
+.topsForm .mannequinBtn {
+  position: absolute;
+  height: 140px;
+}
+
 .topsForm .mannequinItemImg {
   width: 100%;
   height: 140px;
