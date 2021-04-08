@@ -14,9 +14,21 @@
     </div>
 
     <ul class="reccomendImgContainer">
-        <li class="reccomendImg_item"><a href="">
-            <img src="{{asset('img/testImg/z-FK0820-on_model-standard_view.jpg')}}" alt="">
-        </a></li>
+
+        @foreach ($wcCoords as $wcCoord)
+
+        <li class="reccomendImg_item">
+            <form action="{{ route('viewRecommendDetail') }}" method="post" class="homeImg">
+                @csrf
+                <button type="submit">
+                    <img src="{{$wcCoord->outfitSetImg}}" alt="">
+                    <input type="hidden" name="favid" value="{{ $wcCoord->id  }}">
+                    <input type="hidden" name="outfitSetImg" value="{{ $wcCoord->outfitSetImg  }}">
+                </button>
+        </form>
+    </li>
+            @endforeach
+
             <div class="reccomendImg_item moreIcon">
                 <div class="moreIcon_inner">
                     <a href="" class="moreIcon_text">

@@ -16,7 +16,12 @@ class MainController extends Controller
 
         $userCoords = DB::table('users_favorite_outfits')->orderBy('created_at', 'desc')->take(5)->get();
 
-        // ddd($userCoord);
+
+        $wcCoords = DB::table('wc_recommend_outfits')->orderBy('created_at', 'desc')->take(5)->get();
+
+        // ddd($wcCoords);
+
+        // マネキン画像のチェック
 
         if ($checkList == null) {
             if($user->gender == 'male')
@@ -33,7 +38,7 @@ class MainController extends Controller
             }
         }
 
-        return view('viewSets.mainViewSets', ['user' => $user, 'userCoords' => $userCoords]);
+        return view('viewSets.mainViewSets', ['user' => $user, 'userCoords' => $userCoords, 'wcCoords' => $wcCoords]);
     }
 
     public function viewAllCoord(Request $request)
