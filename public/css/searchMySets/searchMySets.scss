@@ -83,8 +83,12 @@
     }
 }
 
+.legsSection{
+    position: relative;
+}
+
 .pantsForm {
-    height: 140px;
+    height: 150px;
     position: relative;
 
     .mannequinItemImg {
@@ -95,7 +99,8 @@
 }
 
 .socksForm{
-    height: 10px;
+    position: absolute;
+    bottom: -10px;
 
     button{
 
@@ -125,10 +130,12 @@
 
 .shoesForm {
     height: 40px;
+    z-index: 100;
+    position: relative;
 
     .mannequinItemImg {
         width: 100px;
-        height: 100%;
+        height: 40px;
         max-width: 200px;
         object-fit: cover;
     }
