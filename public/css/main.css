@@ -55,12 +55,17 @@ input {
 
 .header .titleIcon {
   padding-left: 10px;
+  height: 70%;
 }
 
 .header .mainTitle {
   font-size: 2.4rem;
   color: #0080E4;
   font-weight: bold;
+}
+
+.header .titleImg {
+  height: 100%;
 }
 
 .header .hiddenIcon {
