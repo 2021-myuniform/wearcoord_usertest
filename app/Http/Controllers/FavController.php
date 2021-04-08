@@ -59,6 +59,18 @@ class FavController extends Controller
         return view('favorite.favoriteCoordDetail', ['user' => $user, 'outfitSetImg' => $outfitSetImg, 'favid' => $favid]);
     }
 
+    // レコメンドのコーデ詳細を参照
+
+    public function viewRecommendDetail(Request $request)
+    {
+        $user = Auth::user();
+
+        $favid = $request->favid;
+        $outfitSetImg = $request->outfitSetImg;
+
+        return view('recommend.recommendCoordDetail', ['user' => $user, 'outfitSetImg' => $outfitSetImg, 'favid' => $favid]);
+    }
+
     // 他人のコーデを着用
 
     public function fittingCoord(Request $request)
@@ -113,6 +125,60 @@ class FavController extends Controller
         // return view('mySets.mainMySets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
     }
 
+    // レコメンドのコーデを着用
+
+    public function fittingRecoCoord(Request $request)
+    {
+        $user = Auth::user();
+
+        $favid = $request->favid;
+
+        $getCoord =  Wear::importRecoCoord($favid);
+
+        // ddd($getCoord);
+
+        $checkList = DB::table('userFavorite')->where('userid', $user->id)->first();
+
+        if (isset($checkList)) {
+            $types = ['caps', 'tops', 'pants', 'socks', 'shoes',];
+
+            DB::table('users')->where('id', $user->id)->update([
+                'innerUrl' => $getCoord->innerUrl,
+            ]);
+
+            foreach ($types as $type) {
+                DB::table('userFavorite')->where('userid', $user->id)->update([
+                    'fav' . $type => $getCoord->{'fav' . $type},
+                    $type . 'Tag' => $getCoord->{$type . 'Category'},
+                    $type . 'Brand' => $getCoord->{$type . 'Brand'},
+                    $type . 'Color' => $getCoord->{$type . 'Color'},
+                ]);
+            }
+        } else {
+            $types = ['caps', 'tops', 'pants', 'socks', 'shoes',];
+
+            DB::table('users')->where('id', $user->id)->update([
+                'innerUrl' => $getCoord->innerUrl,
+            ]);
+
+            foreach ($types as $type) {
+                DB::table('userFavorite')->insert([
+                    'fav' . $type => $getCoord->{'fav' . $type},
+                    $type . 'Tag' => $getCoord->{$type . 'Category'},
+                    $type . 'Brand' => $getCoord->{$type . 'Brand'},
+                    $type . 'Color' => $getCoord->{$type . 'Color'},
+                    'userid' => $user->id,
+                ]);
+            }
+        }
+
+        $userFav = DB::table('userFavorite')->where('userid', $user->id)->first();
+
+        $arrayUrl =  Wear::createArrayImgUrl();
+
+        return redirect()->route('mysets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
+    }
+
     public function importItem(Request $request)
     {
         $user = Auth::user();
@@ -121,6 +187,58 @@ class FavController extends Controller
 
         // ウェアのIDを取得
         $outfitid = DB::table('users_favorite_outfits')->where('id', $favid)->first();
+
+        if($type == 'inner'){
+            DB::table('users')->where('id', $user->id)->update([
+                'innerUrl' => $outfitid->innerUrl
+            ]);
+            $userFav = DB::table('userFavorite')->where('userid', $user->id)->first();
+
+            $arrayUrl =  Wear::createArrayImgUrl();
+
+
+            return redirect()->route('mysets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
+
+        }
+
+        $checkList = DB::table('userFavorite')->where('userid', $user->id)->first();
+
+
+        if (isset($checkList)) {
+            DB::table('userFavorite')->where('userid', $user->id)->update([
+                'fav' . $type => $outfitid->{'fav' . $type},
+                $type . 'Tag' => $outfitid->{$type . 'Category'},
+                $type . 'Brand' => $outfitid->{$type . 'Brand'},
+                $type . 'Color' => $outfitid->{$type . 'Color'},
+            ]);
+        } else {
+            DB::table('userFavorite')->insert([
+                'fav' . $type => $outfitid->{'fav' . $type},
+                $type . 'Tag' => $outfitid->{$type . 'Category'},
+                $type . 'Brand' => $outfitid->{$type . 'Brand'},
+                $type . 'Color' => $outfitid->{$type . 'Color'},
+                'userid' => $user->id,
+            ]);
+        }
+
+
+        $userFav = DB::table('userFavorite')->where('userid', $user->id)->first();
+
+        $arrayUrl =  Wear::createArrayImgUrl();
+
+        return view('mySets.mainMySets', ['user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
+    }
+
+    // レコメンドアイテムをインポート
+
+    public function importRecoItem(Request $request)
+    {
+        $user = Auth::user();
+        $favid = $request->favid;
+        $type = $request->type;
+
+        // ウェアのIDを取得
+        $outfitid = DB::table('wc_recommend_outfits')->where('id', $favid)->first();
 
         if($type == 'inner'){
             DB::table('users')->where('id', $user->id)->update([

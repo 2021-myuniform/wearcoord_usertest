@@ -146,4 +146,11 @@ class Wear
 
         return $getCoord;
     }
+
+    public static function importRecoCoord($favid)
+    {
+        $getCoord = DB::table('wc_recommend_outfits')->where('Id', $favid)->first();
+
+        return $getCoord;
+    }
 }

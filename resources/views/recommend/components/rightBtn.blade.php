@@ -8,7 +8,7 @@
                 <p class="btnText" id="btnTitleCaps">Caps</p>
         </summary>
         <div class="detailsBottom">
-            <form action="{{ asset('/coorditemdetails?' . $favid .  '/tops') }}" class="detailsBtn" method="post">
+            <form action="{{ asset('/recocoorditemdetails?' . $favid .  '/caps') }}" class="detailsBtn" method="post">
                 @csrf
                 <button type="submit">
                     <span class="material-icons-outlined">
@@ -20,7 +20,7 @@
                 </button>
             </form>
                 <hr>
-            <form action="{{ route('importItem') }}" class="detailsBtn" method="post">
+            <form action="{{ route('importRecoItem') }}" class="detailsBtn" method="post">
                 @csrf
                 <button type="submit">
                     <span class="material-icons-outlined">
@@ -40,7 +40,7 @@
             <p class="btnText" id="btnTitleTops">Tops</p>
         </summary>
         <div class="detailsBottom">
-            <form action="{{ asset('/coorditemdetails?' . $favid .  '/caps') }}" class="detailsBtn" method="post">
+            <form action="{{ asset('/recocoorditemdetails?' . $favid .  '/tops') }}" class="detailsBtn" method="post">
                 @csrf
                 <button type="submit">
                     <span class="material-icons-outlined">
@@ -52,7 +52,7 @@
                 </button>
             </form>
                 <hr>
-            <form action="{{ route('importItem') }}" class="detailsBtn" method="post">
+            <form action="{{ route('importRecoItem') }}" class="detailsBtn" method="post">
                 @csrf
 
                 <button type="submit">
@@ -75,7 +75,7 @@
                 <p class="btnText" id="btnTitlePants">Pants</p>
         </summary>
         <div class="detailsBottom">
-            <form action="{{ asset('/coorditemdetails?' . $favid .  '/pants') }}" class="detailsBtn" method="post">
+            <form action="{{ asset('/recocoorditemdetails?' . $favid .  '/pants') }}" class="detailsBtn" method="post">
                     @csrf
                     <button type="submit">
                         <span class="material-icons-outlined">
@@ -87,7 +87,7 @@
                     </button>
             </form>
                 <hr>
-            <form action="{{ route('importItem') }}" class="detailsBtn" method="post">
+            <form action="{{ route('importRecoItem') }}" class="detailsBtn" method="post">
                 @csrf
 
                 <button type="submit">
@@ -108,7 +108,7 @@
             <p class="btnText" id="btnTitleSocks">Socks</p>
         </summary>
         <div class="detailsBottom">
-            <form action="{{ asset('/coorditemdetails?' . $favid .  '/socks') }}" class="detailsBtn" method="post">
+            <form action="{{ asset('/recocoorditemdetails?' . $favid .  '/socks') }}" class="detailsBtn" method="post">
                 @csrf
                 <button type="submit">
                     <span class="material-icons-outlined">
@@ -120,7 +120,7 @@
                 </button>
             </form>
                 <hr>
-            <form action="{{ route('importItem') }}" class="detailsBtn" method="post">
+            <form action="{{ route('importRecoItem') }}" class="detailsBtn" method="post">
                 @csrf
                 <button type="submit">
                     <span class="material-icons-outlined">
@@ -140,7 +140,7 @@
             <p class="btnText" id="btnTitleShoes">Shoes</p>
         </summary>
         <div class="detailsBottom">
-            <form action="{{ asset('/coorditemdetails?' . $favid .  '/tops') }}" class="detailsBtn" method="post">
+            <form action="{{ asset('/recocoorditemdetails?' . $favid .  '/tops') }}" class="detailsBtn" method="post">
                 @csrf
                 <button type="submit">
                     <span class="material-icons-outlined">
@@ -152,7 +152,7 @@
                 </button>
             </form>
                 <hr>
-            <form action="{{ route('importItem') }}" class="detailsBtn" method="post">
+            <form action="{{ route('importRecoItem') }}" class="detailsBtn" method="post">
                 @csrf
                 <button type="submit">
                     <span class="material-icons-outlined">

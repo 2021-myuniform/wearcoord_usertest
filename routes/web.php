@@ -78,6 +78,10 @@ Route::post('/itemdetails/fav', [App\Http\Controllers\FavController::class, "fav
 
 Route::post('/coorditemdetails', [App\Http\Controllers\SearchRakutenController::class, "searchDetailsItem"])->middleware(['auth'])->name('searchDetailsItem');
 
+// レコメンド詳細ページ
+
+Route::post('/recocoorditemdetails', [App\Http\Controllers\SearchRakutenController::class, "recommendSearchDetailsItem"])->middleware(['auth'])->name('searchDetailsItem');
+
 Route::post('/buyitemdetails', [App\Http\Controllers\SearchRakutenController::class, "buyDetailsItem"])->middleware(['auth'])->name('buyDetailsItem');
 
 Route::post('/favitemdetails', [App\Http\Controllers\SearchRakutenController::class, "searchFavDetailsItem"])->middleware(['auth'])->name('searchFavDetailsItem');
@@ -95,13 +99,25 @@ Route::get('/itemfavorite', [App\Http\Controllers\FavController::class, "viewFav
 
 Route::post('/coordfavoritedetail', [App\Http\Controllers\FavController::class, "viewFavCoordDetail"])->middleware(['auth'])->name('coordfavoritedetail');
 
+// レコメンドコーデ詳細ページへ
+
+Route::post('/coordrecodetail', [App\Http\Controllers\FavController::class, "viewRecommendDetail"])->middleware(['auth'])->name('viewRecommendDetail');
+
 // コーデ一式をインポート
 
 Route::post('/wearcoordinate', [App\Http\Controllers\FavController::class, "fittingCoord"])->middleware(['auth'])->name('fittingCoord');
 
+// レコメンドコーデ一式をインポート
+
+Route::post('/recocoordinate', [App\Http\Controllers\FavController::class, "fittingRecoCoord"])->middleware(['auth'])->name('fittingRecoCoord');
+
 // コーデの一部をインポート
 
 Route::post('/wearoneitem', [App\Http\Controllers\FavController::class, "importItem"])->middleware(['auth'])->name('importItem');
+
+// レコメンドコーデの一部をインポート
+
+Route::post('/wearrecooneitem', [App\Http\Controllers\FavController::class, "importRecoItem"])->middleware(['auth'])->name('importRecoItem');
 
 // お気に入りアイテムを絞り込み
 

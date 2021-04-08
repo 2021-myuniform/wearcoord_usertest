@@ -52,6 +52,7 @@
 
 .reccomendImgContainer .homeImg {
   display: inline-block;
+  height: 100%;
 }
 
 .reccomendImgContainer .reccomendImg_item {
@@ -62,6 +63,7 @@
   height: 140px;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
+  text-align: center;
 }
 
 .reccomendImgContainer .reccomendImg_item button {
