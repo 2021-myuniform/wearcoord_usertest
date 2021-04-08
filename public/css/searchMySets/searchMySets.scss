@@ -38,6 +38,7 @@
     min-width: 150px;
 
 }
+
 .mannequinImg {
     height: 100%;
     // background-image: url('../../img/other/mannequin_done3.png');
@@ -58,12 +59,18 @@
 
 .capsForm {
     height: 40px;
+    position: relative;
+
+    .mannequinBtn{
+        position: absolute;
+        top: -12px;
+    }
 
     .mannequinItemImg {
         width: 70px;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+        // height: 100%;
+        // object-fit: cover;
+        // object-position: center;
     }
 }
 
@@ -83,7 +90,7 @@
     }
 }
 
-.legsSection{
+.legsSection {
     position: relative;
 }
 
@@ -98,26 +105,28 @@
     }
 }
 
-.socksForm{
+.socksForm {
     position: absolute;
-    bottom: -10px;
+    bottom: -50px;
+    transform: translateX(-50%);
+    left: 50%;
 
-    button{
+    button {
 
-        .mannequinItemImg{
-            width: 70%;
-            height: 20px;
-            object-fit: cover;
+        .mannequinItemImg {
+            // width: 70%;
+            height: 100px;
+            // object-fit: cover;
         }
     }
 }
 
-.socksImg{
+.socksImg {
     display: flex;
     justify-content: center;
 }
 
-.socksBox{
+.socksBox {
     width: 20px;
     height: 15px;
     margin: 0 4px;
@@ -133,11 +142,19 @@
     z-index: 100;
     position: relative;
 
+    .mannequinBtn {
+        position: relative;
+    }
+
     .mannequinItemImg {
-        width: 100px;
-        height: 40px;
-        max-width: 200px;
-        object-fit: cover;
+        // width: 100px;
+        // height: 100%;
+        // max-width: 200px;
+        // object-fit: cover;
+        position: absolute;
+        top: -30px;
+        transform: translateX(-50%);
+        height: 100px;
     }
 }
 
