@@ -41,7 +41,7 @@
 }
 
 .imgContainer {
-    display: flex;
+    // display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 90%;
@@ -58,6 +58,7 @@
         margin: 4px;
         // box-shadow: 1px 1px 3px 0px darkgrey;
         height: fit-content;
+        display: inline-block;
 
         img {
             width: 100%;

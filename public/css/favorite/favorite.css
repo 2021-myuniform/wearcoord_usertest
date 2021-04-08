@@ -37,7 +37,6 @@
 }
 
 .itemBoxFlex {
-  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 90%;
@@ -49,20 +48,21 @@
 .imgContainer {
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   margin: auto;
   height: 60vh;
   overflow: scroll;
 }
 
 .imgContainer .imgItems {
-  width: 40%;
+  width: 30%;
   padding: 10px;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
-  margin: 10px;
+  margin: 4px;
   height: fit-content;
+  display: inline-block;
 }
 
 .imgContainer .imgItems img {
@@ -85,7 +85,7 @@
 }
 
 .itemFav {
-  width: 25% !important;
+  width: 30% !important;
 }
 
 .btn_wrapper {
