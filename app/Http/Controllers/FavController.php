@@ -122,8 +122,21 @@ class FavController extends Controller
         // ウェアのIDを取得
         $outfitid = DB::table('users_favorite_outfits')->where('id', $favid)->first();
 
+        if($type == 'inner'){
+            DB::table('users')->where('id', $user->id)->update([
+                'innerUrl' => $outfitid->innerUrl
+            ]);
+            $userFav = DB::table('userFavorite')->where('userid', $user->id)->first();
+
+            $arrayUrl =  Wear::createArrayImgUrl();
+
+
+            return redirect()->route('mysets', ['type' => $type, 'user' => $user, 'arrayUrl' => $arrayUrl, 'userFav' => $userFav]);
+
+        }
 
         $checkList = DB::table('userFavorite')->where('userid', $user->id)->first();
+
 
         if (isset($checkList)) {
             DB::table('userFavorite')->where('userid', $user->id)->update([
