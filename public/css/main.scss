@@ -57,6 +57,7 @@ input{
 
     .titleIcon{
         padding-left: 10px;
+        height: 70%;
     }
 
     .mainTitle{
@@ -64,6 +65,11 @@ input{
         color: #0080E4;
         font-weight: bold;
     }
+
+    .titleImg{
+        height: 100%;
+    }
+
     .hiddenIcon{
         display: block;
         content:"";
