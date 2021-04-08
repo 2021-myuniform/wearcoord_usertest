@@ -48,13 +48,16 @@
 
 .capsForm {
   height: 40px;
+  position: relative;
+}
+
+.capsForm .mannequinBtn {
+  position: absolute;
+  top: -12px;
 }
 
 .capsForm .mannequinItemImg {
   width: 70px;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 
 .faceDiv {
@@ -73,8 +76,12 @@
   max-width: 170px;
 }
 
+.legsSection {
+  position: relative;
+}
+
 .pantsForm {
-  height: 140px;
+  height: 150px;
   position: relative;
 }
 
@@ -85,13 +92,14 @@
 }
 
 .socksForm {
-  height: 10px;
+  position: absolute;
+  bottom: -50px;
+  transform: translateX(-50%);
+  left: 50%;
 }
 
 .socksForm button .mannequinItemImg {
-  width: 70%;
-  height: 20px;
-  object-fit: cover;
+  height: 100px;
 }
 
 .socksImg {
@@ -112,13 +120,19 @@
 
 .shoesForm {
   height: 40px;
+  z-index: 100;
+  position: relative;
+}
+
+.shoesForm .mannequinBtn {
+  position: relative;
 }
 
 .shoesForm .mannequinItemImg {
-  width: 100px;
-  height: 100%;
-  max-width: 200px;
-  object-fit: cover;
+  position: absolute;
+  top: -30px;
+  transform: translateX(-50%);
+  height: 100px;
 }
 
 .backBtn {

@@ -25,6 +25,7 @@
         </button>
     </form>
 
+<div class="legsSection">
     {{-- pants --}}
     <form action="{{ route('searchmysetsGetPants') }}" class="pantsForm" method="get">
         @csrf
@@ -46,6 +47,8 @@
             @endif
         </button>
     </form>
+</div>
+
 
     {{-- <div class="socksImg">
         <div class="socksBox" style="background-color: red"></div>
