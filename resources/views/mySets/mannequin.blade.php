@@ -18,7 +18,7 @@
     <form action="{{ route('searchmysetsGetTops') }}" class="topsForm" method="get">
         @csrf
         <button class="mannequinBtn"  type="submit">
-            <input type="hidden" name="type" value="caps">
+            <input type="hidden" name="type" value="tops">
             @if ((asset( $arrayUrl['topsUrl'] )) != asset(''))
             <img class="mannequinItemImg" src="{{ asset( $arrayUrl['topsUrl'] ) }}" alt="{{ asset( $arrayUrl['topsUrl'] ) }}">
             @endif
@@ -30,7 +30,7 @@
     <form action="{{ route('searchmysetsGetPants') }}" class="pantsForm" method="get">
         @csrf
         <button class="mannequinBtn"  type="submit">
-            <input type="hidden" name="type" value="caps">
+            <input type="hidden" name="type" value="pants">
             @if ((asset( $arrayUrl['pantsUrl'] )) != asset(''))
             <img class="mannequinItemImg" src="{{ asset( $arrayUrl['pantsUrl'] ) }}" alt="">
             @endif
