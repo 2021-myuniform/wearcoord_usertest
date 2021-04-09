@@ -54,6 +54,10 @@ body {
 Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
 */
 
+.titleImg{
+  height: 40px;
+}
+
 body {
   font-family:
 		system-ui,
