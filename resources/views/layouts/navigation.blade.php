@@ -7,7 +7,8 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('home') }}">
                         {{-- <x-application-logo class="block h-10 w-auto fill-current text-gray-600" /> --}}
-                        <h1>wearcoord</h1>
+                        {{-- <h1>wearcoord</h1> --}}
+                        <img class="titleImg" src="{{asset('img/logo/0080E4-short.png')}}" alt="">
                     </a>
                 </div>
 
