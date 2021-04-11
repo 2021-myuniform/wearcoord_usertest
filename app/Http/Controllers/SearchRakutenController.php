@@ -264,7 +264,11 @@ class SearchRakutenController extends Controller
         $itemCode = DB::table($type . '_rakuten_apis')->where('id', $wearid->{'fav' . $type})->value('itemId');
         $buy = DB::table($type . '_rakuten_apis')->where('id', $wearid->{'fav' . $type})->value('moshimoLink');
 
-        // ddd($wearid);
+        // ddd($itemCode);
+        
+        if($itemCode == null){
+           return $this->view($request);
+        }
 
         $item = SearchItems::SearchItemCodeRakutenAPI($itemCode);
 
@@ -385,6 +389,13 @@ class SearchRakutenController extends Controller
         $buy = DB::table($type . '_rakuten_apis')->where('id', $wearid)->value('moshimoLink');
 
         // ddd($itemCode);
+
+        if($itemCode == null){
+
+            $outfitSetImg = $outfitid->outfitSetImg;
+
+            return view('recommend.recommendCoordDetail', ['user' => $user, 'outfitSetImg' => $outfitSetImg, 'favid' => $favid]);
+        }
 
         $item = SearchItems::SearchItemCodeRakutenAPI($itemCode);
 
