@@ -14,10 +14,10 @@ class MainController extends Controller
 
         $checkList = DB::table('users')->where('id', $user->id)->value('innerUrl');
 
-        $userCoords = DB::table('users_favorite_outfits')->orderBy('created_at', 'desc')->take(5)->get();
+        $userCoords = DB::table('users_favorite_outfits')->orderBy('created_at', 'desc')->where('gender', $user->gender)->take(5)->get();
 
 
-        $wcCoords = DB::table('wc_recommend_outfits')->orderBy('created_at', 'desc')->take(5)->get();
+        $wcCoords = DB::table('wc_recommend_outfits')->orderBy('created_at', 'desc')->where('gender', $user->gender)->take(5)->get();
 
         // ddd($wcCoords);
 
