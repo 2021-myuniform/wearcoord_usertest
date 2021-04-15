@@ -12,7 +12,9 @@
     </form>
 
     {{-- face --}}
-    <div class="faceDiv"></div>
+    <div class="faceDiv">
+        {{-- <img data-html2canvas-ignore="true" class="faceImg" src="{{ asset('img/testImg/z-FK0820-on_model-standard_view.jpg') }}" alt=""> --}}
+    </div>
 
     {{-- tops --}}
     <form action="{{ route('searchmysetsGetTops') }}" class="topsForm" method="get">

@@ -62,6 +62,11 @@
 
 .faceDiv {
   height: 20px;
+  text-align: center;
+}
+
+.faceDiv .faceImg {
+  height: 100%;
 }
 
 .topsForm {
