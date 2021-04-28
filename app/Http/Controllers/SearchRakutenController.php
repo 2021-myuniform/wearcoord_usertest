@@ -265,7 +265,7 @@ class SearchRakutenController extends Controller
         $buy = DB::table($type . '_rakuten_apis')->where('id', $wearid->{'fav' . $type})->value('moshimoLink');
 
         // ddd($itemCode);
-        
+
         if($itemCode == null){
            return $this->view($request);
         }
@@ -399,10 +399,20 @@ class SearchRakutenController extends Controller
 
         $item = SearchItems::SearchItemCodeRakutenAPI($itemCode);
 
+        // 商品が楽天APIから無くなっていた場合の処理
+
+        if($item['items'] == null){
+
+            $outfitSetImg = $outfitid->outfitSetImg;
+
+            return view('recommend.recommendCoordDetail', ['user' => $user, 'outfitSetImg' => $outfitSetImg, 'favid' => $favid]);
+        }
+
         $color = $outfitid->{$type . 'Color'};
         $brand = $outfitid->{$type . 'Brand'};
         $DBID = $outfitid->id;
         $category = $outfitid->{$type . 'Category'};
+
 
         foreach ($item as $i) {
             $itemName = $i[0]['itemName'];
