@@ -60,6 +60,29 @@
         </div>
     </div>
 
+    <div class="mannequinImg female">
+        <div class="caps-container">
+            <img class="capslist" src="{{asset('img/lp/wearlist-caps.png')}}" alt="">
+        </div>
+        <div class="swiper-container tops-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide-item">
+                    <img class="toplist" src="{{asset('img/lp/wearlist-top.png')}}" alt="">
+                </div>
+                <div class="swiper-slide slide-item">
+                    <img class="toplist" src="{{asset('img/lp/wearlist-top.png')}}" alt="">
+                </div>
+            </div>
+        </div>
+            <div class="pants-container">
+                <img class="pantslist" src="{{asset('img/lp/wearlist-pants.png')}}" alt="">
+            </div>
+            <div class="shoes-container">
+                <img class="shoeslist" src="{{asset('img/lp/wearlist-shoes.png')}}" alt="">
+            </div>
+        </div>
+    </div>
+
     <section id="top">
         <div class="skewed"></div>
     </section>
@@ -171,8 +194,34 @@
             </ul>
     </section>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js" integrity="sha512-sAHYBRXSgMOV2axInO6rUzuKKM5SkItFLlLHQ8YjRD+FBwowtATOs4njP9oim3/MzyAGrB52SLDjpAOLcOT9TA==" crossorigin="anonymous"></script>
     <script src="{{ asset('js/lp.js') }}"></script>
+
+    <script>
+        const txts = $('.mannequinImg');
+        let txtIndex = -1;
+        txts.hide()
+
+        function showNextTxt() {
+        txtIndex++;
+        txts.eq(txtIndex % txts.length).fadeIn(2000).delay(3000).fadeOut(2000, showNextTxt);
+
+        var mySwiper = new Swiper ('.swiper-container', {
+        autoplay: {
+        delay: 0,
+        },
+        loop: true,
+        speed: 10000,
+        disableOnInteraction: false,
+        autoplayDisableOnInteraction: false,
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
+        });
+        }
+        showNextTxt();
+    </script>
 </body>
 </html>
