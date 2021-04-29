@@ -2,7 +2,8 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                {{-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> --}}
+                <img class="titleImg" src="{{asset('img/logo/0080E4-short.png')}}" alt="">
             </a>
         </x-slot>
 
@@ -11,7 +12,7 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
+            
             <!-- Name -->
             <div>
                 <x-label for="name" :value="__('Name')" />
