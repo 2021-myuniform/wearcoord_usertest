@@ -7,11 +7,11 @@ var mySwiper = new Swiper ('.swiper-container', {
     disableOnInteraction: false,
   });
 
-var mySwiper = new Swiper ('.pants-container', {
-    autoplay: {
-      delay: 0,
-      reverseDirection: true,
-    },
-    loop: true,
-    speed: 10000,
-  });
+// var mySwiper = new Swiper ('.pants-container', {
+//     autoplay: {
+//       delay: 0,
+//       reverseDirection: true,
+//     },
+//     loop: true,
+//     speed: 10000,
+//   });

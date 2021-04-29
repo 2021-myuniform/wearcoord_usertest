@@ -13,6 +13,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined	" rel="stylesheet">
+
 </head>
 <body>
     <header class="lpHeader">
@@ -34,24 +38,24 @@
     </header>
 
     <div class="mannequinImg">
+        <div class="caps-container">
+            <img class="capslist" src="{{asset('img/lp/wearlist-caps.png')}}" alt="">
+        </div>
         <div class="swiper-container tops-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide slide-item">
-                    <img class="toplist" src="{{asset('img/testImg/wearlist-top.png')}}" alt="">
+                    <img class="toplist" src="{{asset('img/lp/wearlist-top.png')}}" alt="">
                 </div>
                 <div class="swiper-slide slide-item">
-                    <img class="toplist" src="{{asset('img/testImg/wearlist-top.png')}}" alt="">
+                    <img class="toplist" src="{{asset('img/lp/wearlist-top.png')}}" alt="">
                 </div>
             </div>
         </div>
-        <div class="swiper-container pants-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide slide-item">
-                    <img class="pantslist" src="{{asset('img/testImg/wearlist-pants.png')}}" alt="">
-                </div>
-                <div class="swiper-slide slide-item">
-                    <img class="pantslist" src="{{asset('img/testImg/wearlist-pants.png')}}" alt="">
-                </div>
+            <div class="pants-container">
+                <img class="pantslist" src="{{asset('img/lp/wearlist-pants.png')}}" alt="">
+            </div>
+            <div class="shoes-container">
+                <img class="shoeslist" src="{{asset('img/lp/wearlist-shoes.png')}}" alt="">
             </div>
         </div>
     </div>
@@ -60,9 +64,112 @@
         <div class="skewed"></div>
     </section>
     <section class="catchSect">
+        <div class="catchText">
+            <div class="textBold">
+                <p>スポーツウェアのオシャレをもっと気軽に。</p>
+                <p>普段のスポーツを、よりワクワクしたものに。</p>
+            </div>
+            <div class="textDesc">
+                <p>「欲しいウェアが見つかった！でも自分の持っているウェアに合うかな？自分の顔にこの色は似合うかな？」スポーツウェアを購入する前に自分に似合うかどうかわからなくて困ったことはありませんか？</p>
+                <p>wearcoordでは欲しいウェアの組み合わせを購入前に見える化することでスポーツウェアをより気軽に楽しく、普段のスポーツもよりワクワクしたものにするお手伝いをします。</p>
+            </div>
+            <picture>
+                <img class="mockImg" src="{{asset('img/lp/mockup.png')}}" alt="">
+            </picture>
+        </div>
     </section>
 
+    <section class="sect">
+        <div>
+            <h2 class="sectTitle">wearcoordでできること</h2>
+        </div>
+            <ul class="sectUl">
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/li-tennis.png')}}" alt="">
+                    </picture>
+                    <h3>気になるウェアを探す</h3>
+                    <p>「このブランドのこんなカラーのアイテムが欲しい！」新作アイテムやプロ着用モデルなど豊富なアイテムの試着が可能です</p>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/li-running.png')}}" alt="">
+                    </picture>
+                    <h3>コーデを作って確認</h3>
+                    <p>購入したいウェアを手持ちウェアやシューズと合わせマネキンに着せて確認できます</p>
+                </li>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/li-ref.png')}}" alt="">
+                    </picture>
+                    <h3>他人のコーデを参考に</h3>
+                    <p>wearcoordユーザーが作った全身コーディネートを参照しワンクリックで試着できます</p>
+                </li>
+            </ul>
+    </section>
 
+       <section class="sect">
+        <div>
+            <h2 class="sectTitle">wearcoordで取り扱うブランド一覧</h2>
+        </div>
+            <ul class="sectUl sectBrand">
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/adidas.png')}}" alt="">
+                    </picture>
+                    <h3>Adidas</h3>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/asics.png')}}" alt="">
+                    </picture>
+                    <h3>Asics</h3>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/diadora.png')}}" alt="">
+                    </picture>
+                    <h3>Diadora</h3>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/ellesse.png')}}" alt="">
+                    </picture>
+                    <h3>Ellesse</h3>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/fila.png')}}" alt="">
+                    </picture>
+                    <h3>Fila</h3>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/prince.png')}}" alt="">
+                    </picture>
+                    <h3>Prince</h3>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/underarmar.png')}}" alt="">
+                    </picture>
+                    <h3>Underarmar</h3>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/yonex.png')}}" alt="">
+                    </picture>
+                    <h3>Yonex</h3>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/nike.png')}}" alt="">
+                    </picture>
+                    <h3>Nike</h3>
+                </li>
+            </ul>
+    </section>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js" integrity="sha512-sAHYBRXSgMOV2axInO6rUzuKKM5SkItFLlLHQ8YjRD+FBwowtATOs4njP9oim3/MzyAGrB52SLDjpAOLcOT9TA==" crossorigin="anonymous"></script>
