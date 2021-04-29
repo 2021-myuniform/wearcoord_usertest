@@ -33,6 +33,14 @@ input {
   color: #484848;
 }
 
+.displayNone {
+  display: none;
+}
+
+.displayBlock {
+  display: block;
+}
+
 #top {
   position: relative;
   z-index: 1;
@@ -277,6 +285,10 @@ input {
 
 .sect .sectUl li p {
   line-height: 1.4;
+}
+
+.mannequinImg.female {
+  background-image: url("../../img/other/manekin_female_10001000.png");
 }
 
 .sect .sectUl.sectBrand {
