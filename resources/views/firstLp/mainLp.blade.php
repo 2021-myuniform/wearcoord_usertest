@@ -67,10 +67,10 @@
         <div class="swiper-container tops-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide slide-item">
-                    <img class="toplist" src="{{asset('img/lp/wearlist-top.png')}}" alt="">
+                    <img class="toplist" src="{{asset('img/lp/ladies_lp_item.png')}}" alt="">
                 </div>
                 <div class="swiper-slide slide-item">
-                    <img class="toplist" src="{{asset('img/lp/wearlist-top.png')}}" alt="">
+                    <img class="toplist" src="{{asset('img/lp/ladies_lp_item.png')}}" alt="">
                 </div>
             </div>
         </div>
