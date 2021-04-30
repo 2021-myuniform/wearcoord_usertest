@@ -132,6 +132,38 @@
             </ul>
     </section>
 
+    <section class="sect">
+        <div>
+            <h2 class="sectTitle">wearcoordユーザーの声</h2>
+        </div>
+            <ul class="sectUl">
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/person2.png')}}" alt="">
+                    </picture>
+                    <h3>単価が高いウェアも安心<br>(20代 : テニスが趣味)</h3>
+                    <p>「単価の高いレディースウェアをネット上だけで選ぶのは難しいが、自分の顔や組み合わせにマッチするか確認できるので価格を気にせず好きなウェアを選べる」
+                    </p>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/person1.png')}}" alt="">
+                    </picture>
+                    <h3>お店で試着より気軽で良い<br>(30代: 週末テニスプレイヤー)</h3>
+                    <p>「ちょっと気になる可愛いデザインのアイテムがあるけれどお店が近くにない時、試着をする感覚で全身コーデを作ることができてイメージが湧く」</p>
+                </li>
+                </li>
+                <li>
+                    <picture>
+                        <img class="" src="{{asset('img/lp/li-tennis.png')}}" alt="">
+                    </picture>
+                    <h3>ずっとこれを待っていた！<br>(50代: 週末テニスプレイヤー)</h3>
+                    <p>「いつもウェア買う時は欲しいウェアと履いているシューズなどのコーデを頭で想像するしかなかったが、これがあるとちゃんと目で見た上で購入できるのがありがたい」
+                    </p>
+                </li>
+            </ul>
+    </section>
+
        <section class="sect">
         <div>
             <h2 class="sectTitle">wearcoordで取り扱うブランド一覧</h2>
